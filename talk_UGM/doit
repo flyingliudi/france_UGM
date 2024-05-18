@@ -1,0 +1,13 @@
+
+if [ $1 = "full" ]
+then
+	pdflatex ivqreg_output
+	bibtex ivqreg_output
+	pdflatex ivqreg_output
+	pdflatex ivqreg_output
+fi
+
+pdflatex ivqreg_talk
+bibtex ivqreg_talk
+pdflatex ivqreg_talk
+pdflatex ivqreg_talk

@@ -1,0 +1,7 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Motivation and Overview}{2}{0}{1}
+\beamer@sectionintoc {2}{Model and Example}{8}{0}{2}
+\beamer@sectionintoc {3}{Intuition and Simulations}{16}{0}{3}
+\beamer@sectionintoc {4}{IQR Estimator}{27}{0}{4}
+\beamer@sectionintoc {5}{Smooth Estimator}{34}{0}{5}
+\beamer@sectionintoc {6}{Summary}{37}{0}{6}

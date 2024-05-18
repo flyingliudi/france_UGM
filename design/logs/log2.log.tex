@@ -1,0 +1,39 @@
+. ivqreg_iqr y x1 x2 (d1 = z1), quantile(0.7)
+{\smallskip}
+Build initial grid using 2SQR at .7 quantile...
+{\smallskip}
+Start grid search ...
+Iteration     1:  current Wald =  2.455167         minimum Wald =  2.455167
+Iteration     2:  current Wald =  1.543189         minimum Wald =  1.543189
+Iteration     3:  current Wald =  .3562759         minimum Wald =  .3562759
+Iteration     4:  current Wald =   .147103         minimum Wald =   .147103
+Iteration     5:  current Wald =  .0002957         minimum Wald =  .0002957
+Iteration     6:  current Wald =  .0592007         minimum Wald =  .0002957
+Iteration     7:  current Wald =  .5262995         minimum Wald =  .0002957
+Iteration     8:  current Wald =  1.495976         minimum Wald =  .0002957
+Iteration     9:  current Wald =  2.678938         minimum Wald =  .0002957
+Iteration    10:  current Wald =  4.606166         minimum Wald =  .0002957
+Iteration    11:  current Wald =  8.393623         minimum Wald =  .0002957
+Iteration    12:  current Wald =  12.59518         minimum Wald =  .0002957
+Iteration    13:  current Wald =  22.08004         minimum Wald =  .0002957
+Iteration    14:  current Wald =  31.01435         minimum Wald =  .0002957
+Iteration    15:  current Wald =  36.91203         minimum Wald =  .0002957
+Iteration    16:  current Wald =  49.60023         minimum Wald =  .0002957
+Iteration    17:  current Wald =  51.62556         minimum Wald =  .0002957
+Iteration    18:  current Wald =  58.24846         minimum Wald =  .0002957
+Iteration    19:  current Wald =  63.60423         minimum Wald =  .0002957
+Iteration    20:  current Wald =  66.61904         minimum Wald =  .0002957
+{\smallskip}
+IV .7 quantile regression             Number of obs               =      1,000
+\HLI{13}{\TOPT}\HLI{64}
+             {\VBAR}               Robust
+           y {\VBAR} Coefficient  std. err.      z    P>|z|     [95\% conf. interval]
+\HLI{13}{\PLUS}\HLI{64}
+          d1 {\VBAR}   .5292106   .0673312     7.86   0.000     .3972439    .6611772
+          x1 {\VBAR}   1.649298   .0414618    39.78   0.000     1.568034    1.730562
+          x2 {\VBAR}   1.611054   .0371243    43.40   0.000     1.538292    1.683816
+       _cons {\VBAR}    .446551   .0549888     8.12   0.000      .338775     .554327
+\HLI{13}{\BOTT}\HLI{64}
+Endogenous: d1
+ Exogenous: x1 x2 z1
+{\smallskip}

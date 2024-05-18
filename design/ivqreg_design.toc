@@ -1,0 +1,47 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {section}{\numberline {2}The instrumental variable quantile regression model}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The model}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Main assumptions and moment condition}{7}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Reviews of estimation approaches}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Nonconvex and nonsmooth GMM objective function}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Different approaches}{10}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Inverse quantile regression}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Main results of IQR}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Robust inference approach}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Initial grid}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Adaptive grid search}{20}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Smoothed estimating equation estimator}{23}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Optimal bandwidth}{24}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Nonparametrically estimated optimal bandwidth}{25}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Parametrically estimated optimal bandwidth}{26}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Detection of ``bad'' bandwidth}{26}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Variance-covariance estimation}{26}{subsection.5.5}%
+\contentsline {section}{\numberline {6}General inference}{27}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Critical values by resampling scores}{28}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Some interesting testing examples}{29}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Implementation details}{31}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Syntax of {{\tt ivqregress}}}{33}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Syntax}{33}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Quick start}{36}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Post-estimation of {{\tt ivqregress}}}{38}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Overview}{38}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Syntax of {\tt estat coefplot}}{39}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Syntax of {\tt estat endogeffects}}{40}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Syntax of {\tt estat waldplot}}{41}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Syntax of {\tt estat dualci}}{41}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Syntax of {\tt predict}}{42}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Syntax of {\tt margins}}{42}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Examples}{44}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Example 1: IV median regression with the IQR estimator}{45}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Example 2: IV median regression with the SEE estimator}{48}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Example 3: IVQR at different quantiles}{50}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Example 4: Diagnose the IQR estimator}{60}{subsection.9.4}%
+\contentsline {section}{\numberline {A}Appendix}{64}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Proof for Theorem \ref {th:moment}}{64}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Discussion on Theorem \ref {thm:iqr_var}}{65}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Decentralization estimators}{66}{subsection.A.3}%
+\contentsline {subsubsection}{\numberline {A.3.1}Sequential contraction-based algorithm}{67}{subsubsection.A.3.1}%
+\contentsline {subsubsection}{\numberline {A.3.2}Reparameterization}{69}{subsubsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.3}Overidentified case}{69}{subsubsection.A.3.3}%
+\contentsline {section}{References}{71}{section*.2}%

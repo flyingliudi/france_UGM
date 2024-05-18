@@ -1,0 +1,4 @@
+{com}. estimates restore est_iqr
+{res}{txt}(results {stata estimates replay est_iqr:est_iqr} are active now)
+
+{com}. estat waldplot, name(a)

@@ -1,0 +1,282 @@
+{com}. ivqreg_iqr y x1 x2 (d1 = z1), quantile(10(10)90)
+{res}
+{txt}Build initial grid using 2SQR at .1 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res}  22.4736 {col 52}{txt}minimum Wald = {res}  22.4736
+{txt}Iteration     2: {col 18} current Wald = {res}  18.0925 {col 52}{txt}minimum Wald = {res}  18.0925
+{txt}Iteration     3: {col 18} current Wald = {res} 17.00025 {col 52}{txt}minimum Wald = {res} 17.00025
+{txt}Iteration     4: {col 18} current Wald = {res} 15.19126 {col 52}{txt}minimum Wald = {res} 15.19126
+{txt}Iteration     5: {col 18} current Wald = {res} 11.81506 {col 52}{txt}minimum Wald = {res} 11.81506
+{txt}Iteration     6: {col 18} current Wald = {res} 9.107875 {col 52}{txt}minimum Wald = {res} 9.107875
+{txt}Iteration     7: {col 18} current Wald = {res} 5.746381 {col 52}{txt}minimum Wald = {res} 5.746381
+{txt}Iteration     8: {col 18} current Wald = {res} 4.125356 {col 52}{txt}minimum Wald = {res} 4.125356
+{txt}Iteration     9: {col 18} current Wald = {res} 3.614164 {col 52}{txt}minimum Wald = {res} 3.614164
+{txt}Iteration    10: {col 18} current Wald = {res} 1.611728 {col 52}{txt}minimum Wald = {res} 1.611728
+{txt}Iteration    11: {col 18} current Wald = {res} .9497916 {col 52}{txt}minimum Wald = {res} .9497916
+{txt}Iteration    12: {col 18} current Wald = {res} .8163106 {col 52}{txt}minimum Wald = {res} .8163106
+{txt}Iteration    13: {col 18} current Wald = {res} .0736972 {col 52}{txt}minimum Wald = {res} .0736972
+{txt}Iteration    14: {col 18} current Wald = {res} .0000725 {col 52}{txt}minimum Wald = {res} .0000725
+{txt}Iteration    15: {col 18} current Wald = {res}  .174917 {col 52}{txt}minimum Wald = {res} .0000725
+{txt}Iteration    16: {col 18} current Wald = {res} 1.718363 {col 52}{txt}minimum Wald = {res} .0000725
+{txt}Iteration    17: {col 18} current Wald = {res}  2.77329 {col 52}{txt}minimum Wald = {res} .0000725
+{txt}Iteration    18: {col 18} current Wald = {res} 3.110623 {col 52}{txt}minimum Wald = {res} .0000725
+{txt}Iteration    19: {col 18} current Wald = {res} 3.369488 {col 52}{txt}minimum Wald = {res} .0000725
+{txt}Iteration    20: {col 18} current Wald = {res}  4.44968 {col 52}{txt}minimum Wald = {res} .0000725
+
+{txt}Build initial grid using 2SQR at .2 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 13.14172 {col 52}{txt}minimum Wald = {res} 13.14172
+{txt}Iteration     2: {col 18} current Wald = {res}  10.8234 {col 52}{txt}minimum Wald = {res}  10.8234
+{txt}Iteration     3: {col 18} current Wald = {res} 8.520361 {col 52}{txt}minimum Wald = {res} 8.520361
+{txt}Iteration     4: {col 18} current Wald = {res} 5.505812 {col 52}{txt}minimum Wald = {res} 5.505812
+{txt}Iteration     5: {col 18} current Wald = {res} 3.878259 {col 52}{txt}minimum Wald = {res} 3.878259
+{txt}Iteration     6: {col 18} current Wald = {res} 2.646774 {col 52}{txt}minimum Wald = {res} 2.646774
+{txt}Iteration     7: {col 18} current Wald = {res} 1.929225 {col 52}{txt}minimum Wald = {res} 1.929225
+{txt}Iteration     8: {col 18} current Wald = {res} 1.291346 {col 52}{txt}minimum Wald = {res} 1.291346
+{txt}Iteration     9: {col 18} current Wald = {res} .8122345 {col 52}{txt}minimum Wald = {res} .8122345
+{txt}Iteration    10: {col 18} current Wald = {res} .6536955 {col 52}{txt}minimum Wald = {res} .6536955
+{txt}Iteration    11: {col 18} current Wald = {res} .0544883 {col 52}{txt}minimum Wald = {res} .0544883
+{txt}Iteration    12: {col 18} current Wald = {res} .0083728 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    13: {col 18} current Wald = {res} .5175124 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    14: {col 18} current Wald = {res}  .612669 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    15: {col 18} current Wald = {res} 1.057832 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    16: {col 18} current Wald = {res} 1.438829 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    17: {col 18} current Wald = {res} 2.489941 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    18: {col 18} current Wald = {res} 3.415979 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    19: {col 18} current Wald = {res} 5.404424 {col 52}{txt}minimum Wald = {res} .0083728
+{txt}Iteration    20: {col 18} current Wald = {res} 7.472792 {col 52}{txt}minimum Wald = {res} .0083728
+
+{txt}Build initial grid using 2SQR at .3 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 11.68393 {col 52}{txt}minimum Wald = {res} 11.68393
+{txt}Iteration     2: {col 18} current Wald = {res} 11.17559 {col 52}{txt}minimum Wald = {res} 11.17559
+{txt}Iteration     3: {col 18} current Wald = {res} 9.349306 {col 52}{txt}minimum Wald = {res} 9.349306
+{txt}Iteration     4: {col 18} current Wald = {res} 7.664121 {col 52}{txt}minimum Wald = {res} 7.664121
+{txt}Iteration     5: {col 18} current Wald = {res} 5.623626 {col 52}{txt}minimum Wald = {res} 5.623626
+{txt}Iteration     6: {col 18} current Wald = {res} 3.786343 {col 52}{txt}minimum Wald = {res} 3.786343
+{txt}Iteration     7: {col 18} current Wald = {res} 2.263019 {col 52}{txt}minimum Wald = {res} 2.263019
+{txt}Iteration     8: {col 18} current Wald = {res} 1.594027 {col 52}{txt}minimum Wald = {res} 1.594027
+{txt}Iteration     9: {col 18} current Wald = {res} .8936081 {col 52}{txt}minimum Wald = {res} .8936081
+{txt}Iteration    10: {col 18} current Wald = {res}  .232475 {col 52}{txt}minimum Wald = {res}  .232475
+{txt}Iteration    11: {col 18} current Wald = {res} .1285265 {col 52}{txt}minimum Wald = {res} .1285265
+{txt}Iteration    12: {col 18} current Wald = {res} .0867819 {col 52}{txt}minimum Wald = {res} .0867819
+{txt}Iteration    13: {col 18} current Wald = {res} .0020202 {col 52}{txt}minimum Wald = {res} .0020202
+{txt}Iteration    14: {col 18} current Wald = {res} .1072428 {col 52}{txt}minimum Wald = {res} .0020202
+{txt}Iteration    15: {col 18} current Wald = {res} .3816731 {col 52}{txt}minimum Wald = {res} .0020202
+{txt}Iteration    16: {col 18} current Wald = {res} 1.416039 {col 52}{txt}minimum Wald = {res} .0020202
+{txt}Iteration    17: {col 18} current Wald = {res} 3.046751 {col 52}{txt}minimum Wald = {res} .0020202
+{txt}Iteration    18: {col 18} current Wald = {res} 4.038637 {col 52}{txt}minimum Wald = {res} .0020202
+{txt}Iteration    19: {col 18} current Wald = {res} 6.891354 {col 52}{txt}minimum Wald = {res} .0020202
+{txt}Iteration    20: {col 18} current Wald = {res}  7.53752 {col 52}{txt}minimum Wald = {res} .0020202
+
+{txt}Build initial grid using 2SQR at .4 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 11.04784 {col 52}{txt}minimum Wald = {res} 11.04784
+{txt}Iteration     2: {col 18} current Wald = {res} 10.12706 {col 52}{txt}minimum Wald = {res} 10.12706
+{txt}Iteration     3: {col 18} current Wald = {res} 7.851757 {col 52}{txt}minimum Wald = {res} 7.851757
+{txt}Iteration     4: {col 18} current Wald = {res} 5.883417 {col 52}{txt}minimum Wald = {res} 5.883417
+{txt}Iteration     5: {col 18} current Wald = {res} 6.304627 {col 52}{txt}minimum Wald = {res} 5.883417
+{txt}Iteration     6: {col 18} current Wald = {res} 5.856125 {col 52}{txt}minimum Wald = {res} 5.856125
+{txt}Iteration     7: {col 18} current Wald = {res} 5.017342 {col 52}{txt}minimum Wald = {res} 5.017342
+{txt}Iteration     8: {col 18} current Wald = {res} 3.351079 {col 52}{txt}minimum Wald = {res} 3.351079
+{txt}Iteration     9: {col 18} current Wald = {res} 2.489285 {col 52}{txt}minimum Wald = {res} 2.489285
+{txt}Iteration    10: {col 18} current Wald = {res} 1.667728 {col 52}{txt}minimum Wald = {res} 1.667728
+{txt}Iteration    11: {col 18} current Wald = {res}  .472877 {col 52}{txt}minimum Wald = {res}  .472877
+{txt}Iteration    12: {col 18} current Wald = {res} .2067629 {col 52}{txt}minimum Wald = {res} .2067629
+{txt}Iteration    13: {col 18} current Wald = {res}  .000284 {col 52}{txt}minimum Wald = {res}  .000284
+{txt}Iteration    14: {col 18} current Wald = {res} .1374782 {col 52}{txt}minimum Wald = {res}  .000284
+{txt}Iteration    15: {col 18} current Wald = {res}  .694115 {col 52}{txt}minimum Wald = {res}  .000284
+{txt}Iteration    16: {col 18} current Wald = {res} 1.597666 {col 52}{txt}minimum Wald = {res}  .000284
+{txt}Iteration    17: {col 18} current Wald = {res} 2.393153 {col 52}{txt}minimum Wald = {res}  .000284
+{txt}Iteration    18: {col 18} current Wald = {res} 3.338581 {col 52}{txt}minimum Wald = {res}  .000284
+{txt}Iteration    19: {col 18} current Wald = {res} 4.653108 {col 52}{txt}minimum Wald = {res}  .000284
+{txt}Iteration    20: {col 18} current Wald = {res} 6.406676 {col 52}{txt}minimum Wald = {res}  .000284
+
+{txt}Build initial grid using 2SQR at .5 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 13.74773 {col 52}{txt}minimum Wald = {res} 13.74773
+{txt}Iteration     2: {col 18} current Wald = {res} 13.52798 {col 52}{txt}minimum Wald = {res} 13.52798
+{txt}Iteration     3: {col 18} current Wald = {res} 11.68382 {col 52}{txt}minimum Wald = {res} 11.68382
+{txt}Iteration     4: {col 18} current Wald = {res} 10.24402 {col 52}{txt}minimum Wald = {res} 10.24402
+{txt}Iteration     5: {col 18} current Wald = {res} 8.698063 {col 52}{txt}minimum Wald = {res} 8.698063
+{txt}Iteration     6: {col 18} current Wald = {res} 7.168729 {col 52}{txt}minimum Wald = {res} 7.168729
+{txt}Iteration     7: {col 18} current Wald = {res} 5.627557 {col 52}{txt}minimum Wald = {res} 5.627557
+{txt}Iteration     8: {col 18} current Wald = {res}  4.07186 {col 52}{txt}minimum Wald = {res}  4.07186
+{txt}Iteration     9: {col 18} current Wald = {res} 2.561784 {col 52}{txt}minimum Wald = {res} 2.561784
+{txt}Iteration    10: {col 18} current Wald = {res} 1.192822 {col 52}{txt}minimum Wald = {res} 1.192822
+{txt}Iteration    11: {col 18} current Wald = {res} 1.018881 {col 52}{txt}minimum Wald = {res} 1.018881
+{txt}Iteration    12: {col 18} current Wald = {res} .1003419 {col 52}{txt}minimum Wald = {res} .1003419
+{txt}Iteration    13: {col 18} current Wald = {res} .0027824 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    14: {col 18} current Wald = {res} .1779259 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    15: {col 18} current Wald = {res}  1.02566 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    16: {col 18} current Wald = {res} 2.209973 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    17: {col 18} current Wald = {res} 4.154044 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    18: {col 18} current Wald = {res} 5.130442 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    19: {col 18} current Wald = {res} 8.970862 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    20: {col 18} current Wald = {res} 12.27276 {col 52}{txt}minimum Wald = {res} .0027824
+
+{txt}Build initial grid using 2SQR at .6 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res}  12.0374 {col 52}{txt}minimum Wald = {res}  12.0374
+{txt}Iteration     2: {col 18} current Wald = {res} 11.46107 {col 52}{txt}minimum Wald = {res} 11.46107
+{txt}Iteration     3: {col 18} current Wald = {res} 9.411436 {col 52}{txt}minimum Wald = {res} 9.411436
+{txt}Iteration     4: {col 18} current Wald = {res} 8.054216 {col 52}{txt}minimum Wald = {res} 8.054216
+{txt}Iteration     5: {col 18} current Wald = {res}  7.00651 {col 52}{txt}minimum Wald = {res}  7.00651
+{txt}Iteration     6: {col 18} current Wald = {res} 4.237742 {col 52}{txt}minimum Wald = {res} 4.237742
+{txt}Iteration     7: {col 18} current Wald = {res} 3.480847 {col 52}{txt}minimum Wald = {res} 3.480847
+{txt}Iteration     8: {col 18} current Wald = {res} 3.357349 {col 52}{txt}minimum Wald = {res} 3.357349
+{txt}Iteration     9: {col 18} current Wald = {res} 2.247135 {col 52}{txt}minimum Wald = {res} 2.247135
+{txt}Iteration    10: {col 18} current Wald = {res}  1.54442 {col 52}{txt}minimum Wald = {res}  1.54442
+{txt}Iteration    11: {col 18} current Wald = {res} .6128342 {col 52}{txt}minimum Wald = {res} .6128342
+{txt}Iteration    12: {col 18} current Wald = {res} .1454662 {col 52}{txt}minimum Wald = {res} .1454662
+{txt}Iteration    13: {col 18} current Wald = {res} .0269646 {col 52}{txt}minimum Wald = {res} .0269646
+{txt}Iteration    14: {col 18} current Wald = {res} .8189117 {col 52}{txt}minimum Wald = {res} .0269646
+{txt}Iteration    15: {col 18} current Wald = {res} 2.791839 {col 52}{txt}minimum Wald = {res} .0269646
+{txt}Iteration    16: {col 18} current Wald = {res} 4.873324 {col 52}{txt}minimum Wald = {res} .0269646
+{txt}Iteration    17: {col 18} current Wald = {res} 7.957102 {col 52}{txt}minimum Wald = {res} .0269646
+{txt}Iteration    18: {col 18} current Wald = {res} 12.37916 {col 52}{txt}minimum Wald = {res} .0269646
+{txt}Iteration    19: {col 18} current Wald = {res} 16.15612 {col 52}{txt}minimum Wald = {res} .0269646
+{txt}Iteration    20: {col 18} current Wald = {res} 22.68836 {col 52}{txt}minimum Wald = {res} .0269646
+
+{txt}Build initial grid using 2SQR at .7 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 2.455167 {col 52}{txt}minimum Wald = {res} 2.455167
+{txt}Iteration     2: {col 18} current Wald = {res} 1.543189 {col 52}{txt}minimum Wald = {res} 1.543189
+{txt}Iteration     3: {col 18} current Wald = {res} .3562759 {col 52}{txt}minimum Wald = {res} .3562759
+{txt}Iteration     4: {col 18} current Wald = {res}  .147103 {col 52}{txt}minimum Wald = {res}  .147103
+{txt}Iteration     5: {col 18} current Wald = {res} .0002957 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration     6: {col 18} current Wald = {res} .0592007 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration     7: {col 18} current Wald = {res} .5262995 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration     8: {col 18} current Wald = {res} 1.495976 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration     9: {col 18} current Wald = {res} 2.678938 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    10: {col 18} current Wald = {res} 4.606166 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    11: {col 18} current Wald = {res} 8.393623 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    12: {col 18} current Wald = {res} 12.59518 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    13: {col 18} current Wald = {res} 22.08004 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    14: {col 18} current Wald = {res} 31.01435 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    15: {col 18} current Wald = {res} 36.91203 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    16: {col 18} current Wald = {res} 49.60023 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    17: {col 18} current Wald = {res} 51.62556 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    18: {col 18} current Wald = {res} 58.24846 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    19: {col 18} current Wald = {res} 63.60423 {col 52}{txt}minimum Wald = {res} .0002957
+{txt}Iteration    20: {col 18} current Wald = {res} 66.61904 {col 52}{txt}minimum Wald = {res} .0002957
+
+{txt}Build initial grid using 2SQR at .8 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 5.078866 {col 52}{txt}minimum Wald = {res} 5.078866
+{txt}Iteration     2: {col 18} current Wald = {res} 2.515982 {col 52}{txt}minimum Wald = {res} 2.515982
+{txt}Iteration     3: {col 18} current Wald = {res} .5987176 {col 52}{txt}minimum Wald = {res} .5987176
+{txt}Iteration     4: {col 18} current Wald = {res}  .053027 {col 52}{txt}minimum Wald = {res}  .053027
+{txt}Iteration     5: {col 18} current Wald = {res}  .022025 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration     6: {col 18} current Wald = {res} .2003668 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration     7: {col 18} current Wald = {res}  .974975 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration     8: {col 18} current Wald = {res} 1.685423 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration     9: {col 18} current Wald = {res} 3.161163 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    10: {col 18} current Wald = {res} 4.569895 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    11: {col 18} current Wald = {res} 6.072775 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    12: {col 18} current Wald = {res} 9.344878 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    13: {col 18} current Wald = {res} 12.63018 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    14: {col 18} current Wald = {res} 16.56077 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    15: {col 18} current Wald = {res} 22.06752 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    16: {col 18} current Wald = {res} 26.90483 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    17: {col 18} current Wald = {res} 34.08609 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    18: {col 18} current Wald = {res}  45.6832 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    19: {col 18} current Wald = {res} 51.98744 {col 52}{txt}minimum Wald = {res}  .022025
+{txt}Iteration    20: {col 18} current Wald = {res} 64.18327 {col 52}{txt}minimum Wald = {res}  .022025
+
+{txt}Build initial grid using 2SQR at .9 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 1.667187 {col 52}{txt}minimum Wald = {res} 1.667187
+{txt}Iteration     2: {col 18} current Wald = {res} .5624645 {col 52}{txt}minimum Wald = {res} .5624645
+{txt}Iteration     3: {col 18} current Wald = {res} .0313992 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration     4: {col 18} current Wald = {res} .1363963 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration     5: {col 18} current Wald = {res} .7146828 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration     6: {col 18} current Wald = {res} 2.404136 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration     7: {col 18} current Wald = {res} 4.471844 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration     8: {col 18} current Wald = {res} 6.269937 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration     9: {col 18} current Wald = {res} 5.744321 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    10: {col 18} current Wald = {res} 7.497319 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    11: {col 18} current Wald = {res} 12.99305 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    12: {col 18} current Wald = {res}  16.1106 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    13: {col 18} current Wald = {res}  17.9797 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    14: {col 18} current Wald = {res}  20.7435 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    15: {col 18} current Wald = {res} 24.09005 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    16: {col 18} current Wald = {res} 31.05763 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    17: {col 18} current Wald = {res} 46.28931 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    18: {col 18} current Wald = {res} 47.24368 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    19: {col 18} current Wald = {res} 57.57667 {col 52}{txt}minimum Wald = {res} .0313992
+{txt}Iteration    20: {col 18} current Wald = {res} 65.45532 {col 52}{txt}minimum Wald = {res} .0313992
+
+{txt}IV quantile regression{col 39}Number of obs{col 67}={col 69}{res}     1,000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}           y{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q10          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .3053651{col 26}{space 2}  .119892{col 37}{space 1}    2.55{col 46}{space 3}0.011{col 54}{space 4} .0703811{col 67}{space 3} .5403491
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.182945{col 26}{space 2} .0328648{col 37}{space 1}   35.99{col 46}{space 3}0.000{col 54}{space 4} 1.118531{col 67}{space 3} 1.247358
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.164286{col 26}{space 2}  .032438{col 37}{space 1}   35.89{col 46}{space 3}0.000{col 54}{space 4} 1.100709{col 67}{space 3} 1.227863
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-1.222363{col 26}{space 2} .0415186{col 37}{space 1}  -29.44{col 46}{space 3}0.000{col 54}{space 4}-1.303738{col 67}{space 3}-1.140988
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q20          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .1598569{col 26}{space 2}  .091954{col 37}{space 1}    1.74{col 46}{space 3}0.082{col 54}{space 4}-.0203697{col 67}{space 3} .3400834
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.253955{col 26}{space 2} .0374945{col 37}{space 1}   33.44{col 46}{space 3}0.000{col 54}{space 4} 1.180467{col 67}{space 3} 1.327443
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.270747{col 26}{space 2} .0374696{col 37}{space 1}   33.91{col 46}{space 3}0.000{col 54}{space 4} 1.197308{col 67}{space 3} 1.344186
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -.854385{col 26}{space 2} .0437139{col 37}{space 1}  -19.54{col 46}{space 3}0.000{col 54}{space 4}-.9400626{col 67}{space 3}-.7687073
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q30          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .2392064{col 26}{space 2} .0860738{col 37}{space 1}    2.78{col 46}{space 3}0.005{col 54}{space 4} .0705049{col 67}{space 3} .4079078
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.333498{col 26}{space 2} .0378589{col 37}{space 1}   35.22{col 46}{space 3}0.000{col 54}{space 4} 1.259296{col 67}{space 3} 1.407701
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.363506{col 26}{space 2} .0355201{col 37}{space 1}   38.39{col 46}{space 3}0.000{col 54}{space 4} 1.293888{col 67}{space 3} 1.433124
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.5676008{col 26}{space 2} .0430206{col 37}{space 1}  -13.19{col 46}{space 3}0.000{col 54}{space 4}-.6519197{col 67}{space 3}-.4832818
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q40          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2}  .309709{col 26}{space 2} .0756615{col 37}{space 1}    4.09{col 46}{space 3}0.000{col 54}{space 4} .1614153{col 67}{space 3} .4580028
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2}  1.39524{col 26}{space 2}   .03403{col 37}{space 1}   41.00{col 46}{space 3}0.000{col 54}{space 4} 1.328543{col 67}{space 3} 1.461938
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2}    1.443{col 26}{space 2} .0332893{col 37}{space 1}   43.35{col 46}{space 3}0.000{col 54}{space 4} 1.377754{col 67}{space 3} 1.508246
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.3019341{col 26}{space 2} .0411288{col 37}{space 1}   -7.34{col 46}{space 3}0.000{col 54}{space 4}-.3825451{col 67}{space 3}-.2213231
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q50          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .4338709{col 26}{space 2} .0715584{col 37}{space 1}    6.06{col 46}{space 3}0.000{col 54}{space 4}  .293619{col 67}{space 3} .5741229
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.485626{col 26}{space 2} .0361991{col 37}{space 1}   41.04{col 46}{space 3}0.000{col 54}{space 4} 1.414677{col 67}{space 3} 1.556575
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.501151{col 26}{space 2} .0316297{col 37}{space 1}   47.46{col 46}{space 3}0.000{col 54}{space 4} 1.439158{col 67}{space 3} 1.563144
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0737753{col 26}{space 2} .0417094{col 37}{space 1}   -1.77{col 46}{space 3}0.077{col 54}{space 4}-.1555241{col 67}{space 3} .0079736
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q60          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .5214202{col 26}{space 2} .0561679{col 37}{space 1}    9.28{col 46}{space 3}0.000{col 54}{space 4} .4113331{col 67}{space 3} .6315073
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.534618{col 26}{space 2} .0369977{col 37}{space 1}   41.48{col 46}{space 3}0.000{col 54}{space 4} 1.462103{col 67}{space 3} 1.607132
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.548667{col 26}{space 2} .0327482{col 37}{space 1}   47.29{col 46}{space 3}0.000{col 54}{space 4} 1.484482{col 67}{space 3} 1.612853
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .144252{col 26}{space 2} .0439829{col 37}{space 1}    3.28{col 46}{space 3}0.001{col 54}{space 4}  .058047{col 67}{space 3}  .230457
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q70          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .5292106{col 26}{space 2} .0673312{col 37}{space 1}    7.86{col 46}{space 3}0.000{col 54}{space 4} .3972439{col 67}{space 3} .6611772
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.649298{col 26}{space 2} .0414618{col 37}{space 1}   39.78{col 46}{space 3}0.000{col 54}{space 4} 1.568034{col 67}{space 3} 1.730562
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.611054{col 26}{space 2} .0371243{col 37}{space 1}   43.40{col 46}{space 3}0.000{col 54}{space 4} 1.538292{col 67}{space 3} 1.683816
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .446551{col 26}{space 2} .0549888{col 37}{space 1}    8.12{col 46}{space 3}0.000{col 54}{space 4}  .338775{col 67}{space 3}  .554327
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q80          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .6015263{col 26}{space 2}  .067237{col 37}{space 1}    8.95{col 46}{space 3}0.000{col 54}{space 4} .4697441{col 67}{space 3} .7333085
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.739591{col 26}{space 2} .0489798{col 37}{space 1}   35.52{col 46}{space 3}0.000{col 54}{space 4} 1.643592{col 67}{space 3} 1.835589
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.684787{col 26}{space 2}  .049557{col 37}{space 1}   34.00{col 46}{space 3}0.000{col 54}{space 4} 1.587657{col 67}{space 3} 1.781917
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .8587767{col 26}{space 2} .0686253{col 37}{space 1}   12.51{col 46}{space 3}0.000{col 54}{space 4} .7242735{col 67}{space 3} .9932799
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q90          {txt}{c |}
+{space 10}d1 {c |}{col 14}{res}{space 2} .7419114{col 26}{space 2} .0769447{col 37}{space 1}    9.64{col 46}{space 3}0.000{col 54}{space 4} .5911027{col 67}{space 3} .8927202
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.913492{col 26}{space 2} .0426901{col 37}{space 1}   44.82{col 46}{space 3}0.000{col 54}{space 4} 1.829821{col 67}{space 3} 1.997163
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.741339{col 26}{space 2} .0659572{col 37}{space 1}   26.40{col 46}{space 3}0.000{col 54}{space 4} 1.612065{col 67}{space 3} 1.870613
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.298824{col 26}{space 2} .0661339{col 37}{space 1}   19.64{col 46}{space 3}0.000{col 54}{space 4} 1.169204{col 67}{space 3} 1.428444
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p2colset 0 13 13 2}{...}
+{text}{p2col:Endogenous:}{res}d1{p_end}
+{text}{p2col:{space 1}Exogenous:}{res}x1 x2 z1{p_end}
+{p2colreset}{...}
+{txt}

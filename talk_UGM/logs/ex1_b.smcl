@@ -1,0 +1,218 @@
+{com}. ivqregress iqr assets (i.p401k = i.e401k) $covariates, quantile(10(10)90)
+{res}
+{txt}Initial grid:
+{txt}Quantile = {res}0.10{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.20{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.30{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.40{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.50{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.60{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.70{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.80{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.90{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+
+{txt}Adaptive grid:
+{txt}Quantile = {res}0.10{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.20{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.30{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.40{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.50{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.60{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.70{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.80{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+{txt}Quantile = {res}0.90{txt}: {col 18}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30 done
+
+{col 1}IV quantile regression{col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:9,913}
+{txt}{col 1}Estimator: Inverse quantile regression{col 56}{lalign 13:Wald chi2({res:81})}{col 69} = {res}{ralign 7:5121.46}
+{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      assets{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q10          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2}  3240.08{col 26}{space 2} 475.6184{col 37}{space 1}    6.81{col 46}{space 3}0.000{col 54}{space 4} 2307.885{col 67}{space 3} 4172.275
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .0303072{col 26}{space 2} .0123138{col 37}{space 1}    2.46{col 46}{space 3}0.014{col 54}{space 4} .0061725{col 67}{space 3} .0544419
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 131.5908{col 26}{space 2} 15.13725{col 37}{space 1}    8.69{col 46}{space 3}0.000{col 54}{space 4} 101.9223{col 67}{space 3} 161.2592
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-329.2838{col 26}{space 2} 123.4665{col 37}{space 1}   -2.67{col 46}{space 3}0.008{col 54}{space 4}-571.2737{col 67}{space 3}-87.29385
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-301.1635{col 26}{space 2} 52.02897{col 37}{space 1}   -5.79{col 46}{space 3}0.000{col 54}{space 4}-403.1384{col 67}{space 3}-199.1885
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-1504.648{col 26}{space 2} 380.0373{col 37}{space 1}   -3.96{col 46}{space 3}0.000{col 54}{space 4}-2249.508{col 67}{space 3}-759.7886
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}  7864.15{col 26}{space 2} 344.2198{col 37}{space 1}   22.85{col 46}{space 3}0.000{col 54}{space 4} 7189.492{col 67}{space 3} 8538.809
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2} 63.88643{col 26}{space 2} 326.6017{col 37}{space 1}    0.20{col 46}{space 3}0.845{col 54}{space 4}-576.2412{col 67}{space 3} 704.0141
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 969.6861{col 26}{space 2} 300.4319{col 37}{space 1}    3.23{col 46}{space 3}0.001{col 54}{space 4} 380.8503{col 67}{space 3} 1558.522
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-7455.806{col 26}{space 2} 1192.112{col 37}{space 1}   -6.25{col 46}{space 3}0.000{col 54}{space 4}-9792.302{col 67}{space 3}-5119.311
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q20          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 3446.347{col 26}{space 2} 334.4227{col 37}{space 1}   10.31{col 46}{space 3}0.000{col 54}{space 4}  2790.89{col 67}{space 3} 4101.803
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .0730526{col 26}{space 2} .0083383{col 37}{space 1}    8.76{col 46}{space 3}0.000{col 54}{space 4} .0567097{col 67}{space 3} .0893954
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 117.4232{col 26}{space 2} 10.09197{col 37}{space 1}   11.64{col 46}{space 3}0.000{col 54}{space 4} 97.64336{col 67}{space 3} 137.2031
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2} -311.518{col 26}{space 2} 77.31495{col 37}{space 1}   -4.03{col 46}{space 3}0.000{col 54}{space 4}-463.0525{col 67}{space 3}-159.9835
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-198.8986{col 26}{space 2} 36.72851{col 37}{space 1}   -5.42{col 46}{space 3}0.000{col 54}{space 4}-270.8852{col 67}{space 3}-126.9121
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-1023.821{col 26}{space 2} 245.1418{col 37}{space 1}   -4.18{col 46}{space 3}0.000{col 54}{space 4} -1504.29{col 67}{space 3}-543.3515
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 8728.335{col 26}{space 2} 389.1614{col 37}{space 1}   22.43{col 46}{space 3}0.000{col 54}{space 4} 7965.593{col 67}{space 3} 9491.077
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2} 8.450874{col 26}{space 2} 211.6773{col 37}{space 1}    0.04{col 46}{space 3}0.968{col 54}{space 4} -406.429{col 67}{space 3} 423.3307
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}  247.107{col 26}{space 2} 193.7332{col 37}{space 1}    1.28{col 46}{space 3}0.202{col 54}{space 4}-132.6031{col 67}{space 3}  626.817
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-6064.723{col 26}{space 2} 762.7341{col 37}{space 1}   -7.95{col 46}{space 3}0.000{col 54}{space 4}-7559.654{col 67}{space 3}-4569.791
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q30          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 3674.434{col 26}{space 2} 318.7578{col 37}{space 1}   11.53{col 46}{space 3}0.000{col 54}{space 4}  3049.68{col 67}{space 3} 4299.188
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .0900328{col 26}{space 2} .0080609{col 37}{space 1}   11.17{col 46}{space 3}0.000{col 54}{space 4} .0742337{col 67}{space 3} .1058319
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 106.4245{col 26}{space 2} 8.502461{col 37}{space 1}   12.52{col 46}{space 3}0.000{col 54}{space 4}    89.76{col 67}{space 3}  123.089
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-217.4507{col 26}{space 2} 57.05271{col 37}{space 1}   -3.81{col 46}{space 3}0.000{col 54}{space 4} -329.272{col 67}{space 3}-105.6295
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-122.6666{col 26}{space 2} 32.44148{col 37}{space 1}   -3.78{col 46}{space 3}0.000{col 54}{space 4}-186.2508{col 67}{space 3}-59.08249
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-1021.046{col 26}{space 2} 209.9362{col 37}{space 1}   -4.86{col 46}{space 3}0.000{col 54}{space 4}-1432.513{col 67}{space 3}-609.5787
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 11974.65{col 26}{space 2} 566.1735{col 37}{space 1}   21.15{col 46}{space 3}0.000{col 54}{space 4} 10864.98{col 67}{space 3} 13084.33
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-149.6646{col 26}{space 2} 187.9519{col 37}{space 1}   -0.80{col 46}{space 3}0.426{col 54}{space 4}-518.0435{col 67}{space 3} 218.7144
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 118.1594{col 26}{space 2} 157.3384{col 37}{space 1}    0.75{col 46}{space 3}0.453{col 54}{space 4}-190.2182{col 67}{space 3}  426.537
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-5631.287{col 26}{space 2} 617.0855{col 37}{space 1}   -9.13{col 46}{space 3}0.000{col 54}{space 4}-6840.752{col 67}{space 3}-4421.821
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q40          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 4196.127{col 26}{space 2} 369.6983{col 37}{space 1}   11.35{col 46}{space 3}0.000{col 54}{space 4} 3471.532{col 67}{space 3} 4920.722
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .1230721{col 26}{space 2} .0104554{col 37}{space 1}   11.77{col 46}{space 3}0.000{col 54}{space 4} .1025799{col 67}{space 3} .1435643
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 93.83839{col 26}{space 2} 7.963134{col 37}{space 1}   11.78{col 46}{space 3}0.000{col 54}{space 4} 78.23093{col 67}{space 3} 109.4458
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-225.3647{col 26}{space 2} 51.96267{col 37}{space 1}   -4.34{col 46}{space 3}0.000{col 54}{space 4}-327.2097{col 67}{space 3}-123.5198
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-112.4069{col 26}{space 2} 30.98445{col 37}{space 1}   -3.63{col 46}{space 3}0.000{col 54}{space 4}-173.1353{col 67}{space 3}-51.67845
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-1191.624{col 26}{space 2} 211.8386{col 37}{space 1}   -5.63{col 46}{space 3}0.000{col 54}{space 4} -1606.82{col 67}{space 3}-776.4277
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 16997.44{col 26}{space 2} 803.6711{col 37}{space 1}   21.15{col 46}{space 3}0.000{col 54}{space 4} 15422.28{col 67}{space 3} 18572.61
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-511.7032{col 26}{space 2} 194.9456{col 37}{space 1}   -2.62{col 46}{space 3}0.009{col 54}{space 4}-893.7895{col 67}{space 3}-129.6168
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 102.3659{col 26}{space 2} 148.1471{col 37}{space 1}    0.69{col 46}{space 3}0.490{col 54}{space 4} -187.997{col 67}{space 3} 392.7288
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-4787.913{col 26}{space 2} 553.4111{col 37}{space 1}   -8.65{col 46}{space 3}0.000{col 54}{space 4}-5872.579{col 67}{space 3}-3703.247
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q50          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 5313.397{col 26}{space 2} 573.2818{col 37}{space 1}    9.27{col 46}{space 3}0.000{col 54}{space 4} 4189.786{col 67}{space 3} 6437.009
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .1577512{col 26}{space 2} .0124889{col 37}{space 1}   12.63{col 46}{space 3}0.000{col 54}{space 4} .1332735{col 67}{space 3} .1822289
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 99.96526{col 26}{space 2} 8.561923{col 37}{space 1}   11.68{col 46}{space 3}0.000{col 54}{space 4}  83.1842{col 67}{space 3} 116.7463
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-197.8251{col 26}{space 2} 54.36773{col 37}{space 1}   -3.64{col 46}{space 3}0.000{col 54}{space 4}-304.3838{col 67}{space 3}-91.26627
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-96.43983{col 26}{space 2} 32.09465{col 37}{space 1}   -3.00{col 46}{space 3}0.003{col 54}{space 4}-159.3442{col 67}{space 3}-33.53547
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-1359.124{col 26}{space 2} 227.3366{col 37}{space 1}   -5.98{col 46}{space 3}0.000{col 54}{space 4}-1804.696{col 67}{space 3}-913.5528
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 22629.61{col 26}{space 2} 1022.706{col 37}{space 1}   22.13{col 46}{space 3}0.000{col 54}{space 4} 20625.15{col 67}{space 3} 24634.08
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-693.8347{col 26}{space 2} 210.6176{col 37}{space 1}   -3.29{col 46}{space 3}0.001{col 54}{space 4}-1106.638{col 67}{space 3}-281.0317
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}-30.29657{col 26}{space 2} 154.7265{col 37}{space 1}   -0.20{col 46}{space 3}0.845{col 54}{space 4} -333.555{col 67}{space 3} 272.9618
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-4998.673{col 26}{space 2} 570.1315{col 37}{space 1}   -8.77{col 46}{space 3}0.000{col 54}{space 4} -6116.11{col 67}{space 3}-3881.236
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q60          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 7006.205{col 26}{space 2} 801.4258{col 37}{space 1}    8.74{col 46}{space 3}0.000{col 54}{space 4} 5435.439{col 67}{space 3}  8576.97
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .2327564{col 26}{space 2} .0174037{col 37}{space 1}   13.37{col 46}{space 3}0.000{col 54}{space 4} .1986458{col 67}{space 3} .2668671
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 135.4321{col 26}{space 2} 11.38565{col 37}{space 1}   11.89{col 46}{space 3}0.000{col 54}{space 4} 113.1166{col 67}{space 3} 157.7475
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-262.5927{col 26}{space 2} 65.82424{col 37}{space 1}   -3.99{col 46}{space 3}0.000{col 54}{space 4}-391.6058{col 67}{space 3}-133.5795
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-118.7153{col 26}{space 2} 40.43096{col 37}{space 1}   -2.94{col 46}{space 3}0.003{col 54}{space 4}-197.9585{col 67}{space 3}-39.47208
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-1716.762{col 26}{space 2} 269.9874{col 37}{space 1}   -6.36{col 46}{space 3}0.000{col 54}{space 4}-2245.927{col 67}{space 3}-1187.596
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 30301.55{col 26}{space 2} 1241.557{col 37}{space 1}   24.41{col 46}{space 3}0.000{col 54}{space 4} 27868.15{col 67}{space 3} 32734.96
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-988.7325{col 26}{space 2} 261.4987{col 37}{space 1}   -3.78{col 46}{space 3}0.000{col 54}{space 4}-1501.261{col 67}{space 3}-476.2044
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}-122.2135{col 26}{space 2} 193.9046{col 37}{space 1}   -0.63{col 46}{space 3}0.529{col 54}{space 4}-502.2595{col 67}{space 3} 257.8324
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-6290.287{col 26}{space 2} 688.2098{col 37}{space 1}   -9.14{col 46}{space 3}0.000{col 54}{space 4}-7639.154{col 67}{space 3}-4941.421
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q70          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 9093.469{col 26}{space 2} 1109.745{col 37}{space 1}    8.19{col 46}{space 3}0.000{col 54}{space 4} 6918.408{col 67}{space 3} 11268.53
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .3459585{col 26}{space 2} .0226207{col 37}{space 1}   15.29{col 46}{space 3}0.000{col 54}{space 4} .3016228{col 67}{space 3} .3902942
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 191.2876{col 26}{space 2} 16.53737{col 37}{space 1}   11.57{col 46}{space 3}0.000{col 54}{space 4}  158.875{col 67}{space 3} 223.7003
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-242.6605{col 26}{space 2} 86.05014{col 37}{space 1}   -2.82{col 46}{space 3}0.005{col 54}{space 4}-411.3157{col 67}{space 3}-74.00534
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-143.4298{col 26}{space 2} 51.12786{col 37}{space 1}   -2.81{col 46}{space 3}0.005{col 54}{space 4}-243.6386{col 67}{space 3}-43.22104
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-2470.874{col 26}{space 2} 352.4949{col 37}{space 1}   -7.01{col 46}{space 3}0.000{col 54}{space 4}-3161.751{col 67}{space 3}-1779.996
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 39365.32{col 26}{space 2}  1608.07{col 37}{space 1}   24.48{col 46}{space 3}0.000{col 54}{space 4} 36213.56{col 67}{space 3} 42517.08
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-1796.514{col 26}{space 2} 344.5429{col 37}{space 1}   -5.21{col 46}{space 3}0.000{col 54}{space 4}-2471.806{col 67}{space 3}-1121.222
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}-4.058645{col 26}{space 2} 262.5795{col 37}{space 1}   -0.02{col 46}{space 3}0.988{col 54}{space 4}-518.7051{col 67}{space 3} 510.5878
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-8637.647{col 26}{space 2}  928.462{col 37}{space 1}   -9.30{col 46}{space 3}0.000{col 54}{space 4} -10457.4{col 67}{space 3}-6817.894
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q80          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 10699.12{col 26}{space 2} 1651.062{col 37}{space 1}    6.48{col 46}{space 3}0.000{col 54}{space 4} 7463.098{col 67}{space 3} 13935.14
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .5103271{col 26}{space 2} .0293056{col 37}{space 1}   17.41{col 46}{space 3}0.000{col 54}{space 4} .4528892{col 67}{space 3} .5677649
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 280.7892{col 26}{space 2} 24.10894{col 37}{space 1}   11.65{col 46}{space 3}0.000{col 54}{space 4} 233.5366{col 67}{space 3} 328.0419
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-400.8973{col 26}{space 2} 117.2019{col 37}{space 1}   -3.42{col 46}{space 3}0.001{col 54}{space 4}-630.6089{col 67}{space 3}-171.1858
+{txt}{space 8}educ {c |}{col 14}{res}{space 2} -130.398{col 26}{space 2} 68.51364{col 37}{space 1}   -1.90{col 46}{space 3}0.057{col 54}{space 4}-264.6823{col 67}{space 3} 3.886266
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-2902.662{col 26}{space 2} 480.5005{col 37}{space 1}   -6.04{col 46}{space 3}0.000{col 54}{space 4}-3844.426{col 67}{space 3}-1960.899
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 48875.79{col 26}{space 2} 2297.873{col 37}{space 1}   21.27{col 46}{space 3}0.000{col 54}{space 4} 44372.04{col 67}{space 3} 53379.54
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-3072.814{col 26}{space 2} 502.6944{col 37}{space 1}   -6.11{col 46}{space 3}0.000{col 54}{space 4}-4058.077{col 67}{space 3}-2087.551
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 235.2409{col 26}{space 2} 402.9808{col 37}{space 1}    0.58{col 46}{space 3}0.559{col 54}{space 4}-554.5869{col 67}{space 3} 1025.069
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-11871.24{col 26}{space 2} 1257.402{col 37}{space 1}   -9.44{col 46}{space 3}0.000{col 54}{space 4} -14335.7{col 67}{space 3}-9406.775
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}q90          {txt}{c |}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 15983.42{col 26}{space 2} 3046.028{col 37}{space 1}    5.25{col 46}{space 3}0.000{col 54}{space 4} 10013.32{col 67}{space 3} 21953.53
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .8247356{col 26}{space 2} .0570029{col 37}{space 1}   14.47{col 46}{space 3}0.000{col 54}{space 4}  .713012{col 67}{space 3} .9364593
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 485.8734{col 26}{space 2} 48.99224{col 37}{space 1}    9.92{col 46}{space 3}0.000{col 54}{space 4} 389.8504{col 67}{space 3} 581.8965
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-646.4962{col 26}{space 2}  185.913{col 37}{space 1}   -3.48{col 46}{space 3}0.001{col 54}{space 4}-1010.879{col 67}{space 3}-282.1134
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}  48.4205{col 26}{space 2} 106.2844{col 37}{space 1}    0.46{col 46}{space 3}0.649{col 54}{space 4}-159.8931{col 67}{space 3} 256.7341
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-3265.007{col 26}{space 2} 753.4701{col 37}{space 1}   -4.33{col 46}{space 3}0.000{col 54}{space 4}-4741.782{col 67}{space 3}-1788.233
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 68543.44{col 26}{space 2} 4952.261{col 37}{space 1}   13.84{col 46}{space 3}0.000{col 54}{space 4} 58837.18{col 67}{space 3} 78249.69
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-4656.177{col 26}{space 2} 869.4887{col 37}{space 1}   -5.36{col 46}{space 3}0.000{col 54}{space 4}-6360.343{col 67}{space 3} -2952.01
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 400.1957{col 26}{space 2} 680.2776{col 37}{space 1}    0.59{col 46}{space 3}0.556{col 54}{space 4} -933.124{col 67}{space 3} 1733.515
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-20594.85{col 26}{space 2} 2260.983{col 37}{space 1}   -9.11{col 46}{space 3}0.000{col 54}{space 4} -25026.3{col 67}{space 3}-16163.41
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p2colset 0 13 13 2}{...}
+{text}{p2col:Endogenous:}{res}1.p401k{p_end}
+{text}{p2col:Exogenous:}{res}income age familysize educ 1.married 1.ira 1.pension 1.ownhome 1.e401k{p_end}
+{p2colreset}{...}
+{txt}
+{com}. estimates  store iqr

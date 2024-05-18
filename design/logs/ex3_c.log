@@ -1,0 +1,14 @@
+. estat endogeffects
+
+Tests for endogenous effects           Replications = 100
+---------------------------------------------------------
+Null hypothesis  |     KS statistic    95% Critical value
+-----------------+---------------------------------------
+No effect        |           11.271                 2.658
+Constant effect  |            5.395                 2.650
+Dominance        |            0.000                 2.390
+Exogeneity       |            4.145                 2.386
+---------------------------------------------------------
+Note: If the KS statistic < critical value, there is
+      insufficient evidence to reject the null
+      hypothesis.

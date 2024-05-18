@@ -1,0 +1,46 @@
+. use assets2, clear
+(Excerpt from Chernozhukov and Hanson (2004) Rev. of Economics and Statistics)
+{\smallskip}
+. 
+. ivqregress iqr assets (i.p401k = i.e401k) income age familysize ///
+>         i.married i.ira i.pension i.ownhome educ, quantile(50) 
+{\smallskip}
+Initial grid
+    quantile = 0.50: .........10.........20.........30
+{\smallskip}
+Adaptive grid
+    quantile = 0.50: .........10.........20.........30
+{\smallskip}
+IV median regression                                   Number of obs =   9,913
+Estimator: Inverse quantile regression                 Wald chi2(9)  = 1289.75
+                                                       Prob > chi2   =  0.0000
+{\smallskip}
+\HLI{13}{\TOPT}\HLI{64}
+             {\VBAR}               Robust
+      assets {\VBAR} Coefficient  std. err.      z    P>|z|     [95\% conf. interval]
+\HLI{13}{\PLUS}\HLI{64}
+     1.p401k {\VBAR}   5313.397   573.2818     9.27   0.000     4189.786    6437.009
+      income {\VBAR}   .1577512   .0124889    12.63   0.000     .1332735    .1822289
+         age {\VBAR}   99.96526   8.561923    11.68   0.000      83.1842    116.7463
+  familysize {\VBAR}  -197.8251   54.36773    -3.64   0.000    -304.3838   -91.26627
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}  -1359.124   227.3366    -5.98   0.000    -1804.696   -913.5528
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   22629.61   1022.706    22.13   0.000     20625.15    24634.08
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -693.8347   210.6176    -3.29   0.001    -1106.638   -281.0317
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}  -30.29657   154.7265    -0.20   0.845     -333.555    272.9618
+        educ {\VBAR}  -96.43983   32.09465    -3.00   0.003    -159.3442   -33.53547
+       _cons {\VBAR}  -4998.673   570.1315    -8.77   0.000     -6116.11   -3881.236
+\HLI{13}{\BOTT}\HLI{64}
+Endogenous: 0b.p401k 1.p401k
+ Exogenous: income age familysize 0b.married 1.married 0b.ira 1.ira
+            0b.pension 1.pension 0b.ownhome 1.ownhome educ 0b.e401k 1.e401k
+{\smallskip}
+. 
+. estat waldplot, name(b)

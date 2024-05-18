@@ -1,0 +1,32 @@
+{com}. estimates restore iqr
+{res}{txt}(results {stata estimates replay iqr:iqr} are active now)
+
+{com}. estat endogeffects
+{res}
+{txt}Tests for endogenous effects{col 39}{txt}Replications = {res}100
+{txt}{hline 16}{c TT}{hline 17}{hline 22}
+{col 1}Null hypothesis {col 17}{c |}     KS statistic{col 35}    95% critical value
+{hline 16}{c +}{hline 17}{hline 22}
+{col 1}No effect       {col 17}{c |}{res}{space 8}   11.271{col 35}{space 13}    2.481
+{col 1}{txt}Constant effect {col 17}{c |}{res}{space 8}    5.395{col 35}{space 13}    2.524
+{col 1}{txt}Dominance       {col 17}{c |}{res}{space 8}    0.000{col 35}{space 13}    2.569
+{col 1}{txt}Exogeneity      {col 17}{c |}{res}{space 8}    4.146{col 35}{space 13}    2.809
+{txt}{hline 16}{c BT}{hline 17}{hline 22}
+{p 0 6 0 55}{txt}Note: If the KS statistic < critical value, there is insufficient evidence to reject the {help j_ivqreg_endogef:null hypothesis}. (KS = Kolmogorov–Smirnov){p_end}
+
+{com}. 
+. estimates restore smooth
+{res}{txt}(results {stata estimates replay smooth:smooth} are active now)
+
+{com}. estat endogeffects
+{res}
+{txt}Tests for endogenous effects{col 39}{txt}Replications = {res}100
+{txt}{hline 16}{c TT}{hline 17}{hline 22}
+{col 1}Null hypothesis {col 17}{c |}     KS statistic{col 35}    95% critical value
+{hline 16}{c +}{hline 17}{hline 22}
+{col 1}No effect       {col 17}{c |}{res}{space 8}   11.507{col 35}{space 13}    2.525
+{col 1}{txt}Constant effect {col 17}{c |}{res}{space 8}    5.351{col 35}{space 13}    2.514
+{col 1}{txt}Dominance       {col 17}{c |}{res}{space 8}    0.000{col 35}{space 13}    2.661
+{col 1}{txt}Exogeneity      {col 17}{c |}{res}{space 8}    4.201{col 35}{space 13}    2.573
+{txt}{hline 16}{c BT}{hline 17}{hline 22}
+{p 0 6 0 55}{txt}Note: If the KS statistic < critical value, there is insufficient evidence to reject the {help j_ivqreg_endogef:null hypothesis}. (KS = Kolmogorov–Smirnov){p_end}

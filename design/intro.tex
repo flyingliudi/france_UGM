@@ -1,0 +1,113 @@
+%------------------------------------------------------------------------------
+\section{Introduction}
+%------------------------------------------------------------------------------
+
+In empirical applications, we are usually interested in the causal effects of
+some covariate on the outcome variable. The traditional linear regression model
+is an excellent way to model how the covariate affects the outcome's conditional
+mean. 
+However, sometimes we would like to study features of the outcome distribution
+different than the mean to have a full picture of the causal effects of
+covariates.
+For example, a policy maker may be more interested in how a summer
+job training program affects the income's lower quantile instead of just
+its mean. 
+
+Quantile regression in \cite{Koenker1978} can help us grasp a better picture
+than the regular linear regression by estimating the causal effects on different
+quantiles of the outcome's conditional distribution. 
+For a discussion on quantile regression, see {\tt qreg}.
+
+In practice, some covariates of interests are often endogenous due to various
+reasons such as self-selection, omission of some relevant variable, and
+measurement error. For example, suppose we are interested in how the
+participation of the 401(k) program affects the net wealth. However,
+participation in the 401(k) program is endogenous because the people who do and
+do not participate may have different saving preferences, which will affect the
+net wealth growth. 
+
+Endogenous covariates make quantile regression estimates inconsistent, as
+is the case for linear regression model. Analogous to the instrumental
+variable least square estimator, there are instrumental variable quantile
+regression estimator to compute the different quantiles of casual effects
+consistently. For a discussion of instrumental variables estimation, see
+{\tt ivregress}.
+
+{\ivqreg} fits a quantile regression model with endogeneity using
+two estimators: the inverse quantile regression estimator proposed in
+\cite{Chernozhukov2006} and the smoothed estimating equation estimator outlined
+in \cite{Kaplan2017}.  Intuitively, {\ivqreg} can be thought of as the {\tt
+ivregress} version of the {\tt qreg}, although the underlying estimators are not
+as straightforward as the two-stage least-squares estimator. 
+
+This paper describes the design of the {\ivqreg} and a suite of post-estimation
+tools to estimate, visualize, make the inference, and diagnose the instrumental
+variable quantile regression model. In particular, the Stata commands in the
+IVQR toolbox can be grouped into the following categories.
+
+\begin{description}
+  \item{\bf Estimation}
+    \begin{itemize}
+      \item {\tt ivqregress iqr} estimates the IVQR model by the inverse
+	quantile regression (IQR) estimator proposed in \cite{Chernozhukov2006}.
+	\item {\tt ivqregress smooth} estimates the IVQR model by the smoothed
+	  estimation equation (SEE) estimator proposed in \cite{Kaplan2017}.
+    \end{itemize}
+
+  \item{\bf Visualization}
+    \begin{itemize}
+      \item {\tt estat coefplot} visualizes how the treatment effects vary at
+	different quantiles of the outcome.
+
+	\item {\tt marginsplot} plots the potential outcome's conditional
+	  quantile function.
+    \end{itemize}
+
+  \item{\bf Inference} 
+    \begin{itemize}
+      \item {\tt estat endogeffects} makes inference of particular interest in
+	the context of IVQR model. In particular, {\tt estat endogeffects} test
+	four hypotheses: 1. the quantile treatment effects are zero; 2. the
+	quantile treatment effects are  constant across different quantiles; 3.
+	the quantile treatment effects are unambiguously beneficial; 4. the
+	treatment is exogenous.
+
+     \item {\tt estat dualci} provides confidence interval robust to weak
+       instruments for the endogenous treatment effects. It is allowed only
+       after {\tt ivqregress iqr}.
+
+      \item {\tt test} and {\tt testnl} infer classical linear and
+	nonlinear hypotheses after estimation.
+
+      \item {\tt margins} helps to compute the potential outcome's conditional
+	quantile function.
+
+    \end{itemize}
+
+   \item{\bf Diagnosis}
+
+     \begin{itemize}
+       \item {\tt estat waldplot} helps diagnosis the convergence of the
+	 inverse quantile regression estimator ({\tt ivqregress iqr}). In
+	 particular, {\tt estat waldplot} visualizes the optimization process
+	 during the computation in {\tt ivqregress iqr} and shows if the
+	 searching domain contains the true value of the parameter with a
+	 predefined probability level.
+     \end{itemize}
+
+\end{description}
+
+We organize this paper as follows. Section \ref{sec:model} describes the
+instrumental variable quantile regression model and the primary moment condition
+for estimation. Section \ref{sec:rev} reviews the existing estimators, discusses
+their strength and weakness and identify two estimators implemented in
+{\ivqreg}.  In particular, {\ivqreg} implements the inverse quantile regression
+estimator and the smoothed estimating equation estimator, discussed in
+Sections \ref{sec:iqr_method} and \ref{sec:see_method}, respectively.  Section
+\ref{sec:infer} outlines the general inference approach of particular
+interest in the IV quantile regression model. Section \ref{sec:ivqreg_syntax}
+describes the syntax of {\ivqreg}. Section \ref{sec:post_syntax} describes the
+post-estimation of {\ivqreg}. Finally, section \ref{sec:example} illustrates the
+use of {\ivqreg} and its post-estimation through some examples. 
+
+

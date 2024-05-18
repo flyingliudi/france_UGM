@@ -1,0 +1,12 @@
+{com}. estat endogeffects
+{res}
+{txt}Tests for endogenous effects{col 40}{txt}Replications = {res}100
+{txt}{hline 17}{c TT}{hline 17}{hline 22}
+{col 1}Null hypothesis  {col 18}{c |}     KS statistic{col 36}    95% Critical value
+{hline 17}{c +}{hline 17}{hline 22}
+{col 1}No effect        {col 18}{c |}{res}{space 8}   11.271{col 36}{space 13}    2.658
+{col 1}{txt}Constant effect  {col 18}{c |}{res}{space 8}    5.395{col 36}{space 13}    2.650
+{col 1}{txt}Dominance        {col 18}{c |}{res}{space 8}    0.000{col 36}{space 13}    2.390
+{col 1}{txt}Exogeneity       {col 18}{c |}{res}{space 8}    4.145{col 36}{space 13}    2.386
+{txt}{hline 17}{c BT}{hline 17}{hline 22}
+{p 0 6 0 56}{txt}Note: If the KS statistic < critical value, there is insufficient evidence to reject the {help i_ivqreg_endogef:null hypothesis}.{p_end}

@@ -1,0 +1,10 @@
+{com}. estimates table est_iqr est_smooth, keep(i.p401k) se
+{res}
+{txt}{hline 12}{c -}{c TT}{c -}{hline 10}{c -}{c -}{c -}{hline 10}{c -}{c -}
+{ralign 12:Variable} {c |} {center 10:est_iqr} {space 1} {center 10:est_smooth} {space 1}
+{hline 12}{c -}{c +}{c -}{hline 10}{c -}{c -}{c -}{hline 10}{c -}{c -}
+{res}{txt}{space 7}p401k {c |}
+{space 10}1  {c |}{res} {ralign 10:5313.3974}{txt} {space 1}{res} {ralign 10:5364.468}{txt} {space 1}
+{res}{txt}{space 12} {c |}{res} {ralign 10:573.28183}{txt} {space 1}{res} {ralign 10:573.37279}{txt} {space 1}
+{res}{txt}{hline 12}{c -}{c BT}{c -}{hline 10}{c -}{c -}{c -}{hline 10}{c -}{c -}
+{ralign 40:Legend: b/se}

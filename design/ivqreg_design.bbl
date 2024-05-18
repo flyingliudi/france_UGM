@@ -1,0 +1,107 @@
+\ifnum 18=1 \def\bibname{Reference}
+\else \def\bibname{References} \fi
+\begin{thebibliography}{18}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Amemiya(1982)}]{Amemiya1982}
+Amemiya, T. 1982.
+\newblock Two Stage Least Absolute Deviations Estimators.
+\newblock \emph{Econometrica} 50: 689--711.
+
+\bibitem[{Bofinger(1975)}]{Bofinger1975}
+Bofinger, E. 1975.
+\newblock Estimation of a Density Function using Order Statistics.
+\newblock \emph{Australian Journal of Statistics} 17: 1--7.
+
+\bibitem[{de~Castro et~al.(2019)de~Castro, Galvao, Kaplan, and
+  Liu}]{DeCastro2019}
+de~Castro, L., A.~F. Galvao, D.~M. Kaplan, and X.~Liu. 2019.
+\newblock Smoothed GMM for quantile models.
+\newblock \emph{Journal of Econometrics} 213: 121--144.
+\urlprefix\url{https://doi.org/10.1016/j.jeconom.2019.04.008}.
+\bibitem[{Chen and Lee(2018)}]{Chen2018}
+Chen, L.~Y., and S.~Lee. 2018.
+\newblock {Exact computation of GMM estimators for instrumental variable
+  quantile regression models}.
+\newblock \emph{Journal of Applied Econometrics} 33(4): 553--567.
+
+\bibitem[{Chernozhukov and Hansen(2004)}]{Chernozhukov2004}
+Chernozhukov, V., and C.~Hansen. 2004.
+\newblock {The effects of 401(k) participation on the wealth distribution: An
+  instrumental quantile regression analysis}.
+\newblock \emph{Review of Economics and Statistics} 86(3): 735--751.
+
+\bibitem[{Chernozhukov and Hansen(2005)}]{Chernozhukov2005}
+\mbox{\vrule width30.25006ptheight2.62222ptdepth-2.25222pt}. 2005.
+\newblock {an IV model of quantile treatment effects}.
+\newblock \emph{Econometrica} 73(1): 245--261.
+
+\bibitem[{Chernozhukov and Hansen(2006)}]{Chernozhukov2006}
+\mbox{\vrule width30.25006ptheight2.62222ptdepth-2.25222pt}. 2006.
+\newblock {Instrumental quantile regression inference for structural and
+  treatment effect models}.
+\newblock \emph{Journal of Econometrics} 132(2): 491--525.
+
+\bibitem[{Chernozhukov and Hansen(2008)}]{Chernozhukov2008}
+\mbox{\vrule width30.25006ptheight2.62222ptdepth-2.25222pt}. 2008.
+\newblock {Instrumental variable quantile regression: A robust inference
+  approach}.
+\newblock \emph{Journal of Econometrics} 142(1): 379--398.
+
+\bibitem[{Chernozhukov and Hong(2003)}]{Chernozhukov2003}
+Chernozhukov, V., and H.~Hong. 2003.
+\newblock {An MCMC approach to classical estimation}.
+\newblock \emph{Journal of Econometrics} 115(2): 293--346.
+
+\bibitem[{DasGupta(2008)}]{DasGupta2008}
+DasGupta, A. 2008.
+\newblock \emph{Asymptotic Theory of Statistics and Probability}.
+\newblock Springer.
+
+\bibitem[{Hall and Sheather(1988)}]{Hall1988}
+Hall, P., and S.~J. Sheather. 1988.
+\newblock On the Distribution of a Studentized Quantile.
+\newblock \emph{Journal of the Royal Statistical Society. Series B
+  (Methodological)} 50: 381--391.
+
+\bibitem[{Kaido and W{\"{u}}thrich(2021)}]{Kaido2021}
+Kaido, H., and K.~W{\"{u}}thrich. 2021.
+\newblock {Decentralization estimators for instrumental variable quantile
+  regression models}.
+\newblock \emph{Quantitative Economics} 12(2): 443--475.
+
+\bibitem[{Kaplan and Sun(2017)}]{Kaplan2017}
+Kaplan, D.~M., and Y.~Sun. 2017.
+\newblock {Smoothed estimating equations for instrumental variables quantile
+  regression}.
+\newblock \emph{Econometric Theory} 33(1): 105--157.
+
+\bibitem[{Koenker(2005)}]{Koenker2005}
+Koenker, R. 2005.
+\newblock \emph{Quantile Regression}.
+\newblock Econometric Society Monographs, Cambridge University Press.
+\urlprefix\url{https://books.google.com/books?id=hdkt7V4NXsgC}.
+\bibitem[{Koenker and Bassett(1978)}]{Koenker1978}
+Koenker, R., and G.~Bassett. 1978.
+\newblock Regression quantiles.
+\newblock \emph{Econometrica: journal of the Econometric Society}  33--50.
+
+\bibitem[{Poterba et~al.(1995)Poterba, Venti, and Wise}]{Poterba1995}
+Poterba, J.~M., S.~F. Venti, and D.~A. Wise. 1995.
+\newblock {Do 401(k) contributions crowd out other personal saving?}
+\newblock \emph{Journal of Public Economics} 58(1): 1--32.
+
+\bibitem[{Silverman(1998)}]{Silverman1998}
+Silverman, B. 1998.
+\newblock \emph{Density estimation for statistics and data analysis}.
+\newblock Chapman \& Hall/CRC.
+
+\bibitem[{Wand and Jones(1995)}]{Wand1995}
+Wand, M., and M.~Jones. 1995.
+\newblock \emph{Kernel Smoothing}.
+\newblock Chapman \& Hall/CRC.
+
+\end{thebibliography}

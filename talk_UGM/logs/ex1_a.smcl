@@ -1,0 +1,28 @@
+{com}. describe
+
+{txt}Contains data from {res}assets2.dta
+{txt} Observations:{res}         9,913                  Excerpt from Chernozhukov and
+                                                Hanson (2004) Rev. of Economics
+                                                and Statistics
+{txt}    Variables:{res}            12                  18 Jan 2022 08:19
+{txt}{hline}
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+{hline}
+{p 0 48}{res}{bind:assets         }{txt}{bind: float   }{bind:%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}Net total financial assets{p_end}
+{p 0 48}{bind:age            }{txt}{bind: byte    }{bind:%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}Age{p_end}
+{p 0 48}{bind:income         }{txt}{bind: float   }{bind:%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}Household income{p_end}
+{p 0 48}{bind:familysize     }{txt}{bind: byte    }{bind:%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}Household size{p_end}
+{p 0 48}{bind:educ           }{txt}{bind: byte    }{bind:%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}Years of education{p_end}
+{p 0 48}{bind:pension        }{txt}{bind: byte    }{bind:%16.0g    }{space 1}{bind:lbpen    }{bind:  }{res}{res}Pension benefits{p_end}
+{p 0 48}{bind:married        }{txt}{bind: byte    }{bind:%11.0g    }{space 1}{bind:lbmar    }{bind:  }{res}{res}Marital status{p_end}
+{p 0 48}{bind:twoearn        }{txt}{bind: byte    }{bind:%9.0g     }{space 1}{bind:lbyes    }{bind:  }{res}{res}Two-earner household{p_end}
+{p 0 48}{bind:e401k          }{txt}{bind: byte    }{bind:%12.0g    }{space 1}{bind:lbe401   }{bind:  }{res}{res}401(k) eligibility{p_end}
+{p 0 48}{bind:p401k          }{txt}{bind: byte    }{bind:%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}401(k) participation{p_end}
+{p 0 48}{bind:ira            }{txt}{bind: byte    }{bind:%9.0g     }{space 1}{bind:lbyes    }{bind:  }{res}{res}IRA participation{p_end}
+{p 0 48}{bind:ownhome        }{txt}{bind: byte    }{bind:%9.0g     }{space 1}{bind:lbyes    }{bind:  }{res}{res}Home owner{p_end}
+{txt}{hline}
+Sorted by: {res}e401k
+{txt}
+{com}. global covariates income age familysize educ i.(married ira pension ownhome)
+{txt}

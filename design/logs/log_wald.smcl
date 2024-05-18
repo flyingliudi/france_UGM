@@ -1,0 +1,18 @@
+{com}. ivqreg_iqr y x1 x2 (d1 = z1), nolog quantile(60) all
+{res}
+{txt}IV .6 quantile regression{col 39}Number of obs{col 67}={col 69}{res}       500
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}           y{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}d1 {c |}{col 14}{res}{space 2} .6764157{col 26}{space 2} .0890964{col 37}{space 1}    7.59{col 46}{space 3}0.000{col 54}{space 4}   .50179{col 67}{space 3} .8510413
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2}  1.59415{col 26}{space 2} .0641614{col 37}{space 1}   24.85{col 46}{space 3}0.000{col 54}{space 4} 1.468396{col 67}{space 3} 1.719904
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.624427{col 26}{space 2} .0573557{col 37}{space 1}   28.32{col 46}{space 3}0.000{col 54}{space 4} 1.512012{col 67}{space 3} 1.736842
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .2172936{col 26}{space 2} .0740217{col 37}{space 1}    2.94{col 46}{space 3}0.003{col 54}{space 4} .0722137{col 67}{space 3} .3623734
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p2colset 0 13 13 2}{...}
+{text}{p2col:Endogenous:}{res}d1{p_end}
+{text}{p2col:{space 1}Exogenous:}{res}x1 x2 z1{p_end}
+{p2colreset}{...}
+{txt}
+{com}. estat waldplot

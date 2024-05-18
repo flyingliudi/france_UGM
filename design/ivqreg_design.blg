@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ivqreg_design.aux
+The style file: sjlatex/sj.bst
+Database file #1: mybib.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 18 entries,
+            3196 wiz_defined-function locations,
+            798 strings with 7763 characters,
+and the built_in function-call counts, 9293 in all, are:
+= -- 847
+> -- 368
+< -- 17
++ -- 120
+- -- 102
+* -- 880
+:= -- 1584
+add.period$ -- 74
+call.type$ -- 18
+change.case$ -- 196
+chr.to.int$ -- 18
+cite$ -- 18
+duplicate$ -- 443
+empty$ -- 722
+format.name$ -- 168
+if$ -- 1813
+int.to.chr$ -- 1
+int.to.str$ -- 2
+missing$ -- 22
+newline$ -- 99
+num.names$ -- 72
+pop$ -- 144
+preamble$ -- 1
+purify$ -- 196
+quote$ -- 0
+skip$ -- 325
+stack$ -- 0
+substring$ -- 510
+swap$ -- 62
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 150
+warning$ -- 0
+while$ -- 79
+width$ -- 0
+write$ -- 241

@@ -1,0 +1,218 @@
+%------------------------------------------------------------------------------
+\subsection{Decentralization estimators} \label{sec:dec_method}
+%------------------------------------------------------------------------------
+One major drawback of the IQR approach is that it suffers from the curse of
+dimensionality. When there are more than two endogenous variables, the grid
+search computing time becomes slow. Recently, \cite{Kaido2021} proposes to
+recast the original problem into finding a Nash equilibrium game solution. The
+resulting estimator is called the ``decentralization estimator'' because it
+iteratively divides the original problem into small sub-problems, a form of
+decentralization. 
+
+Another advantage of the decentralization estimator is that it does not require
+choosing extra tuning parameter as in the smoothing GMM approach.
+
+\cite{Kaido2021} proposes three different decentralization algorithms: the
+simultaneous contraction-based algorithm, the sequential contraction-based
+algorithm, and the root-finding algorithm. The simulations in \cite{Kaido2021}
+show that the sequential contraction-based estimator is more stable and faster
+than the other two alternatives, so we will only focus on this method.
+
+%------------------------------------------------------------------------------
+\subsubsection{Sequential contraction-based algorithm}	
+%------------------------------------------------------------------------------
+We start by partition the parameter vector $\theta = (\beta', \alpha')'$ into $J
+= k_d + 1$ subvectors, where $\theta_1 = \beta$ and $\theta_{j} = \alpha_{j-1}$
+for $j = 2, \ldots, J$. Let $\theta_{-j}$ denote all the elements in $\theta$
+except $\theta_j$. 
+
+We define the following quantile regression objective functions:
+
+\begin{align}
+Q_1 &= \E\left[ \rho_{\tau} \left(Y - X'\theta_1 - 	
+	D_1\theta_2 - D_2\theta_3 - \ldots - D_{k_d}\theta_J \right) \right] \\
+Q_j &= \E\left[ \rho_{\tau} 
+\left(
+Y - X'\theta_1 - D_1\theta_2 - D_2\theta_3 - \ldots - D_{k_d}\theta_J 
+\right) 
+	\frac{Z_{j-1}}{D_{j-1}}
+	\right] \qquad \text{for } j=2, \ldots, J 
+\end{align}
+where $\rho_{\tau}(u) = u(\tau - \I(u < 0))$ is the ``check function''. We
+assume that $Z_{j-1}/D_{j-1}$ is well defined and positive. In practice, we can
+transform the instruments $Z$ and add a large constant to $D$ to satisfy this
+condition.  See Section \ref{sec:reparam} for more discussion.
+
+Suppose there are $J$ players, and each player $j$ has control over $\theta_j$
+and take $\theta_{-j}$ as given. The players solve the following optimization
+problems:
+\begin{align}
+	\min_{\tilde{\theta_1}\in R^{k_x}} Q_1(\tilde{\theta_1}, \theta_{-1}) \\
+	\min_{\tilde{\theta_j}\in R} Q_j(\tilde{\theta_j}, \theta_{-j}) 
+\end{align}
+Notice that each problem is just an ordinary weighted quantile regression
+problem. 
+
+The solution for $Q_j$ satisfies the first-order condition such that 
+\begin{align}
+\frac{\partial Q_1}{\partial \theta_1} &= \E\left[ 
+	(\tau - \I(
+Y - X'\theta_1 - D_1\theta_2 - D_2\theta_3 - \ldots - D_{k_d}\theta_J )
+	)X
+	\right] = 0 \\
+\frac{\partial Q_j}{\partial \theta_j} &= \E\left[ 
+	(\tau - \I(
+Y - X'\theta_1 - D_1\theta_2 - D_2\theta_3 - \ldots - D_{k_d}\theta_J )
+	)Z_{j-1}
+	\right] = 0  \qquad j = 2, \ldots, J 
+\end{align}
+These FOC conditions together form the moment conditions in Equation
+(\ref{eq:moment_linear}) implied by the linear IVQREG model. 
+
+Let $L_j(\theta_{-j})$ as the minimizer for $Q_j$. The solution satisfies
+$$
+	L_j(\theta_{-j}^*) = \theta_j^*
+$$
+which means $\theta^*$ satisfies the moment condition in Equation
+(\ref{eq:moment_linear}) simultaneously. $\theta^*$ is also the Nash equilibrium
+of the game.
+
+The sequential contraction-based algorithm is as follows.
+
+%------------------------------------------------------------------------------
+\begin{algorithm}[H]\caption{Sequential contraction-based algorithm}
+\label{algo:seq}
+%------------------------------------------------------------------------------
+\begin{enumerate}
+	
+\item Define the starting value $\theta^{(0)} = (\theta_1^{(0)}, \ldots,
+\theta_J^{(0)})$ as the solution of the two-stage-least-square estimator for the
+linear IV model.
+
+\item Define the maximum number of iteration K.
+
+\item Define the numerical tolerance level $e_N$.
+
+\item For $k = 1$ to K, do loop
+	
+\begin{enumerate}
+\item $\theta_1^{(k)} = L_1(\theta_{-1}^{(k-1)})$
+\item For $j=2, \ldots, J$, do loop
+$$
+\theta_j^{(k)} = M_j(\theta_{-1}^{(k)}) = L_j
+	\left(
+	\theta_1^{(k)}, \theta_2^{(k)}, \ldots, \theta_{j-1}^{(k)}, 
+	\theta_{\{-1, -2, \ldots, -(j-1)\}}^{(k-1)}
+	\right)
+$$
+\item Compute the relative difference between $\theta_{-1}^{(k)}$ and
+$\theta_{-1}^{(k-1)}$, denote it as $\delta$.
+
+\item If $\delta \leq e_N$ or $k > K$, exit the loop.
+
+\end{enumerate}
+
+\item The solution is $\hat{\theta} = (\hat{\theta_1}, \theta_{-1}^{(k)})$, where
+$\hat{\theta_1} = L_1(\theta_{-1}^{(k)})$.
+\end{enumerate}
+
+\end{algorithm}
+
+\vskip 1cm
+
+To conduct inference, we can employ a regular bootstrap.
+
+\vskip 1cm
+
+%------------------------------------------------------------------------------
+\begin{algorithm}[H]\caption{bootstrap the decentralized estimator}
+\label{algo:boot}
+%------------------------------------------------------------------------------
+
+\begin{enumerate}
+\item Using the original sample, estimate $\hat{\theta}$ as in Algorithm
+(\ref{algo:seq}).
+
+\item For $b=1, \ldots, B$, do
+
+\begin{enumerate}
+\item Draw a bootstrap sample ${W_{i=1}^{N}}^{(b)}$ with replacement.
+
+\item Using ${W_{i=1}^{N}}^{(b)}$ and Algorithm (\ref{algo:seq}), estimate
+$\widetilde{\theta^{(b)}}$
+
+\end{enumerate}
+
+\item Let $$
+F_B(x) = \frac{1}{B}\sum_{b=1}^B \I(\sqrt{N}(
+\widetilde{\theta^{(b)}} - \hat{\theta}) \leq x)
+$$
+Use $F_B(x)$ as an approximation to the distribution of $\sqrt{N}(\hat{\theta} -
+\theta^*)$
+\end{enumerate}
+
+\end{algorithm}
+
+%------------------------------------------------------------------------------
+\subsubsection{Reparameterization}	
+\label{sec:reparam}
+%------------------------------------------------------------------------------
+The sequential contraction-based algorithm requires that $D_j/Z_j$ is positive
+and well defined. Therefore, we need to reparameterize the model to satisfy this
+condition.
+
+For the instruments, we can transform $Z_j$ such as 
+$$
+\tilde{Z_j} = \exp{Z_j}/(1 + \exp{Z_j})
+$$
+So $\tilde{Z_j}$ will always be positive. Given the original moment condition in
+Equation (\ref{eq:moment_linear}) , any transformation of $Z_j$ should also
+satisfy this condition.
+
+For the endogenous variable $D_j$, we can add to it a large constant to make the
+sum always positive. In particular, suppose $D_j \in (D_{min}, D_{max})$ for
+each $j=1, \ldots, k_d$, we add $D_j$ to a constant $c$ such that $c >
+|D_{min}|$.  Denote $\tilde{D_j} = D_j + c$.
+
+Suppose the original model is 
+$$
+	q(D, X, \tau) = \beta_0 + D'\alpha + X'\beta 
+$$
+After reparameterization, the model becomes
+$$
+	q(D, X, \tau) = \beta_0 - c \sum_{j=1}^{k_d}\alpha_j 
+		+ (D + c)'\alpha + X'\beta 
+$$
+So the estimated constant is 
+$\tilde{\beta_0} = \hat{\beta_0} - c \sum_{j=1}^{k_d}\hat{\alpha_j}$, 
+and the estimate for the original constant term
+is $ \hat{\beta_0} = \tilde{\beta_0} + c\sum_{j=1}^{k_d}\hat{\alpha_j}$.
+
+
+%------------------------------------------------------------------------------
+\subsubsection{Overidentified case}	
+%------------------------------------------------------------------------------
+So far, we assume the model is just identified, that is $k_z = k_d$. When there
+are more instruments than the endogenous variables, we can use the instrument
+$\tilde{D}$, which is the linear projection of $D$ on the space spanned by $Z$
+and $X$. Then the objective function in the sequential contraction-based
+algorithm becomes:
+
+\begin{align*}
+Q_1 &= \E\left[ \rho_{\tau} \left(Y - X'\theta_1 - 	
+	D_1\theta_2 - D_2\theta_3 - \ldots - D_{k_d}\theta_J \right) \right] \\
+Q_j &= \E\left[ \rho_{\tau} 
+\left(
+Y - X'\theta_1 - D_1\theta_2 - D_2\theta_3 - \ldots - D_{k_d}\theta_J 
+\right) 
+	\frac{\widetilde{D_{j-1}}}{D_{j-1}}
+	\right] \qquad \text{for } j=2, \ldots, J 
+\end{align*}
+where $\widetilde{D_{j-1}} = \Psi(\Psi'\Psi)^{-1}\Psi'D_{j-1}$, and $\Psi = (X,
+Z)$.
+
+To achieve further efficiency gain, we can use the method in Remark 5 of
+\cite{Chernozhukov2006}. In practice, this method also involves
+nonparametrically estimating the error term's density function at $0$, which
+inevitably requires a choice of the bandwidth. For simplicity, we will not
+pursue this path.

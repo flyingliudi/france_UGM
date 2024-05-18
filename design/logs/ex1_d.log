@@ -1,0 +1,24 @@
+. margins i.p401k, at((mean) income age familysize educ   ///
+>         married = 1 ira = 1 pension = 1 ownhome = 1)
+
+Adjusted predictions                                     Number of obs = 9,913
+Model VCE: Robust
+
+Expression: Linear prediction, predict()
+At: income     =  37208.4 (mean)
+    age        = 41.05891 (mean)
+    familysize = 2.865328 (mean)
+    married    =        1
+    ira        =        1
+    pension    =        1
+    ownhome    =        1
+    educ       = 13.20629 (mean)
+
+------------------------------------------------------------------------------
+             |            Delta-method
+             |     Margin   std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       p401k |
+          0  |   23681.37   1007.612    23.50   0.000     21706.49    25656.26
+          1  |   28994.77   1123.076    25.82   0.000     26793.58    31195.96
+------------------------------------------------------------------------------

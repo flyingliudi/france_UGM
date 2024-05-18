@@ -1,0 +1,41 @@
+. ivqregress iqr assets (i.p401k = i.e401k) income age familysize         ///
+>         i.married i.ira i.pension i.ownhome educ
+
+Initial grid
+    quantile = 0.50: .........10.........20.........30
+
+Adaptive grid
+    quantile = 0.50: .........10.........20.........30
+
+IV median regression                                   Number of obs =   9,913
+Estimator: Inverse quantile regression                 Wald chi2(9)  = 1289.75
+                                                       Prob > chi2   =  0.0000
+
+------------------------------------------------------------------------------
+             |               Robust
+      assets | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     1.p401k |   5313.397   573.2818     9.27   0.000     4189.786    6437.009
+      income |   .1577512   .0124889    12.63   0.000     .1332735    .1822289
+         age |   99.96526   8.561923    11.68   0.000      83.1842    116.7463
+  familysize |  -197.8251   54.36773    -3.64   0.000    -304.3838   -91.26627
+             |
+     married |
+    Married  |  -1359.124   227.3366    -5.98   0.000    -1804.696   -913.5528
+             |
+         ira |
+        Yes  |   22629.61   1022.706    22.13   0.000     20625.15    24634.08
+             |
+     pension |
+Receives ..  |  -693.8347   210.6176    -3.29   0.001    -1106.638   -281.0317
+             |
+     ownhome |
+        Yes  |  -30.29657   154.7265    -0.20   0.845     -333.555    272.9618
+        educ |  -96.43983   32.09465    -3.00   0.003    -159.3442   -33.53547
+       _cons |  -4998.673   570.1315    -8.77   0.000     -6116.11   -3881.236
+------------------------------------------------------------------------------
+Endogenous: 0b.p401k 1.p401k
+ Exogenous: income age familysize 0b.married 1.married 0b.ira 1.ira
+            0b.pension 1.pension 0b.ownhome 1.ownhome educ 0b.e401k 1.e401k
+
+. estimates store est_iqr

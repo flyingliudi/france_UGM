@@ -1,0 +1,39 @@
+. ivqreg_iqr y x1 x2 (d1 = z1)
+
+Build initial grid using 2SQR at .5 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  13.74773         minimum Wald =  13.74773
+Iteration     2:  current Wald =  13.52798         minimum Wald =  13.52798
+Iteration     3:  current Wald =  11.68382         minimum Wald =  11.68382
+Iteration     4:  current Wald =  10.24402         minimum Wald =  10.24402
+Iteration     5:  current Wald =  8.698063         minimum Wald =  8.698063
+Iteration     6:  current Wald =  7.168729         minimum Wald =  7.168729
+Iteration     7:  current Wald =  5.627557         minimum Wald =  5.627557
+Iteration     8:  current Wald =   4.07186         minimum Wald =   4.07186
+Iteration     9:  current Wald =  2.561784         minimum Wald =  2.561784
+Iteration    10:  current Wald =  1.192822         minimum Wald =  1.192822
+Iteration    11:  current Wald =  1.018881         minimum Wald =  1.018881
+Iteration    12:  current Wald =  .1003419         minimum Wald =  .1003419
+Iteration    13:  current Wald =  .0027824         minimum Wald =  .0027824
+Iteration    14:  current Wald =  .1779259         minimum Wald =  .0027824
+Iteration    15:  current Wald =   1.02566         minimum Wald =  .0027824
+Iteration    16:  current Wald =  2.209973         minimum Wald =  .0027824
+Iteration    17:  current Wald =  4.154044         minimum Wald =  .0027824
+Iteration    18:  current Wald =  5.130442         minimum Wald =  .0027824
+Iteration    19:  current Wald =  8.970862         minimum Wald =  .0027824
+Iteration    20:  current Wald =  12.27276         minimum Wald =  .0027824
+
+IV median regression                  Number of obs               =      1,000
+------------------------------------------------------------------------------
+             |               Robust
+           y | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+          d1 |   .4338709   .0715584     6.06   0.000      .293619    .5741229
+          x1 |   1.485626   .0361991    41.04   0.000     1.414677    1.556575
+          x2 |   1.501151   .0316297    47.46   0.000     1.439158    1.563144
+       _cons |  -.0737753   .0417094    -1.77   0.077    -.1555241    .0079736
+------------------------------------------------------------------------------
+Endogenous: d1
+ Exogenous: x1 x2 z1
+

@@ -1,0 +1,43 @@
+. ivqregress smooth assets (i.p401k = i.e401k) income age familysize           
+>    ///
+>         i.married i.ira i.pension i.ownhome educ
+
+Fitting smoothed IV quantile regression ...
+
+Quantile = .5
+Step 1:   bandwidth =  1302.9736    GMM criterion Q(b) =  2.617e-08
+Step 2:   bandwidth =  6079.6881    GMM criterion Q(b) =  2.391e-12
+Step 3:   bandwidth =  1438.3068    GMM criterion Q(b) =  8.068e-13
+
+IV median regression                                   Number of obs =   9,913
+Estimator: Smoothed estimating equations               Wald chi2(9)  = 1243.05
+                                                       Prob > chi2   =  0.0000
+
+------------------------------------------------------------------------------
+             |               Robust
+      assets | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     1.p401k |   5364.468   573.3728     9.36   0.000     4240.678    6488.258
+      income |   .1679934    .013419    12.52   0.000     .1416925    .1942942
+         age |   113.6318   9.352867    12.15   0.000     95.30052    131.9631
+  familysize |  -228.7766   57.61072    -3.97   0.000    -341.6916   -115.8617
+             |
+     married |
+    Married  |   -1362.56   238.5988    -5.71   0.000    -1830.205   -894.9153
+             |
+         ira |
+        Yes  |   22402.04   1043.504    21.47   0.000     20356.81    24447.27
+             |
+     pension |
+Receives ..  |   -713.996    220.476    -3.24   0.001    -1146.121   -281.8709
+             |
+     ownhome |
+        Yes  |  -12.71396   161.3703    -0.08   0.937     -328.994    303.5661
+        educ |  -102.2889   34.18527    -2.99   0.003    -169.2908   -35.28701
+       _cons |  -5672.645   619.7049    -9.15   0.000    -6887.244   -4458.045
+------------------------------------------------------------------------------
+Endogenous: 0b.p401k 1.p401k
+ Exogenous: income age familysize 0b.married 1.married 0b.ira 1.ira
+            0b.pension 1.pension 0b.ownhome 1.ownhome educ 0b.e401k 1.e401k
+
+. estimates store est_smooth

@@ -1,0 +1,6 @@
+pdflatex ivqreg_design
+bibtex ivqreg_design
+pdflatex ivqreg_design
+pdflatex ivqreg_design
+
+pandoc -o TODO.pdf TODO.md

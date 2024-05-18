@@ -1,0 +1,36 @@
+. estimates restore iqr
+(results iqr are active now)
+{\smallskip}
+. estat endogeffects
+{\smallskip}
+Tests for endogenous effects          Replications = 100
+\HLI{16}{\TOPT}\HLI{39}
+Null hypothesis {\VBAR}     KS statistic    95\% critical value
+\HLI{16}{\PLUS}\HLI{39}
+No effect       {\VBAR}           11.271                 2.481
+Constant effect {\VBAR}            5.395                 2.524
+Dominance       {\VBAR}            0.000                 2.569
+Exogeneity      {\VBAR}            4.146                 2.809
+\HLI{16}{\BOTT}\HLI{39}
+Note: If the KS statistic < critical value, there is
+      insufficient evidence to reject the null
+      hypothesis. (KS = Kolmogorov-Smirnov)
+{\smallskip}
+. 
+. estimates restore smooth
+(results smooth are active now)
+{\smallskip}
+. estat endogeffects
+{\smallskip}
+Tests for endogenous effects          Replications = 100
+\HLI{16}{\TOPT}\HLI{39}
+Null hypothesis {\VBAR}     KS statistic    95\% critical value
+\HLI{16}{\PLUS}\HLI{39}
+No effect       {\VBAR}           11.507                 2.525
+Constant effect {\VBAR}            5.351                 2.514
+Dominance       {\VBAR}            0.000                 2.661
+Exogeneity      {\VBAR}            4.201                 2.573
+\HLI{16}{\BOTT}\HLI{39}
+Note: If the KS statistic < critical value, there is
+      insufficient evidence to reject the null
+      hypothesis. (KS = Kolmogorov-Smirnov)

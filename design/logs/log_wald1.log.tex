@@ -1,0 +1,21 @@
+. ivqregress iqr y x1 x2 (d1 = z1 z2),  quantile(40) noadaptive
+{\smallskip}
+Initial grid
+    quantile = 0.40: .........10.........20.........30
+{\smallskip}
+IV .4 quantile regression                              Number of obs =   1,000
+Estimator: Inverse quantile regression                 Wald chi2(3)  = 3534.04
+                                                       Prob > chi2   =  0.0000
+{\smallskip}
+\HLI{13}{\TOPT}\HLI{64}
+             {\VBAR}               Robust
+           y {\VBAR} Coefficient  std. err.      z    P>|z|     [95\% conf. interval]
+\HLI{13}{\PLUS}\HLI{64}
+          d1 {\VBAR}    .459274   .0502662     9.14   0.000      .360754    .5577939
+          x1 {\VBAR}   1.393901   .0334069    41.72   0.000     1.328425    1.459377
+          x2 {\VBAR}   1.427885   .0321419    44.42   0.000     1.364888    1.490882
+       _cons {\VBAR}  -.3458003   .0411389    -8.41   0.000     -.426431   -.2651695
+\HLI{13}{\BOTT}\HLI{64}
+Endogenous: d1
+ Exogenous: x1 x2 z1 z2
+{\smallskip}

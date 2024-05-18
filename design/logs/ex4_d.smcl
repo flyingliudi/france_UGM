@@ -1,0 +1,41 @@
+{com}. cap noi ivqregress iqr assets (i.p401k = i.e401k) income age familysize  ///
+>         i.married i.ira i.pension i.ownhome educ, bound(3000 8000)
+{res}
+{txt}Initial grid
+{col 5}{txt}quantile = {res}0.50{txt}: {col 22}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30
+
+{txt}Adaptive grid
+{col 5}{txt}quantile = {res}0.50{txt}: {col 22}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30
+
+{col 1}IV median regression{col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:9,913}
+{txt}{col 1}Estimator: {res:Inverse quantile regression}{col 56}{lalign 13:Wald chi2({res:9})}{col 69} = {res}{ralign 7:1290.41}
+{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      assets{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 5332.937{col 26}{space 2} 574.5175{col 37}{space 1}    9.28{col 46}{space 3}0.000{col 54}{space 4} 4206.903{col 67}{space 3} 6458.971
+{txt}{space 6}income {c |}{col 14}{res}{space 2}  .157381{col 26}{space 2}  .012478{col 37}{space 1}   12.61{col 46}{space 3}0.000{col 54}{space 4} .1329246{col 67}{space 3} .1818374
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 99.78981{col 26}{space 2} 8.553978{col 37}{space 1}   11.67{col 46}{space 3}0.000{col 54}{space 4} 83.02432{col 67}{space 3} 116.5553
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-199.6165{col 26}{space 2}  54.3519{col 37}{space 1}   -3.67{col 46}{space 3}0.000{col 54}{space 4}-306.1442{col 67}{space 3}-93.08872
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2}-1351.309{col 26}{space 2} 227.0824{col 37}{space 1}   -5.95{col 46}{space 3}0.000{col 54}{space 4}-1796.382{col 67}{space 3}-906.2357
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 22631.85{col 26}{space 2} 1022.023{col 37}{space 1}   22.14{col 46}{space 3}0.000{col 54}{space 4} 20628.72{col 67}{space 3} 24634.98
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2}-694.1447{col 26}{space 2}  210.533{col 37}{space 1}   -3.30{col 46}{space 3}0.001{col 54}{space 4}-1106.782{col 67}{space 3}-281.5077
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}-30.67158{col 26}{space 2} 154.6947{col 37}{space 1}   -0.20{col 46}{space 3}0.843{col 54}{space 4}-333.8676{col 67}{space 3} 272.5244
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-96.30363{col 26}{space 2}  32.0715{col 37}{space 1}   -3.00{col 46}{space 3}0.003{col 54}{space 4}-159.1626{col 67}{space 3}-33.44465
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-4983.758{col 26}{space 2} 569.4043{col 37}{space 1}   -8.75{col 46}{space 3}0.000{col 54}{space 4} -6099.77{col 67}{space 3}-3867.746
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p2colset 0 13 13 2}{...}
+{text}{p2col:Endogenous:}{res}0b.p401k 1.p401k{p_end}
+{text}{p2col:{space 1}Exogenous:}{res}income age familysize 0b.married 1.married 0b.ira 1.ira 0b.pension 1.pension 0b.ownhome 1.ownhome educ 0b.e401k 1.e401k{p_end}
+{p2colreset}{...}
+{txt}

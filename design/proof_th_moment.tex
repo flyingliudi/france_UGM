@@ -1,0 +1,58 @@
+%------------------------------------------------------------------------------
+\subsection{Proof for Theorem \ref{th:moment}}	 \label{sec:proof_moment}
+%------------------------------------------------------------------------------
+\begin{proof}
+
+\begin{align*}
+P(Y \leq q(\Db, \Xb, \tau) |\Xb=\xb, \Zb=\zb)
+	& \stackrel{(1)}{=} P( q(\Db, \Xb, \UD) \leq q(\Db, \Xb, \tau) |
+	\Xb=\xb, \Zb=\zb) \\
+	& \stackrel{(2)}{=} P( \UD \leq \tau | \Xb=\xb, \Zb=\zb) \\
+	& \stackrel{(3)}{=} \int P(\UD \leq \tau | \Xb=\xb, \Zb=\zb, V=v)
+		dP(V=v|\Xb=\xb, \Zb=\zb) \\
+	& \stackrel{(4)}{=} \int P(U_{\delta(\xb, \zb, v)} \leq \tau
+		| \Xb=\xb, \Zb=\zb, V=v) dP(V=v|\Xb=\xb, \Zb=\zb)  \\
+	& \stackrel{(5)}{=} \int P(\Ud \leq \tau
+		| \Xb=\xb, \Zb=\zb, V=v) dP(V=v|\Xb=\xb, \Zb=\zb)  \\
+	& \stackrel{(6)}{=} P(U_0 \leq \tau | \Xb=\xb, \Zb=\zb) \\
+	& \stackrel{(7)}{=} \tau
+\end{align*}
+Equality (1) by the definition of $Y$ in A5. Equality (2) follows the decreasing
+feature of $q()$ in A1. Equality (3) is by the definition of conditional
+probability. Equality (4) is by the definition of $\Db$ in A3. Equality (5) holds
+because, conditional on $(\Xb, \Zb, v)$, $\Db$ is a constant, and the
+distribution of $\Ud$ is identical. Here, we assume $\Db = 0$ in this case.
+$\Db$ can be any fixed value in $\mathbbm{D}$. Equality (6) is by definition.
+Finally, equality (7) holds because $\Ud \sim U(0,1)$ in A1 and $\Ud$ is
+independent of $\Xb$ and $\Zb$ in A2.
+
+\begin{align*}
+P(\UD \leq \tau | \Xb=\xb, \Zb=\zb) &= P(U_{\delta(\Xb, \Zb, V)} \leq \tau |\Xb
+= \xb, \Zb=\zb) \\
+	&= \int P(U_{\delta(\Xb, \Zb, v)}\leq \tau |\Xb=\xb, \Zb=\zb, V=v)
+		d P(V=v|\Xb, \Zb)  \\
+	&= \int P(U_0 \leq \tau | \Xb=\xb, \Zb=\zb, V=v) d P(V=v | \Xb, \Zb) \\
+	&= P(U_0 \leq \tau | \Xb=\xb, \Zb=\zb)
+\end{align*}
+So conditional on $\Xb$ and $\Zb$, $\UD$ has the same distribution as $\Ud$ for
+a fixed value of $\db$.
+
+\end{proof}
+
+From the proof for Theorem \ref{th:moment}, we see that rank similarity
+assumption in A4 is the fundamental assumption to convert the conditional
+distribution of $\UD$ to $\Ud$ with fixed value $\db$. Here, we discuss the
+nuisance underlying this assumption.
+
+First, rank invariance is a particular case of rank similarity. Namely, the
+rank invariance assumes $\Ud$ are the same across different values in
+$\mathbbm{D}$. While convenient and supported by some applications, the rank
+invariance assumption may be too strong in practice.
+
+Second, rank similarity means that given an assignment of treatment, the rank
+$\Ud$ is identically distributed. For example, among the individuals who have
+$\Xb=\xb$, $\Zb=\zb$, and $D=1$, the distribution of $U_0$ and $U_1$ are the
+same. In this formulation, we implicitly assume that one selects the treatment
+without knowing the potential outcomes. However, the individuals may know the
+distribution of the potential outcomes given $(\Xb, \Zb, v)$ but not the exact
+value of $U_0$ for each observation.

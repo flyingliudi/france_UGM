@@ -1,0 +1,10 @@
+{com}. estat dualci
+{res}
+{txt}{col 1}Dual confidence interval{col 58}{lalign 13:Number of obs}{col 71} = {res}{ralign 5:9,913}
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust{col 67}Dual
+{col 1}      assets{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}p401k {c |}
+{space 10}1  {c |}{col 14}{res}{space 2} 5313.397{col 26}{space 2} 573.2818{col 37}{space 1}    9.27{col 46}{space 3}0.000{col 54}{space 4} 3683.916{col 67}{space 3} 7304.986
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}

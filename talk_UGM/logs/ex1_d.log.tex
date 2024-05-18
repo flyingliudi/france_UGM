@@ -1,0 +1,10 @@
+. estimates restore iqr
+(results iqr are active now)
+{\smallskip}
+. estat coefplot 1.p401k, name(iqr) title("IQR") legend(off)
+{\smallskip}
+. 
+. estimates restore smooth
+(results smooth are active now)
+{\smallskip}
+. estat coefplot 1.p401k, name(smooth) title("SEE") legend(off)

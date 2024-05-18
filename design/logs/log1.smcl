@@ -1,0 +1,41 @@
+{com}. ivqreg_iqr y x1 x2 (d1 = z1)
+{res}
+{txt}Build initial grid using 2SQR at .5 quantile...
+
+{txt}Start grid search ...
+{txt}Iteration     1: {col 18} current Wald = {res} 13.74773 {col 52}{txt}minimum Wald = {res} 13.74773
+{txt}Iteration     2: {col 18} current Wald = {res} 13.52798 {col 52}{txt}minimum Wald = {res} 13.52798
+{txt}Iteration     3: {col 18} current Wald = {res} 11.68382 {col 52}{txt}minimum Wald = {res} 11.68382
+{txt}Iteration     4: {col 18} current Wald = {res} 10.24402 {col 52}{txt}minimum Wald = {res} 10.24402
+{txt}Iteration     5: {col 18} current Wald = {res} 8.698063 {col 52}{txt}minimum Wald = {res} 8.698063
+{txt}Iteration     6: {col 18} current Wald = {res} 7.168729 {col 52}{txt}minimum Wald = {res} 7.168729
+{txt}Iteration     7: {col 18} current Wald = {res} 5.627557 {col 52}{txt}minimum Wald = {res} 5.627557
+{txt}Iteration     8: {col 18} current Wald = {res}  4.07186 {col 52}{txt}minimum Wald = {res}  4.07186
+{txt}Iteration     9: {col 18} current Wald = {res} 2.561784 {col 52}{txt}minimum Wald = {res} 2.561784
+{txt}Iteration    10: {col 18} current Wald = {res} 1.192822 {col 52}{txt}minimum Wald = {res} 1.192822
+{txt}Iteration    11: {col 18} current Wald = {res} 1.018881 {col 52}{txt}minimum Wald = {res} 1.018881
+{txt}Iteration    12: {col 18} current Wald = {res} .1003419 {col 52}{txt}minimum Wald = {res} .1003419
+{txt}Iteration    13: {col 18} current Wald = {res} .0027824 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    14: {col 18} current Wald = {res} .1779259 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    15: {col 18} current Wald = {res}  1.02566 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    16: {col 18} current Wald = {res} 2.209973 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    17: {col 18} current Wald = {res} 4.154044 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    18: {col 18} current Wald = {res} 5.130442 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    19: {col 18} current Wald = {res} 8.970862 {col 52}{txt}minimum Wald = {res} .0027824
+{txt}Iteration    20: {col 18} current Wald = {res} 12.27276 {col 52}{txt}minimum Wald = {res} .0027824
+
+{txt}IV median regression{col 39}Number of obs{col 67}={col 69}{res}     1,000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}           y{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}d1 {c |}{col 14}{res}{space 2} .4338709{col 26}{space 2} .0715584{col 37}{space 1}    6.06{col 46}{space 3}0.000{col 54}{space 4}  .293619{col 67}{space 3} .5741229
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.485626{col 26}{space 2} .0361991{col 37}{space 1}   41.04{col 46}{space 3}0.000{col 54}{space 4} 1.414677{col 67}{space 3} 1.556575
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.501151{col 26}{space 2} .0316297{col 37}{space 1}   47.46{col 46}{space 3}0.000{col 54}{space 4} 1.439158{col 67}{space 3} 1.563144
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0737753{col 26}{space 2} .0417094{col 37}{space 1}   -1.77{col 46}{space 3}0.077{col 54}{space 4}-.1555241{col 67}{space 3} .0079736
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p2colset 0 13 13 2}{...}
+{text}{p2col:Endogenous:}{res}d1{p_end}
+{text}{p2col:{space 1}Exogenous:}{res}x1 x2 z1{p_end}
+{p2colreset}{...}
+{txt}

@@ -1,0 +1,28 @@
+. describe
+{\smallskip}
+Contains data from assets2.dta
+ Observations:         9,913                  Excerpt from Chernozhukov and
+                                                Hanson (2004) Rev. of Economics
+                                                and Statistics
+    Variables:            12                  18 Jan 2022 08:19
+\HLI{79}
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+\HLI{79}
+assets          float   \%9.0g                 Net total financial assets
+age             byte    \%9.0g                 Age
+income          float   \%9.0g                 Household income
+familysize      byte    \%9.0g                 Household size
+educ            byte    \%9.0g                 Years of education
+pension         byte    \%16.0g     lbpen      Pension benefits
+married         byte    \%11.0g     lbmar      Marital status
+twoearn         byte    \%9.0g      lbyes      Two-earner household
+e401k           byte    \%12.0g     lbe401     401(k) eligibility
+p401k           byte    \%9.0g                 401(k) participation
+ira             byte    \%9.0g      lbyes      IRA participation
+ownhome         byte    \%9.0g      lbyes      Home owner
+\HLI{79}
+Sorted by: e401k
+{\smallskip}
+. global covariates income age familysize educ i.(married ira pension ownhome)
+{\smallskip}

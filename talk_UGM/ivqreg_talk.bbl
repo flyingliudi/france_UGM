@@ -1,0 +1,38 @@
+\ifnum 5=1 \def\bibname{Reference}
+\else \def\bibname{References} \fi
+\begin{thebibliography}{5}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{de~Castro et~al.(2019)de~Castro, Galvao, Kaplan, and
+  Liu}]{DeCastro2019}
+de~Castro, L., A.~F. Galvao, D.~M. Kaplan, and X.~Liu. 2019.
+\newblock Smoothed GMM for quantile models.
+\newblock \emph{Journal of Econometrics} 213: 121--144.
+
+\bibitem[{Chernozhukov and Hansen(2006)}]{chernozhukov2006}
+Chernozhukov, V., and C.~Hansen. 2006.
+\newblock {Instrumental quantile regression inference for structural and
+  treatment effect models}.
+\newblock \emph{Journal of Econometrics} 132(2): 491--525.
+
+\bibitem[{Chernozhukov and Hansen(2008)}]{chernozhukov2008}
+\mbox{\vrule width30.25006ptheight2.62222ptdepth-2.25222pt}. 2008.
+\newblock {Instrumental variable quantile regression: A robust inference
+  approach}.
+\newblock \emph{Journal of Econometrics} 142(1): 379--398.
+
+\bibitem[{Kaplan and Sun(2017)}]{kaplan2017}
+Kaplan, D.~M., and Y.~Sun. 2017.
+\newblock {Smoothed estimating equations for instrumental variables quantile
+  regression}.
+\newblock \emph{Econometric Theory} 33(1): 105--157.
+
+\bibitem[{Poterba et~al.(1995)Poterba, Venti, and Wise}]{Poterba1995}
+Poterba, J.~M., S.~F. Venti, and D.~A. Wise. 1995.
+\newblock {Do 401(k) contributions crowd out other personal saving?}
+\newblock \emph{Journal of Public Economics} 58(1): 1--32.
+
+\end{thebibliography}

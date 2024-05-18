@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------
+\subsection{Discussion on Theorem \ref{thm:iqr_var}} \label{sec:discuss_iqrvar}
+%------------------------------------------------------------------------------
+
+For a rigorous proof for Theorem \ref{thm:iqr_var}, see \cite{Chernozhukov2006}.
+Here I provide a intuitive interpretation. IQR estimator approximately solves
+the GMM moment condition in Equation \ref{eq:moment2}, and thus the
+variance of IQR estimator can be understood via the GMM approach. We take the
+first-order taylor expansion of the sample analog of moment
+\ref{eq:moment3} at the true value $\thetab(\cdot)$.  The term,
+$\frac{1}{\sqrt{n}} \sum_{i=1}^n l_i(\cdot, \thetab(\cdot))\Psib_i(\cdot)$, is
+the moment condition at the true value. The term, $\Jb(\cdot)$ is the gradient of
+the moment with respect to $\alphab$ and $\betab$. The term, $\Sb(\tau, \tau')$ is
+the variance for the moment
+$$
+\E \left[ l(\cdot)\Psib(\cdot) l(\cdot)\Psib(\cdot)' \right]
+$$
+This variance has a block-by-block structure such that the block for the $(\tau,
+\tau')$ is $\Sb(\tau, \tau')$.
+\begin{align*}
+\E &\left[ l(\tau)\Psib(\tau) l(\tau')\Psib(\tau')' \right] \\
+ &=  \E \left[ l(\tau) l(\tau')\Psib(\tau)\Psib(\tau')' \right] \\
+& = \E\left\{
+\E \left[ l(\tau) l(\tau')\Psib(\tau)\Psib(\tau')' |\Xb, \Zb\right]
+\right \} \\
+& = \E \left \{
+\E \left[
+l(\tau) l(\tau') | \Xb, \Zb
+\right] \Psib(\tau) \Psib(\tau')'
+\right \} \\
+& = \E \left \{
+\E \left[
+(\tau - \I (\epsilon(\tau) \leq 0)) (\tau' - \I (\epsilon(\tau') \leq 0)
+| \Xb, \Zb
+\right] \Psib(\tau) \Psib(\tau')'
+\right \} \\
+& = \E \left \{
+\E \left[
+(\tau\tau' - \tau\I (\epsilon(\tau')\leq 0)
+- \I(\epsilon(\tau)\leq 0)\tau' + \I (\epsilon(\tau)\leq 0)
+\I (\epsilon(\tau') \leq 0)
+| \Xb, \Zb
+\right] \Psib(\tau) \Psib(\tau')'
+\right \}
+\intertext{notice that $\E(\I(\epsilon(\tau) \leq 0) = \tau$ by the main
+implications in IVQR model in Equation \ref{eq:moment1}. So}
+& = \E \left \{
+\E \left[
+(\tau\tau' - \tau \tau'
+- \tau\tau' + \I (\epsilon(\tau)\leq 0) \I (\epsilon(\tau' \leq 0))
+| \Xb, \Zb
+\right] \Psib(\tau) \Psib(\tau')'
+\right \}
+\intertext{smaller value of $\tau$ also means greater residuals $\epsilon$, so
+$\I (\epsilon(\tau)\leq 0) \I (\epsilon(\tau' \leq 0))$ is simplified to
+$\min(\tau, \tau')$}
+& = \E \left \{
+\E \left[ (\min(\tau, \tau') - \tau\tau')  | \Xb, \Zb \right] 
+\Psib(\tau) \Psib(\tau')'
+\right \} \\
+& =
+(\min(\tau, \tau') - \tau\tau') \E \left [ \Psib(\tau) \Psib(\tau')' \right]
+\end{align*}
+
+For the gradient, $\Jb(\cdot)$,
+\begin{align*}
+\Jb(\tau) &= \frac{\partial \E(l(\tau) \Psib(\tau))}{\partial \thetab'} \\
+&= \E \left[ \E \left( \frac{\partial
+l(\tau) \Psib(\tau)
+}{\partial \thetab'} |\Xb, \Db, \Zb \right) \right] \\
+&= \E \left[ \E \left( \frac{\partial
+l(\tau)
+}{\partial \thetab'} |\Xb, \Db, \Zb \right) \Psib(\tau) \right] \\
+&= \E \left[  \frac{\partial \E ( l(\tau) |\Xb, \Db, \Zb )
+}{\partial \thetab'}  \Psib(\tau) \right] \\
+&= \E \left[ \left( \frac{\partial F_{\epsilon}(0 |\Xb, \Db, \Zb)
+}{\partial \thetab'}  \right) \Psib(\tau) \right] \\
+&= \E \left[f_{\epsilon}(0 |\Xb, \Db, \Zb) \Psib(\tau) [\Db', \Xb'] \right] \\
+\end{align*}

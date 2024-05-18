@@ -1,0 +1,421 @@
+%------------------------------------------------------------------------------
+\section{Examples} \label{sec:example}
+%------------------------------------------------------------------------------
+We want to estimate the effect of 401(k) participation ({\tt p401k}) on
+different conditional quantiles of net financial assets ({\tt asset}).  We
+use data reported by \cite{Chernozhukov2004}.  These data are from a sample of
+households in 1990 Survey of Income and Program Participation (SIPP). 
+For the head of household we have data on: income ({\tt income}), age ({\tt
+age}), number of people in the family ({\tt familysize}), years of education
+({\tt educ}), marital status ({\tt married}), whether to participate in the IRA
+({\tt ira}), whether to receive pension benefit ({\tt pension}), and whether own
+a home ({\tt ownhome}).
+
+We suspect the 401(k) participation is endogenous because it may depend on
+unobserved factors such as saving preference that also impacts financial assets.
+Using the 401(k) eligibility ({\tt e401k}) as an instrument for the 401(k)
+participation, we use {\tt ivqregress} to estimate how the {\tt p401k} affect
+the entire range of {\tt asset}'s conditional distribution. One concern about
+using {\tt e401k} as an instrument is that choosing to work for a company that
+offers the 401(k) program is not randomly assigned. \cite{Poterba1995} suggest
+that after conditioning on the income, we can take working for a company that
+offers the 401(k) plan as exogenous.
+
+The IVQR model we want to estimate is
+\begin{align}
+{\tt asset}_i = {\tt p401k}_i\alpha(U) +  {\bf covariates}_i'\betab(U),  
+\label{eq:asset}
+\end{align}
+where the distribution of $U$ conditional on instrument {\tt e401k} and
+covariates is assumed to be uniform between $0$ and $1$.
+The covariates are the continuous variables {\tt income}, {\tt age}, {\tt
+familysize}, and {\tt educ}, and the categorical variables {\tt i.married}, {\tt
+i.ira}, {\tt i.pension}, and {\tt i.ownhome}. As discussed above, {\tt e401k} is
+the instrument for {\tt p401k}. The coefficients $\alpha(U)$ and $\betab(U)$ are
+random because they depend on the unobserved random variable $U$, which is
+uniformly distributed. In practice, $U$ can be considered a ranking variable for
+the asset. When $U$ is set to a fixed level $\tau$, we are estimating an IVQR
+model at a specific quantile index $\tau$. For example, when $\tau = 0.5$, we
+estimate how the 401(k) participation affects the median of net financial assets
+conditional on other covariates.
+
+There are two objectives in the analysis:
+\begin{enumerate}
+
+\item Estimate the conditional quantile function of the two potential outcomes,
+which are the net financial asset when everyone or no one in the population
+participates in the 401(k) plan, respectively. In particular, the $\tau$-th
+conditional quantile of the asset when everyone participates in the 401(k) plan
+is 
+$$
+{\tt asset}_{\text{participate in 401(k)}} = \alpha(\tau)
++ {\bf covariates}'\betab(\tau)
+$$
+Similarly, the $\tau$-th conditional quantile of the asset when no one
+participate in the 401(k) plan is
+$$
+{\tt asset}_{\text{no 401(k)}} = {\bf covariates}'\betab(\tau)
+$$
+
+\item Estimate the quantile treatment effects of 401k participation on net
+financial assets. By definition, the $\tau$-th quantile treatment effect is
+$$
+{\tt asset}_{\text{participate in 401(k)}}
+-
+{\tt asset}_{\text{no 401(k)}} = \alpha(\tau)
+$$
+
+Thus, the coefficient $\alpha(\tau)$ can fully summarize the quantile treatment
+effect of {\tt p401k} on {\tt asset}.
+
+\end{enumerate}
+
+We will show four examples that use {\tt ivqregress} to estimate the quantile
+treatment effect of 401(k) participation on net financial assets. 
+\begin{itemize}
+
+\item Example 1 estimates the median treatment effect of {\tt p401k} on {\tt
+asset} using the inverse quantile regression estimator. We will illustrate the
+use of {\ivqreg} for estimation, how to interpret the estimates, use {\tt estat
+dualci} to obtain confidence interval robust to the weak instrument, and how to
+use {\tt margins} to get the conditional quantile function of the potential
+outcome.
+
+\item Example 2 is similar to Example 1 except that we use the smoothed
+estimating equation estimator for estimation. We compare the results between
+Example 1 and 2 and explain the difference.
+
+\item In Example 3, we use {\ivqreg} to estimate the IVQR model at a range of
+quantile indexes, use {\tt estat coefplot} to visualize quantile treatment
+effects, and use {\tt estat endogeffects} to test some hypotheses of particular
+interest in the context of the IVQR model.
+
+\item Finally, Example 4 takes a closer look at the optimization procedure
+underhood the IQR estimator, and uses {\tt estat waldplot} to diagnose the IQR
+estimator if a non-convergence issue emerges.
+
+\end{itemize}
+
+
+%------------------------------------------------------------------------------
+\subsection{Example 1: IV median regression with the IQR estimator} 
+%------------------------------------------------------------------------------
+In this example, we use the inverse quantile regression estimator 
+to estimate the effect of 401(k) participation on the conditional median of the
+net financial asset. 
+
+\begin{stlog}
+\input{logs/ex1_a.log.tex}
+\end{stlog}
+
+\begin{stlog}
+\input{logs/ex1_b.log.tex}
+\end{stlog}
+
+We specify {\tt iqr} to use the inverse quantile regression. The dependent
+variable is {\tt asset}. The endogenous variable {\tt i.p401k} and the
+instrument {\tt i.e401k} are specified in parenthesis, the other
+covariates follow as a regular {\tt varlist}. 
+{\ivqreg} estimate the IV median regression by default. 
+
+
+The coefficient for {\tt p401k} is \$5313. It means participation in 401(k)
+would increase the median of net financial asset by \$5313 conditional on other
+covariates, relative to a senario where no one participates.
+We store the estimation result as {\tt est\_iqr} for later use.
+
+After {\tt ivqregress iqr}, we can also use {\tt estat dualci} to obtain the
+dual confidence interval robust to weak instrument for the coefficient on the
+endogenous variables. The dual confidence interval is usually wider than the
+regular confidence interval, but it provides a more robust inference if the
+instrument is weak. In this example, we see that dual 95\% CI is $[\$3684,
+\$7305]$, which is wider than the regular 95\% CI $[\$4178, \$6449]$.
+
+\begin{stlog}
+\input{logs/ex1_c.log.tex}
+\end{stlog}
+
+The coefficients on each variable summarize the quantile treatment effects of
+the respective variable on the net financial asset. If we want to know
+the exact quantity of the conditional median for each potential outcome,
+we need to use {\tt margins}. In particular, we want to know the median of
+financial assets when everyone does or does not participate in 401(k)
+conditional on other covariates. We specify {\tt i.p401k} right after {\tt
+margins} to tell {\tt margins} to obtain median of the asset under 401(k)
+participation or no participation. The option {\tt at} specifies the values of
+other covariates when computing the median. In particular, the continuous
+variables such as {\tt income}, {\tt age}, {\tt familysize}, {\tt educ} are
+fixed at the sample mean, and people are assumed to be married, participate in
+the IRA, receive pension benefits, and own a home.
+
+\begin{stlog}
+\input{logs/ex1_d.log.tex}
+\end{stlog}
+
+The results show that the conditional median of assets when everyone
+participates in 401(k) is \$28,995. In contrast, the conditional median of
+assets when no one participates in 401(k) is only \$23,681. The difference
+between these two medians is \$5313, which is the quantile treatment effect of
+{\tt p401k} and is the same as the coefficient's value.
+
+%------------------------------------------------------------------------------
+\subsection{Example 2: IV median regression with the SEE estimator}
+%------------------------------------------------------------------------------
+In this example, we use {\tt ivqregress} to estimate the IV median regression as
+in Example 1 but using the smoothed estimating equation estimator. We type {\tt
+smooth} after {\tt ivqregress} to use this estimator. The model specification is
+the same as in Example 1. The estimation result is stored as {\tt est\_smooth}
+for later use. 
+
+\begin{stlog}
+\input{logs/ex2_a.log.tex}
+\end{stlog}
+
+The interpretation of the coefficient estimates is the same as in Example 1.
+For example, the coefficient for {\tt p401k} is \$5364. So participation in
+401(k) would increase the median of net financial assets by \$5364 conditional
+on other covariates, relative to a senario where no one participates.
+
+Now we can compare the coefficient on {\tt p401k} between the SEE estimator and
+the IQR estimator in Example 1.
+
+\begin{stlog}
+\input{logs/ex2_b.log.tex}
+\end{stlog}
+
+We see that the point estimate in these two estimators are similar but not the
+same. It is normal to see the different results between IQR and SEE estimators
+because these two estimators approximate the original exact estimating equation
+in different ways. On the one hand, the IQR estimator tries to find the solution
+by an exhaust grid search. The estimation result critically depends on the range
+and finesse of grid points. On the other hand, the SEE estimator uses a Kernel
+method to smooth the original estimating equation. Its result depends on how
+well the smoothed estimating equation approximates the original equation, mainly
+controlled by the bandwidth.  
+
+Both the IQR and SEE estimators have their advantage and weakness. The IQR
+estimator is numerically stable, and it allows computing the dual confidence
+interval robust to weak instruments (use {\tt estat dualci}). However, the IQR
+becomes computational intensive when there is more than one endogenous variable.
+Thus, {\tt ivqregress iqr} allows only one endogenous variable. In contrast, the
+SEE estimator can handle multiple endogenous variables within a reasonable
+computation time. However, it does not allow {\tt estat dualci} for robust
+inference. In practice, if there is only one endogenous variable in the model,
+we recommend using both estimators, comparing the results, and using IQR
+estimator as a benchmark as it can provide valid inference even the instrument
+is weak.  If there is more than one endogenous variable, we can only use {\tt
+ivqregress smooth}.
+
+As in Example 1, we can use {\tt margins} to obtain the conditional quantile
+function of the potential outcome.
+
+\begin{stlog}
+\input{logs/ex2_c.log.tex}
+\end{stlog}
+
+The results show that the conditional median of assets when everyone
+participates in 401(k) is \$28,915. In contrast, the conditional median of
+assets when no one participates in 401(k) is only \$23,550.
+
+
+%------------------------------------------------------------------------------
+\subsection{Example 3: IVQR at different quantiles}
+%------------------------------------------------------------------------------
+In the first two examples, we estimate the 401(k) participation ({\tt p401k})
+treatment effect on the conditional median of net financial assets ({\tt
+asset}).  From the policy designer's point of view, we may be more
+interested in estimating the treatment effect of {\tt p401k} on other
+conditional quantiles of {\tt asset}. For example, we can ask questions like 1)
+how the 401(k) participation affect the lower quantile of asset 2) are the
+401(k) participation unambiguously beneficial for both lower and upper
+conditional quantiles of asset. In addition, we also want to know whether
+the 401(k) participation is endogenous in our model. In this example, we will
+show how to use {\ivqreg} to estimate the IVQR model at different quantiles and
+how to use the post-estimation tools to answer the above questions.
+
+First, we use the IQR estimator to estimate the model at different quantiles.
+In particular, we specify option {\tt quantile(10(10)90)} to estimate the IVQR
+model at the 10th, 20th, \ldots, 90th quantiles. 
+
+\begin{stlog}
+\input{logs/ex3_a.log.tex}
+\end{stlog}
+
+The results show the estimates for the effect of 401(k) participation on each
+conditional quantile of the asset. The interpretation of the coefficient is
+similar as in Example 1 except we are looking at different conditional
+quantiles. For example, for the Equation {\tt q30}, the estimates for
+coefficient on {\tt p401k} is \$3674, thus participation of 401(k) would
+increase the 30th conditional quantile of net financial assets by \$3674. 
+
+In addition to looking at the exact numerical estimates from the coefficient
+table, we can also use {\tt estat coefplot} to visualize the trend of {\tt
+p401k}'s treatment effect from the lower to upper quantile. We specify {\tt
+1.p401k} after {\tt estat coefplot} to only show the coefficient plot for the
+variable {\tt 1.p401k}.
+
+\begin{stlog}
+\input{logs/ex3_b.log.tex}
+\end{stlog}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{eps/ex3_coefplot1}
+\end{figure}
+
+The dots in the plot show the point estimates of {\tt p401k}'s treatment effect
+on different conditional quantiles of {\tt asset}, and the grey bound show the
+95\% confidence interval.  We see that there is an upward trend of {\tt p401k}'s
+treatment effect. At lower level quantiles such as the 10th, 20th, \ldots, 40th
+quantiles, the treatment effect is relatively flat.  However, we see the
+treatment effect increase significantly in the upper-level quantiles. 
+
+{\tt estat coefplot} is a good way to visualize the treatment effect's trend. If
+we want to test some hypotheses regarding the trend and the model statistically,
+we can use {\tt estat endogeffects}. For example, we are interested in testing
+the following hypotheses.
+
+\begin{itemize} 
+
+\item {\bf No effect}: The 401(k) participation does not affect net financial
+asset for all the estimated quantiles; 
+
+\item {\bf Constant effect}: The 401(k) participation's treatment effect is
+constant for the different conditional quantiles of asset; 
+
+\item {\bf Dominance}: The 401(k) participation is unambiguously beneficial for
+all the estimated quantiles of asset; 
+
+\item {\bf Exogeneity}: The 401(k) participation is exogenous.
+\end{itemize}
+
+\clearpage
+
+\begin{stlog}
+\input{logs/ex3_c.log.tex}
+\end{stlog}
+
+{\tt estat endogeffects} show the Kolmogorov-Smirnov statistic and the 95\%
+critical value for each hypothesis. Therefore, we reject the null hypothesis if
+the test statistic is greater than the critical value. Otherwise, we can not
+reject the null hypothesis.
+
+In particular, we see that the test statistics are greater than the critical
+values in testing the hypotheses of no effect, constant effect, and exogeneity.
+Thus, with 95\% confidence level, we can reject these three hypotheses. In other
+words, we accept the hypotheses that the 401(k) participation has some effect,
+treatment is not constant across different quantiles, and 401(k) participation
+is endogenous.  In contrast, we can not reject the dominance hypothesis. Thus,
+we accept the hypothesis that 401(k) participation is unambiguously beneficial
+for all the estimated quantiles of assets.
+
+The test results are consistent with the result of the coefficient plot
+produced by {\tt estat coefplot}, where we see that the treatment effects are
+positive (dominance and no effect hypotheses) and upward trended (constant
+effect hypothesis).
+
+Finally, for reference,  we can also use the SEE estimator to estimate the
+model.
+
+\begin{stlog}
+\input{logs/ex3_d.log.tex}
+\end{stlog}
+
+As seen above, after {\tt ivqregress smooth}, we can use {\tt estat coefplot} to
+visualize the treatment effect and {\tt estat endogeffects} to test some
+hypotheses of particular interest in the context of the IVQR model. To save
+space, we will not list the result here.
+
+%------------------------------------------------------------------------------
+\subsection{Example 4: Diagnose the IQR estimator}
+%------------------------------------------------------------------------------
+In this example, we will take a closer look at the IQR estimator and show how to
+diagnose the non-convergence issue if it happens. Let us first briefly talk
+about the algorithm in the IQR estimator in the context of the 401(k) example.
+Intuitively, the IQR estimator can be divided into the following steps.
+
+\begin{enumerate}
+\item Define a series of $A = \{\alpha_j\}_{j=1}^J$, where $J$ is the number of
+grid points and it can be specified via option {\tt ngrid()}, and $\alpha_j$ is
+a candidate solution for the coefficient on {\tt 1.p401k}.
+
+\item For each $\alpha_j$, run the quantile regression of ${\tt asset} - {\tt
+1.p401k}*\alpha_j$ on the covariates and some transformations of instruments.
+Denote $\gammab_j$ as the coefficients on the instruments and $\Wb_j$ as the
+Wald statistic for $\gammab_j$.
+
+\item The IQR solution for $\alpha$ (the coefficients on {\tt 1.p401k}) is the
+$\alpha_j$ such that $\gammab_j$ is closest to zero. In other words, the
+solution chooses $\alpha_j$ such that the Wald statistic $\Wb_j$ is the
+smallest.
+
+\end{enumerate}
+
+We can use {\tt estat waldplot} to visualize the above procedure. Using the
+estimation result in Example 1, we first restore the result {\tt est\_iqr} and
+then use {\tt estat waldplot} to draw the Wald statistics corresponding to each
+grid points.
+
+\begin{stlog}
+\input{logs/ex4_a.log.tex}
+\end{stlog}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{eps/ex4_waldplot1}
+\end{figure}
+
+The horizontal axis shows the grid points for $\alpha$, and the vertical axis
+shows the values of Wald statistics. Each dot in the plot shows the Wald
+statistic corresponding to each grid point. The red dashed line is the 95\%
+critical value of the Wald test. Thus, only the Wald statistics below the red
+dashed line will not reject the hypothesis that $\gammab_j$ equals zero.
+Respectively, the 95\% dual confidence interval is the $\alpha$'s such that the
+Wald statistics are below the critical value. See Example 1 for the use of {\tt
+estat dualci} to show the numerical values of the dual CI.
+
+By default, {\tt ivqregress iqr} uses the dual CI to generate the lower and
+upper bound for the grid points to make sure that the grid covers the true value
+of parameter $\alpha$ with a big probability. Sometimes, we may want to
+customize the bounds. For example, suppose we want to search grid points between
+$3000$ and $6000$. We can use option {\tt bound()} for this purpose.
+
+\begin{stlog}
+\input{logs/ex4_b.log.tex}
+\end{stlog}
+
+We see that {\ivqreg} errors out with ``convergence not achieved". The reason is
+that the specified bound is too narrow to cover the true value of the parameter
+with a 95\% probability. We can use {\tt estat waldplot} to further visualize
+the issue.
+
+\begin{stlog}
+\input{logs/ex4_c.log.tex}
+\end{stlog}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{eps/ex4_waldplot2}
+\end{figure}
+
+The graph shows that the upper bound $6000$ is too small because we need the
+Wald statistics to intersect with the 95\% critical value at both the lower and
+upper bound. Now, we can increase the upper bound and see if the IQR estimator
+converges. For example, we increase the upper bound to $8000$.
+
+\begin{stlog}
+\input{logs/ex4_d.log.tex}
+\end{stlog}
+
+Now, the IQR estimator converges. We can redraw the Wald plot to confirm that
+the proposed grid points interval is indeed wider than the dual confidence
+interval.
+
+\begin{stlog}
+\input{logs/ex4_e.log.tex}
+\end{stlog}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{eps/ex4_waldplot3}
+\end{figure}

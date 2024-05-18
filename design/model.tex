@@ -1,0 +1,164 @@
+%------------------------------------------------------------------------------
+\section{The instrumental variable quantile regression model} \label{sec:model}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+	\subsection{The model}
+%------------------------------------------------------------------------------
+The general instrumental variables quantile regression model was first
+proposed by \cite{Chernozhukov2005}. {\ivqreg} is based on the linear IVQR model
+described in \cite{Chernozhukov2006} and \cite{Chernozhukov2008}.
+
+To simplify notation, we use the capital letter to denote the random variable
+and a lower-case letter to denote the random variable's actual value.  We use
+the bold letter to represent a vector. All the vectors are assumed to be  column
+vectors.
+
+The linear IVQR model can be written in the form of ``random
+coefficients'' model
+\begin{align}
+Y &= \Db' \alphab(\UD) + \Xb' \betab(\UD) \quad \text{where  $\UD|\Xb, \Zb \sim
+Uniform(0,1)$}  \label{eq:outcome} \\
+\Db &= \delta(\Xb, \Zb, V) \quad \text{where $V$ statistically depends on $\UD$} 
+\label{eq:dvar} \\
+\tau &\rightarrow \Db' \alphab(\tau) + \Xb' \betab(\tau) 
+\quad \text{is strictly increasing in $\tau$}
+\end{align}
+where
+\begin{itemize}
+\item $Y$ is a scalar outcome variable,
+\item $\UD$ is a scalar random variable that charaterizes the heterogeneity of
+the outcome and captures all the unobservables in the outcome Equation
+\ref{eq:outcome}, 
+\item $\Db$ is a vector of endogenous variables that statistically depend on
+$\UD$, 
+\item $\Xb$ is a vector of exogenous variables that are independent of $\UD$,
+\item $\alphab()$ and $\betab()$ are random coefficient vectors that depend on
+$\UD$, 
+\item the endogenous variables $\Db$ are dermined via Equation \ref{eq:dvar},
+\item $\Zb$ is a vector of instrumental variables that are independent of $\UD$
+but correlated with $\Db$, 
+\item $V$ is a scalar unobserved random variable that impacts $\Db$ and also
+correlated with $\UD$, and
+\item the observable variables are $\{Y_i, \Xb_i, \Db_i, \Zb_i\}_{i=1}^n$ with a
+sample of size $n$.
+\end{itemize}
+
+There are two objectives of the analysis.
+\begin{enumerate}
+
+\item Estimate the conditional quantile function of the latent potential outcome
+$\Yd$ when fixing $\Db = \db$ and conditional on $\Xb$. More precisely, the
+potential outcome $\Yd = \db'\alpha(\Ud) + \Xb'\betab(\Ud)$ with $\Ud$ as a
+scalar random variable from uniform distribution conditional on $\Xb$ (note that
+$\db$ are treated as constant here). The conditional quantile function of $\Yd$
+can be written as
+\begin{align}
+S_{\Yd}(\Yd | \tau, \Xb, \db) = \db'\alphab(\tau) + \Xb'\betab(\tau)
+\end{align}
+Notice that $S_{\Yd}()$ is generally different from the conditional quantile
+function for the observed outcome $Y$ because $\Db$ are endogenous. $S_{\Yd}()$
+is also referred to as structural quantile equation (SQE).
+
+
+\item Estimate the quantile treatment effects of $\Db$. Suppose $\Db$ is a
+binary variable that can only take $0$ and $1$, The quantile treatment
+effects (QTE) are defined as 
+\begin{align}
+S_{Y_1}(Y_1 | \tau, \Xb, 1) - S_{Y_0}(Y_0 | \tau, \Xb, 0) = \alphab(\tau)
+\end{align}
+Or, if $\Db$ is continuous, QTE is defined as
+\begin{align}
+\frac{\partial S_{Y_{\db}}()}{\partial \db} = \alphab(\tau)
+\end{align}
+
+The linear-in-parameter assumption greatly simplifies the estimation of QTE, which
+is $\alphab(\tau)$ in both discrete and continuous case.  
+\end{enumerate}
+
+Suppose we estimate the function $S_{\Yd}()$ at different values of $\tau$
+spanned between $0$ and $1$. In that case, we can have a fuller picture of the
+conditional distribution of $\Yd$ than just estimating the mean of the
+distribution. In addition, the estimates for $\alphab(\tau)$ at different values
+of $\tau$ reveal how the treatment effects vary at different conditional
+quantile indexes.
+
+
+
+%------------------------------------------------------------------------------
+	\subsection{Main assumptions and moment condition}
+	\label{sec:cond}
+%------------------------------------------------------------------------------
+The primary condition in the IVQR model (\cite{Chernozhukov2005}) is
+
+\begin{assumption}
+  \label{assum:ivqr}
+
+Consider a probability space $(\Omega, F, P)$ and the set of potential outcome
+variables $(\Yd, d \in \mathbbm{D})$, endogenous variables $\Db$, exogenous
+covariates $\Xb$, and instruments $\Zb$. The following conditions hold:
+
+\begin{description}
+
+\item[A1] (Potential outcomes) Conditional on $\Xb=\xb$, for each $\db$, $\Yd =
+q(\db, \xb, \Ud)$, where $q(\db, \xb, \tau)$ is increasing in $\tau$ and $\Ud
+\sim U(0, 1)$.
+
+\item[A2] (Independence) Conditional on $\Xb=\xb$, $\Ud$ are independent of
+$\Zb$.
+
+\item[A3] (Selection) $\Db = \delta(\Zb, \Xb, V)$ for some unknown function
+$\delta(\cdot)$ and random vector $V$.
+
+\item[A4] (Rank similarity) Conditional on $(\Xb, \Zb, V)$, $\{\Ud\}$ are
+identically distributed.
+
+\item[A5] (Observables) Observed variables consist of $Y = q(\Db, \Xb, \UD)$,
+$\Db$, $\Xb$, and $\Zb$.
+
+\end{description}
+\end{assumption}
+
+In the linear IVQR model, $q(\Db, \Xb, \UD) = \Db'\alphab(\UD) +
+\Xb'\betab(\UD)$ as specified in Equation \ref{eq:outcome}.
+
+The following is the main implication of Assumption A1-A5.
+
+\begin{theorem}[Main implications of IVQR model]\label{th:moment}
+Suppose conditions A1-A5 hold. Then for all $\tau \in (0, 1)$, a.s.
+\begin{align}
+	P(Y \leq q(\Db, \Xb, \UD) | \Xb, \Zb) = \tau
+	\label{eq:moment1}
+\end{align}
+and $\UD \sim U(0,1)$ conditional on $\Xb$ and $\Zb$.
+\end{theorem}
+
+For the proof of Theorem \ref{th:moment} and a discussion on the rank
+similarity, see Section \ref{sec:proof_moment} in Appendix.  Theorem
+\ref{th:moment} also implies the following unconditional moment condition that
+can be used to estimate the IVQR model. Namely, Equation \ref{eq:moment1}
+together with the linear-in-parameter assumptions imply
+
+\begin{align}
+\E \left[ \left( \tau - \I (Y  - \Db'\alphab - \Xb'\betab \leq 0)
+	\right) \Psib(\Xb, \Zb) \right]= 0 \label{eq:moment2}
+\end{align}
+where $\I()$ is the indicator function, $\Psib(\Xb, \Zb)$ is some transformation
+of $\Xb$ and $\Zb$. In practice, $\Psib(\Xb, \Zb) = (\Phib(\Xb, \Zb)',
+  \xb')'$, and $\Phib(\Xb, \Zb)$ is the projection of
+$\Db$ into the linear space spanned by $\Xb$ and $\Zb$.
+
+The empirical version of Equation \ref{eq:moment2} is
+\begin{align}
+\frac{1}{n} \sum_{i=1}^n \left[ 
+	\left( 
+	\tau - \I (Y_i  - \Db_i'\alphab - \Xb_i'\betab \leq 0) 
+	\right) 
+	\Psib(\Xb_i, \Zb_i) 
+	\right]= 0 
+\label{eq:moment3}
+\end{align}
+
+Equation \ref{eq:moment2} and \ref{eq:moment3} are the foundation for different
+estimation strategies, that will be discussed in Sections \ref{sec:rev},
+\ref{sec:iqr_method}, \ref{sec:see_method}, and \ref{sec:dec_method}.

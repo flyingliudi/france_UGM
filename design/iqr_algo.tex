@@ -1,0 +1,32 @@
+
+\item Define a sequence of $\alphab$'s, denoted by $A = \{\alphab_j\}_{j=1}^J$.
+
+\item Define the quantile level $\tau$.
+
+\item For each variable in $\Db$, compute its linear projection on the space
+spanned by $\Xb$ and $\Zb$. Denote the predicted $\Db$ as $\widehat{\Phib}$.
+
+\item For $j$ from $1$ to $J$, make the following loop.
+
+\begin{enumerate}
+	\item Run regular $\tau$-th quantile regression of $Y - \Db'\alphab_j$ on
+	$\Xb$ and $\widehat{\Phib}$. Denote the estimate for $\betab$ and
+	$\gammab$ as $\hat{\betab}(\alphab_j)$ and $\hat{\gammab}(\alphab_j)$,
+	respectively.  Also denote the $\hat{\Omegab}(\alphab_j)$ as the estimated
+	variance matrix for $\sqrt{N}(\hat{\gammab}(\alphab_j) -
+	\gammab(\alphab_j))$.
+
+	\item Compute the norm of $\hat{\gammab}(\alphab_j)$ as $W(\alphab_j) =
+	N\hat{\gammab}(\alphab_j)' \hat{\Omegab}(\alphab_j)^{-1}
+	\hat{\gammab}(\alphab_j)$
+\end{enumerate}
+
+\item The IQR estimate for $\alphab$ is $\hat{\alphab}_{IQR}$ such that
+$W(\hat{\alphab}_{IQR})$ is the smallest among $\{W(\alphab_j)\}_{j=1}^J$.
+Formally,
+\begin{align*}
+	\hat{\alphab}_{IQR} = \argmin_{\alphab \in A} W(\alphab)
+\end{align*}
+
+\item Given $\hat{\alphab}_{IQR}$, the estimate for $\betab$ is
+$\hat{\betab}(\hat{\alphab}_{IQR})$.

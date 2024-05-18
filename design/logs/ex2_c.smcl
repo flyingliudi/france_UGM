@@ -1,0 +1,26 @@
+{com}. margins i.p401k, at((mean) income age familysize educ   ///
+>         married = 1 ira = 1 pension = 1 ownhome = 1)
+{res}
+{txt}{col 1}Adjusted predictions{col 58}{lalign 13:Number of obs}{col 71} = {res}{ralign 5:9,913}
+{txt}{col 1}Model VCE: {res:Robust}
+
+{txt}{p2colset 1 13 13 2}{...}
+{p2col:Expression:}{res:Linear prediction, predict()}{p_end}
+{p2colreset}{...}
+{lalign 4:At: }{space 0}{lalign 10:income} = {res:{ralign 8:37208.4}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 10:age} = {res:{ralign 8:41.05891}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 10:familysize} = {res:{ralign 8:2.865328}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 10:married} = {res:{ralign 8:1}}
+{lalign 4:}{space 0}{lalign 10:ira} = {res:{ralign 8:1}}
+{lalign 4:}{space 0}{lalign 10:pension} = {res:{ralign 8:1}}
+{lalign 4:}{space 0}{lalign 10:ownhome} = {res:{ralign 8:1}}
+{lalign 4:}{space 0}{lalign 10:educ} = {res:{ralign 8:13.20629}} {txt:(mean)}
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26} Delta-method
+{col 14}{c |}     Margin{col 26}   std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}p401k {c |}
+{space 10}0  {c |}{col 14}{res}{space 2} 23550.11{col 26}{space 2} 1026.286{col 37}{space 1}   22.95{col 46}{space 3}0.000{col 54}{space 4} 21538.63{col 67}{space 3}  25561.6
+{txt}{space 10}1  {c |}{col 14}{res}{space 2} 28914.58{col 26}{space 2} 1142.314{col 37}{space 1}   25.31{col 46}{space 3}0.000{col 54}{space 4} 26675.69{col 67}{space 3} 31153.47
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}

@@ -1,0 +1,40 @@
+. cap noi ivqregress iqr assets (i.p401k = i.e401k) income age familysize  ///
+>         i.married i.ira i.pension i.ownhome educ, bound(3000 8000)
+
+Initial grid
+    quantile = 0.50: .........10.........20.........30
+
+Adaptive grid
+    quantile = 0.50: .........10.........20.........30
+
+IV median regression                                   Number of obs =   9,913
+Estimator: Inverse quantile regression                 Wald chi2(9)  = 1290.41
+                                                       Prob > chi2   =  0.0000
+
+------------------------------------------------------------------------------
+             |               Robust
+      assets | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     1.p401k |   5332.937   574.5175     9.28   0.000     4206.903    6458.971
+      income |    .157381    .012478    12.61   0.000     .1329246    .1818374
+         age |   99.78981   8.553978    11.67   0.000     83.02432    116.5553
+  familysize |  -199.6165    54.3519    -3.67   0.000    -306.1442   -93.08872
+             |
+     married |
+    Married  |  -1351.309   227.0824    -5.95   0.000    -1796.382   -906.2357
+             |
+         ira |
+        Yes  |   22631.85   1022.023    22.14   0.000     20628.72    24634.98
+             |
+     pension |
+Receives ..  |  -694.1447    210.533    -3.30   0.001    -1106.782   -281.5077
+             |
+     ownhome |
+        Yes  |  -30.67158   154.6947    -0.20   0.843    -333.8676    272.5244
+        educ |  -96.30363    32.0715    -3.00   0.003    -159.1626   -33.44465
+       _cons |  -4983.758   569.4043    -8.75   0.000     -6099.77   -3867.746
+------------------------------------------------------------------------------
+Endogenous: 0b.p401k 1.p401k
+ Exogenous: income age familysize 0b.married 1.married 0b.ira 1.ira
+            0b.pension 1.pension 0b.ownhome 1.ownhome educ 0b.e401k 1.e401k
+

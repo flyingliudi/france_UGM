@@ -1,0 +1,280 @@
+. ivqreg_iqr y x1 x2 (d1 = z1), quantile(10(10)90)
+
+Build initial grid using 2SQR at .1 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =   22.4736         minimum Wald =   22.4736
+Iteration     2:  current Wald =   18.0925         minimum Wald =   18.0925
+Iteration     3:  current Wald =  17.00025         minimum Wald =  17.00025
+Iteration     4:  current Wald =  15.19126         minimum Wald =  15.19126
+Iteration     5:  current Wald =  11.81506         minimum Wald =  11.81506
+Iteration     6:  current Wald =  9.107875         minimum Wald =  9.107875
+Iteration     7:  current Wald =  5.746381         minimum Wald =  5.746381
+Iteration     8:  current Wald =  4.125356         minimum Wald =  4.125356
+Iteration     9:  current Wald =  3.614164         minimum Wald =  3.614164
+Iteration    10:  current Wald =  1.611728         minimum Wald =  1.611728
+Iteration    11:  current Wald =  .9497916         minimum Wald =  .9497916
+Iteration    12:  current Wald =  .8163106         minimum Wald =  .8163106
+Iteration    13:  current Wald =  .0736972         minimum Wald =  .0736972
+Iteration    14:  current Wald =  .0000725         minimum Wald =  .0000725
+Iteration    15:  current Wald =   .174917         minimum Wald =  .0000725
+Iteration    16:  current Wald =  1.718363         minimum Wald =  .0000725
+Iteration    17:  current Wald =   2.77329         minimum Wald =  .0000725
+Iteration    18:  current Wald =  3.110623         minimum Wald =  .0000725
+Iteration    19:  current Wald =  3.369488         minimum Wald =  .0000725
+Iteration    20:  current Wald =   4.44968         minimum Wald =  .0000725
+
+Build initial grid using 2SQR at .2 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  13.14172         minimum Wald =  13.14172
+Iteration     2:  current Wald =   10.8234         minimum Wald =   10.8234
+Iteration     3:  current Wald =  8.520361         minimum Wald =  8.520361
+Iteration     4:  current Wald =  5.505812         minimum Wald =  5.505812
+Iteration     5:  current Wald =  3.878259         minimum Wald =  3.878259
+Iteration     6:  current Wald =  2.646774         minimum Wald =  2.646774
+Iteration     7:  current Wald =  1.929225         minimum Wald =  1.929225
+Iteration     8:  current Wald =  1.291346         minimum Wald =  1.291346
+Iteration     9:  current Wald =  .8122345         minimum Wald =  .8122345
+Iteration    10:  current Wald =  .6536955         minimum Wald =  .6536955
+Iteration    11:  current Wald =  .0544883         minimum Wald =  .0544883
+Iteration    12:  current Wald =  .0083728         minimum Wald =  .0083728
+Iteration    13:  current Wald =  .5175124         minimum Wald =  .0083728
+Iteration    14:  current Wald =   .612669         minimum Wald =  .0083728
+Iteration    15:  current Wald =  1.057832         minimum Wald =  .0083728
+Iteration    16:  current Wald =  1.438829         minimum Wald =  .0083728
+Iteration    17:  current Wald =  2.489941         minimum Wald =  .0083728
+Iteration    18:  current Wald =  3.415979         minimum Wald =  .0083728
+Iteration    19:  current Wald =  5.404424         minimum Wald =  .0083728
+Iteration    20:  current Wald =  7.472792         minimum Wald =  .0083728
+
+Build initial grid using 2SQR at .3 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  11.68393         minimum Wald =  11.68393
+Iteration     2:  current Wald =  11.17559         minimum Wald =  11.17559
+Iteration     3:  current Wald =  9.349306         minimum Wald =  9.349306
+Iteration     4:  current Wald =  7.664121         minimum Wald =  7.664121
+Iteration     5:  current Wald =  5.623626         minimum Wald =  5.623626
+Iteration     6:  current Wald =  3.786343         minimum Wald =  3.786343
+Iteration     7:  current Wald =  2.263019         minimum Wald =  2.263019
+Iteration     8:  current Wald =  1.594027         minimum Wald =  1.594027
+Iteration     9:  current Wald =  .8936081         minimum Wald =  .8936081
+Iteration    10:  current Wald =   .232475         minimum Wald =   .232475
+Iteration    11:  current Wald =  .1285265         minimum Wald =  .1285265
+Iteration    12:  current Wald =  .0867819         minimum Wald =  .0867819
+Iteration    13:  current Wald =  .0020202         minimum Wald =  .0020202
+Iteration    14:  current Wald =  .1072428         minimum Wald =  .0020202
+Iteration    15:  current Wald =  .3816731         minimum Wald =  .0020202
+Iteration    16:  current Wald =  1.416039         minimum Wald =  .0020202
+Iteration    17:  current Wald =  3.046751         minimum Wald =  .0020202
+Iteration    18:  current Wald =  4.038637         minimum Wald =  .0020202
+Iteration    19:  current Wald =  6.891354         minimum Wald =  .0020202
+Iteration    20:  current Wald =   7.53752         minimum Wald =  .0020202
+
+Build initial grid using 2SQR at .4 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  11.04784         minimum Wald =  11.04784
+Iteration     2:  current Wald =  10.12706         minimum Wald =  10.12706
+Iteration     3:  current Wald =  7.851757         minimum Wald =  7.851757
+Iteration     4:  current Wald =  5.883417         minimum Wald =  5.883417
+Iteration     5:  current Wald =  6.304627         minimum Wald =  5.883417
+Iteration     6:  current Wald =  5.856125         minimum Wald =  5.856125
+Iteration     7:  current Wald =  5.017342         minimum Wald =  5.017342
+Iteration     8:  current Wald =  3.351079         minimum Wald =  3.351079
+Iteration     9:  current Wald =  2.489285         minimum Wald =  2.489285
+Iteration    10:  current Wald =  1.667728         minimum Wald =  1.667728
+Iteration    11:  current Wald =   .472877         minimum Wald =   .472877
+Iteration    12:  current Wald =  .2067629         minimum Wald =  .2067629
+Iteration    13:  current Wald =   .000284         minimum Wald =   .000284
+Iteration    14:  current Wald =  .1374782         minimum Wald =   .000284
+Iteration    15:  current Wald =   .694115         minimum Wald =   .000284
+Iteration    16:  current Wald =  1.597666         minimum Wald =   .000284
+Iteration    17:  current Wald =  2.393153         minimum Wald =   .000284
+Iteration    18:  current Wald =  3.338581         minimum Wald =   .000284
+Iteration    19:  current Wald =  4.653108         minimum Wald =   .000284
+Iteration    20:  current Wald =  6.406676         minimum Wald =   .000284
+
+Build initial grid using 2SQR at .5 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  13.74773         minimum Wald =  13.74773
+Iteration     2:  current Wald =  13.52798         minimum Wald =  13.52798
+Iteration     3:  current Wald =  11.68382         minimum Wald =  11.68382
+Iteration     4:  current Wald =  10.24402         minimum Wald =  10.24402
+Iteration     5:  current Wald =  8.698063         minimum Wald =  8.698063
+Iteration     6:  current Wald =  7.168729         minimum Wald =  7.168729
+Iteration     7:  current Wald =  5.627557         minimum Wald =  5.627557
+Iteration     8:  current Wald =   4.07186         minimum Wald =   4.07186
+Iteration     9:  current Wald =  2.561784         minimum Wald =  2.561784
+Iteration    10:  current Wald =  1.192822         minimum Wald =  1.192822
+Iteration    11:  current Wald =  1.018881         minimum Wald =  1.018881
+Iteration    12:  current Wald =  .1003419         minimum Wald =  .1003419
+Iteration    13:  current Wald =  .0027824         minimum Wald =  .0027824
+Iteration    14:  current Wald =  .1779259         minimum Wald =  .0027824
+Iteration    15:  current Wald =   1.02566         minimum Wald =  .0027824
+Iteration    16:  current Wald =  2.209973         minimum Wald =  .0027824
+Iteration    17:  current Wald =  4.154044         minimum Wald =  .0027824
+Iteration    18:  current Wald =  5.130442         minimum Wald =  .0027824
+Iteration    19:  current Wald =  8.970862         minimum Wald =  .0027824
+Iteration    20:  current Wald =  12.27276         minimum Wald =  .0027824
+
+Build initial grid using 2SQR at .6 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =   12.0374         minimum Wald =   12.0374
+Iteration     2:  current Wald =  11.46107         minimum Wald =  11.46107
+Iteration     3:  current Wald =  9.411436         minimum Wald =  9.411436
+Iteration     4:  current Wald =  8.054216         minimum Wald =  8.054216
+Iteration     5:  current Wald =   7.00651         minimum Wald =   7.00651
+Iteration     6:  current Wald =  4.237742         minimum Wald =  4.237742
+Iteration     7:  current Wald =  3.480847         minimum Wald =  3.480847
+Iteration     8:  current Wald =  3.357349         minimum Wald =  3.357349
+Iteration     9:  current Wald =  2.247135         minimum Wald =  2.247135
+Iteration    10:  current Wald =   1.54442         minimum Wald =   1.54442
+Iteration    11:  current Wald =  .6128342         minimum Wald =  .6128342
+Iteration    12:  current Wald =  .1454662         minimum Wald =  .1454662
+Iteration    13:  current Wald =  .0269646         minimum Wald =  .0269646
+Iteration    14:  current Wald =  .8189117         minimum Wald =  .0269646
+Iteration    15:  current Wald =  2.791839         minimum Wald =  .0269646
+Iteration    16:  current Wald =  4.873324         minimum Wald =  .0269646
+Iteration    17:  current Wald =  7.957102         minimum Wald =  .0269646
+Iteration    18:  current Wald =  12.37916         minimum Wald =  .0269646
+Iteration    19:  current Wald =  16.15612         minimum Wald =  .0269646
+Iteration    20:  current Wald =  22.68836         minimum Wald =  .0269646
+
+Build initial grid using 2SQR at .7 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  2.455167         minimum Wald =  2.455167
+Iteration     2:  current Wald =  1.543189         minimum Wald =  1.543189
+Iteration     3:  current Wald =  .3562759         minimum Wald =  .3562759
+Iteration     4:  current Wald =   .147103         minimum Wald =   .147103
+Iteration     5:  current Wald =  .0002957         minimum Wald =  .0002957
+Iteration     6:  current Wald =  .0592007         minimum Wald =  .0002957
+Iteration     7:  current Wald =  .5262995         minimum Wald =  .0002957
+Iteration     8:  current Wald =  1.495976         minimum Wald =  .0002957
+Iteration     9:  current Wald =  2.678938         minimum Wald =  .0002957
+Iteration    10:  current Wald =  4.606166         minimum Wald =  .0002957
+Iteration    11:  current Wald =  8.393623         minimum Wald =  .0002957
+Iteration    12:  current Wald =  12.59518         minimum Wald =  .0002957
+Iteration    13:  current Wald =  22.08004         minimum Wald =  .0002957
+Iteration    14:  current Wald =  31.01435         minimum Wald =  .0002957
+Iteration    15:  current Wald =  36.91203         minimum Wald =  .0002957
+Iteration    16:  current Wald =  49.60023         minimum Wald =  .0002957
+Iteration    17:  current Wald =  51.62556         minimum Wald =  .0002957
+Iteration    18:  current Wald =  58.24846         minimum Wald =  .0002957
+Iteration    19:  current Wald =  63.60423         minimum Wald =  .0002957
+Iteration    20:  current Wald =  66.61904         minimum Wald =  .0002957
+
+Build initial grid using 2SQR at .8 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  5.078866         minimum Wald =  5.078866
+Iteration     2:  current Wald =  2.515982         minimum Wald =  2.515982
+Iteration     3:  current Wald =  .5987176         minimum Wald =  .5987176
+Iteration     4:  current Wald =   .053027         minimum Wald =   .053027
+Iteration     5:  current Wald =   .022025         minimum Wald =   .022025
+Iteration     6:  current Wald =  .2003668         minimum Wald =   .022025
+Iteration     7:  current Wald =   .974975         minimum Wald =   .022025
+Iteration     8:  current Wald =  1.685423         minimum Wald =   .022025
+Iteration     9:  current Wald =  3.161163         minimum Wald =   .022025
+Iteration    10:  current Wald =  4.569895         minimum Wald =   .022025
+Iteration    11:  current Wald =  6.072775         minimum Wald =   .022025
+Iteration    12:  current Wald =  9.344878         minimum Wald =   .022025
+Iteration    13:  current Wald =  12.63018         minimum Wald =   .022025
+Iteration    14:  current Wald =  16.56077         minimum Wald =   .022025
+Iteration    15:  current Wald =  22.06752         minimum Wald =   .022025
+Iteration    16:  current Wald =  26.90483         minimum Wald =   .022025
+Iteration    17:  current Wald =  34.08609         minimum Wald =   .022025
+Iteration    18:  current Wald =   45.6832         minimum Wald =   .022025
+Iteration    19:  current Wald =  51.98744         minimum Wald =   .022025
+Iteration    20:  current Wald =  64.18327         minimum Wald =   .022025
+
+Build initial grid using 2SQR at .9 quantile...
+
+Start grid search ...
+Iteration     1:  current Wald =  1.667187         minimum Wald =  1.667187
+Iteration     2:  current Wald =  .5624645         minimum Wald =  .5624645
+Iteration     3:  current Wald =  .0313992         minimum Wald =  .0313992
+Iteration     4:  current Wald =  .1363963         minimum Wald =  .0313992
+Iteration     5:  current Wald =  .7146828         minimum Wald =  .0313992
+Iteration     6:  current Wald =  2.404136         minimum Wald =  .0313992
+Iteration     7:  current Wald =  4.471844         minimum Wald =  .0313992
+Iteration     8:  current Wald =  6.269937         minimum Wald =  .0313992
+Iteration     9:  current Wald =  5.744321         minimum Wald =  .0313992
+Iteration    10:  current Wald =  7.497319         minimum Wald =  .0313992
+Iteration    11:  current Wald =  12.99305         minimum Wald =  .0313992
+Iteration    12:  current Wald =   16.1106         minimum Wald =  .0313992
+Iteration    13:  current Wald =   17.9797         minimum Wald =  .0313992
+Iteration    14:  current Wald =   20.7435         minimum Wald =  .0313992
+Iteration    15:  current Wald =  24.09005         minimum Wald =  .0313992
+Iteration    16:  current Wald =  31.05763         minimum Wald =  .0313992
+Iteration    17:  current Wald =  46.28931         minimum Wald =  .0313992
+Iteration    18:  current Wald =  47.24368         minimum Wald =  .0313992
+Iteration    19:  current Wald =  57.57667         minimum Wald =  .0313992
+Iteration    20:  current Wald =  65.45532         minimum Wald =  .0313992
+
+IV quantile regression                Number of obs               =      1,000
+------------------------------------------------------------------------------
+             |               Robust
+           y | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+q10          |
+          d1 |   .3053651    .119892     2.55   0.011     .0703811    .5403491
+          x1 |   1.182945   .0328648    35.99   0.000     1.118531    1.247358
+          x2 |   1.164286    .032438    35.89   0.000     1.100709    1.227863
+       _cons |  -1.222363   .0415186   -29.44   0.000    -1.303738   -1.140988
+-------------+----------------------------------------------------------------
+q20          |
+          d1 |   .1598569    .091954     1.74   0.082    -.0203697    .3400834
+          x1 |   1.253955   .0374945    33.44   0.000     1.180467    1.327443
+          x2 |   1.270747   .0374696    33.91   0.000     1.197308    1.344186
+       _cons |   -.854385   .0437139   -19.54   0.000    -.9400626   -.7687073
+-------------+----------------------------------------------------------------
+q30          |
+          d1 |   .2392064   .0860738     2.78   0.005     .0705049    .4079078
+          x1 |   1.333498   .0378589    35.22   0.000     1.259296    1.407701
+          x2 |   1.363506   .0355201    38.39   0.000     1.293888    1.433124
+       _cons |  -.5676008   .0430206   -13.19   0.000    -.6519197   -.4832818
+-------------+----------------------------------------------------------------
+q40          |
+          d1 |    .309709   .0756615     4.09   0.000     .1614153    .4580028
+          x1 |    1.39524     .03403    41.00   0.000     1.328543    1.461938
+          x2 |      1.443   .0332893    43.35   0.000     1.377754    1.508246
+       _cons |  -.3019341   .0411288    -7.34   0.000    -.3825451   -.2213231
+-------------+----------------------------------------------------------------
+q50          |
+          d1 |   .4338709   .0715584     6.06   0.000      .293619    .5741229
+          x1 |   1.485626   .0361991    41.04   0.000     1.414677    1.556575
+          x2 |   1.501151   .0316297    47.46   0.000     1.439158    1.563144
+       _cons |  -.0737753   .0417094    -1.77   0.077    -.1555241    .0079736
+-------------+----------------------------------------------------------------
+q60          |
+          d1 |   .5214202   .0561679     9.28   0.000     .4113331    .6315073
+          x1 |   1.534618   .0369977    41.48   0.000     1.462103    1.607132
+          x2 |   1.548667   .0327482    47.29   0.000     1.484482    1.612853
+       _cons |    .144252   .0439829     3.28   0.001      .058047     .230457
+-------------+----------------------------------------------------------------
+q70          |
+          d1 |   .5292106   .0673312     7.86   0.000     .3972439    .6611772
+          x1 |   1.649298   .0414618    39.78   0.000     1.568034    1.730562
+          x2 |   1.611054   .0371243    43.40   0.000     1.538292    1.683816
+       _cons |    .446551   .0549888     8.12   0.000      .338775     .554327
+-------------+----------------------------------------------------------------
+q80          |
+          d1 |   .6015263    .067237     8.95   0.000     .4697441    .7333085
+          x1 |   1.739591   .0489798    35.52   0.000     1.643592    1.835589
+          x2 |   1.684787    .049557    34.00   0.000     1.587657    1.781917
+       _cons |   .8587767   .0686253    12.51   0.000     .7242735    .9932799
+-------------+----------------------------------------------------------------
+q90          |
+          d1 |   .7419114   .0769447     9.64   0.000     .5911027    .8927202
+          x1 |   1.913492   .0426901    44.82   0.000     1.829821    1.997163
+          x2 |   1.741339   .0659572    26.40   0.000     1.612065    1.870613
+       _cons |   1.298824   .0661339    19.64   0.000     1.169204    1.428444
+------------------------------------------------------------------------------
+Endogenous: d1
+ Exogenous: x1 x2 z1
+

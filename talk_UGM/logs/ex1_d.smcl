@@ -1,0 +1,10 @@
+{com}. estimates restore iqr
+{res}{txt}(results {stata estimates replay iqr:iqr} are active now)
+
+{com}. estat coefplot 1.p401k, name(iqr) title("IQR") legend(off)
+{res}{txt}
+{com}. 
+. estimates restore smooth
+{res}{txt}(results {stata estimates replay smooth:smooth} are active now)
+
+{com}. estat coefplot 1.p401k, name(smooth) title("SEE") legend(off)

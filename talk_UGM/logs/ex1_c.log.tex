@@ -1,0 +1,234 @@
+. ivqregress smooth assets (i.p401k = i.e401k) $covariates, quantile(10(10)90)
+{\smallskip}
+Fitting smoothed IV quantile regression:
+{\smallskip}
+Quantile = .1:
+Step 1: Bandwidth = 1327.0069    GMM criterion Q(b) = 9.224e-11
+Step 2: Bandwidth = 1311.3131    GMM criterion Q(b) = 1.997e-10
+{\smallskip}
+Quantile = .2:
+Step 1: Bandwidth = 1272.5204    GMM criterion Q(b) = 2.089e-10
+Step 2: Bandwidth = 1237.7195    GMM criterion Q(b) = 3.115e-19
+{\smallskip}
+Quantile = .3:
+Step 1: Bandwidth = 1504.4065    GMM criterion Q(b) = 5.407e-13
+Step 2: Bandwidth = 1486.4224    GMM criterion Q(b) = 1.153e-10
+{\smallskip}
+Quantile = .4:
+Step 1: Bandwidth = 1362.7753    GMM criterion Q(b) = 5.797e-17
+Step 2: Bandwidth = 1362.6479    GMM criterion Q(b) = 2.271e-16
+{\smallskip}
+Quantile = .5:
+Step 1: Bandwidth = 1302.9736    GMM criterion Q(b) = 2.617e-08
+Step 2: Bandwidth = 6079.6881    GMM criterion Q(b) = 2.391e-12
+Step 3: Bandwidth = 1438.3068    GMM criterion Q(b) = 9.212e-13
+{\smallskip}
+Quantile = .6:
+Step 1: Bandwidth = 1533.5129    GMM criterion Q(b) = 2.663e-18
+Step 2: Bandwidth = 1520.1182    GMM criterion Q(b) = 1.557e-19
+{\smallskip}
+Quantile = .7:
+Step 1: Bandwidth = 2044.8617    GMM criterion Q(b) = 1.391e-10
+Step 2: Bandwidth = 1977.2482    GMM criterion Q(b) = 1.825e-11
+{\smallskip}
+Quantile = .8:
+Step 1: Bandwidth = 2503.7256    GMM criterion Q(b) = 3.623e-10
+Step 2: Bandwidth = 2458.6714    GMM criterion Q(b) = 2.307e-10
+{\smallskip}
+Quantile = .9:
+Step 1: Bandwidth = 3560.2178    GMM criterion Q(b) = 4.301e-12
+Step 2: Bandwidth = 3529.3557    GMM criterion Q(b) = 2.929e-10
+{\smallskip}
+IV quantile regression                                 Number of obs =   9,913
+Estimator: Smoothed estimating equations               Wald chi2(81) = 4932.84
+                                                       Prob > chi2   =  0.0000
+{\smallskip}
+\HLI{13}{\TOPT}\HLI{64}
+             {\VBAR}               Robust
+      assets {\VBAR} Coefficient  std. err.      z    P>|z|     [95\% conf. interval]
+\HLI{13}{\PLUS}\HLI{64}
+q10          {\VBAR}
+     1.p401k {\VBAR}   3191.667   486.2193     6.56   0.000     2238.695    4144.639
+      income {\VBAR}   .0318585   .0123707     2.58   0.010     .0076124    .0561046
+         age {\VBAR}   128.9268   15.42632     8.36   0.000     98.69178    159.1618
+  familysize {\VBAR}  -329.8374   125.4774    -2.63   0.009    -575.7687   -83.90615
+        educ {\VBAR}  -289.8807   53.06713    -5.46   0.000    -393.8904   -185.8711
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}  -1480.013   386.4611    -3.83   0.000    -2237.463   -722.5635
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   7914.049   342.9506    23.08   0.000     7241.878     8586.22
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -5.356704   334.9869    -0.02   0.987     -661.919    651.2056
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}   1043.279    308.722     3.38   0.001     438.1945    1648.363
+       _cons {\VBAR}  -7631.313   1214.725    -6.28   0.000    -10012.13   -5250.496
+\HLI{13}{\PLUS}\HLI{64}
+q20          {\VBAR}
+     1.p401k {\VBAR}   3503.744   338.8383    10.34   0.000     2839.633    4167.854
+      income {\VBAR}   .0737261   .0084716     8.70   0.000      .057122    .0903302
+         age {\VBAR}   114.9688   10.38239    11.07   0.000     94.61965    135.3179
+  familysize {\VBAR}  -277.8925   78.67289    -3.53   0.000    -432.0885   -123.6964
+        educ {\VBAR}  -194.0516   37.98876    -5.11   0.000    -268.5082    -119.595
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}  -1160.725   253.6528    -4.58   0.000    -1657.876   -663.5752
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   8799.905   388.3753    22.66   0.000     8038.703    9561.106
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -33.33779    218.144    -0.15   0.879    -460.8921    394.2165
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}   386.2308   201.4194     1.92   0.055    -8.543996    781.0057
+       _cons {\VBAR}  -6264.968   792.0489    -7.91   0.000    -7817.356   -4712.581
+\HLI{13}{\PLUS}\HLI{64}
+q30          {\VBAR}
+     1.p401k {\VBAR}   3754.908   320.9631    11.70   0.000     3125.832    4383.984
+      income {\VBAR}   .0939826   .0083408    11.27   0.000     .0776348    .1103303
+         age {\VBAR}   103.8314   8.712147    11.92   0.000     86.75593    120.9069
+  familysize {\VBAR}  -250.4947   59.95479    -4.18   0.000    -368.0039   -132.9855
+        educ {\VBAR}  -134.7013    33.4085    -4.03   0.000    -200.1808   -69.22189
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}  -1028.643   217.4311    -4.73   0.000      -1454.8   -602.4861
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   12008.63   563.5555    21.31   0.000     10904.08    13113.18
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -179.5281   192.0513    -0.93   0.350    -555.9418    196.8855
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}   195.7323    162.634     1.20   0.229    -123.0246    514.4891
+       _cons {\VBAR}  -5536.814   637.1917    -8.69   0.000    -6785.686   -4287.941
+\HLI{13}{\PLUS}\HLI{64}
+q40          {\VBAR}
+     1.p401k {\VBAR}   4326.754   371.7419    11.64   0.000     3598.153    5055.354
+      income {\VBAR}   .1288469   .0105877    12.17   0.000     .1080955    .1495983
+         age {\VBAR}   99.89601   8.289602    12.05   0.000     83.64869    116.1433
+  familysize {\VBAR}  -231.3411   53.94265    -4.29   0.000    -337.0668   -125.6155
+        educ {\VBAR}  -114.4753   32.09266    -3.57   0.000    -177.3758   -51.57484
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}  -1212.951   216.8328    -5.59   0.000    -1637.935    -787.966
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   16874.38   801.2841    21.06   0.000     15303.89    18444.86
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -493.1742   198.6221    -2.48   0.013    -882.4663   -103.8821
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}   105.4536   152.7777     0.69   0.490    -193.9852    404.8925
+       _cons {\VBAR}  -5216.625   581.4362    -8.97   0.000    -6356.219   -4077.031
+\HLI{13}{\PLUS}\HLI{64}
+q50          {\VBAR}
+     1.p401k {\VBAR}   5364.468   573.3728     9.36   0.000     4240.678    6488.258
+      income {\VBAR}   .1679934    .013419    12.52   0.000     .1416925    .1942942
+         age {\VBAR}   113.6318   9.352867    12.15   0.000     95.30052    131.9631
+  familysize {\VBAR}  -228.7766   57.61072    -3.97   0.000    -341.6916   -115.8617
+        educ {\VBAR}  -102.2889   34.18527    -2.99   0.003    -169.2908   -35.28701
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}   -1362.56   238.5988    -5.71   0.000    -1830.205   -894.9153
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   22402.04   1043.504    21.47   0.000     20356.81    24447.27
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}   -713.996    220.476    -3.24   0.001    -1146.121   -281.8709
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}  -12.71396   161.3703    -0.08   0.937     -328.994    303.5661
+       _cons {\VBAR}  -5672.645   619.7049    -9.15   0.000    -6887.244   -4458.045
+\HLI{13}{\PLUS}\HLI{64}
+q60          {\VBAR}
+     1.p401k {\VBAR}    6964.18   799.1829     8.71   0.000     5397.811     8530.55
+      income {\VBAR}   .2422267   .0180009    13.46   0.000     .2069457    .2775078
+         age {\VBAR}   145.0532   11.88882    12.20   0.000     121.7515    168.3549
+  familysize {\VBAR}  -271.8402   68.28584    -3.98   0.000     -405.678   -138.0024
+        educ {\VBAR}  -128.4236   41.84504    -3.07   0.002    -210.4384   -46.40883
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}   -1790.19   278.6729    -6.42   0.000    -2336.379   -1244.001
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   30029.76   1251.554    23.99   0.000     27576.76    32482.76
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -1063.919   269.4261    -3.95   0.000    -1591.984   -535.8533
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}  -79.57029   198.2018    -0.40   0.688    -468.0387    308.8981
+       _cons {\VBAR}  -6708.442   714.0485    -9.39   0.000    -8107.951   -5308.932
+\HLI{13}{\PLUS}\HLI{64}
+q70          {\VBAR}
+     1.p401k {\VBAR}   9002.846   1108.915     8.12   0.000     6829.412    11176.28
+      income {\VBAR}   .3555392   .0229067    15.52   0.000      .310643    .4004354
+         age {\VBAR}   203.3279   17.59732    11.55   0.000     168.8378     237.818
+  familysize {\VBAR}  -314.0023   89.13006    -3.52   0.000     -488.694   -139.3106
+        educ {\VBAR}   -163.099   52.90533    -3.08   0.002    -266.7916   -59.40646
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}  -2396.634   359.7017    -6.66   0.000    -3101.636   -1691.631
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   38962.04   1621.653    24.03   0.000     35783.66    42140.42
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -1882.868   352.3168    -5.34   0.000    -2573.396    -1192.34
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}  -19.74677   271.0796    -0.07   0.942     -551.053    511.5595
+       _cons {\VBAR}  -8753.875   954.0692    -9.18   0.000    -10623.82   -6883.934
+\HLI{13}{\PLUS}\HLI{64}
+q80          {\VBAR}
+     1.p401k {\VBAR}   10658.02   1665.467     6.40   0.000     7393.765    13922.27
+      income {\VBAR}   .5172628   .0298155    17.35   0.000     .4588255       .5757
+         age {\VBAR}   293.9692   24.78395    11.86   0.000     245.3935    342.5448
+  familysize {\VBAR}  -407.2737   119.8248    -3.40   0.001    -642.1259   -172.4214
+        educ {\VBAR}  -131.0776   69.87187    -1.88   0.061    -268.0239    5.868784
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}   -3077.77   491.0029    -6.27   0.000    -4040.118   -2115.422
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   48410.11   2296.042    21.08   0.000     43909.95    52910.27
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -3049.023   515.0161    -5.92   0.000    -4058.436    -2039.61
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}   272.4814   412.1642     0.66   0.509    -535.3457    1080.308
+       _cons {\VBAR}  -12294.73   1284.692    -9.57   0.000    -14812.68   -9776.781
+\HLI{13}{\PLUS}\HLI{64}
+q90          {\VBAR}
+     1.p401k {\VBAR}   15525.23   3035.965     5.11   0.000     9574.848    21475.61
+      income {\VBAR}   .8311508   .0574108    14.48   0.000     .7186277    .9436738
+         age {\VBAR}   486.9876   51.61654     9.43   0.000      385.821    588.1541
+  familysize {\VBAR}  -586.2617   193.5936    -3.03   0.002    -965.6983   -206.8252
+        educ {\VBAR}    14.5293   110.8781     0.13   0.896    -202.7878    231.8464
+             {\VBAR}
+     married {\VBAR}
+    Married  {\VBAR}  -3877.165   781.2296    -4.96   0.000    -5408.347   -2345.983
+             {\VBAR}
+         ira {\VBAR}
+        Yes  {\VBAR}   67888.86   4902.106    13.85   0.000     58280.91    77496.81
+             {\VBAR}
+     pension {\VBAR}
+Receives ..  {\VBAR}  -4829.506   898.9147    -5.37   0.000    -6591.346   -3067.665
+             {\VBAR}
+     ownhome {\VBAR}
+        Yes  {\VBAR}   715.6272   722.8727     0.99   0.322    -701.1773    2132.432
+       _cons {\VBAR}  -19953.21   2326.698    -8.58   0.000    -24513.45   -15392.96
+\HLI{13}{\BOTT}\HLI{64}
+Endogenous: 1.p401k
+Exogenous:  income age familysize educ 1.married 1.ira 1.pension 1.ownhome
+            1.e401k
+{\smallskip}
+. estimates  store smooth

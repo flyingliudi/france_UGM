@@ -1,0 +1,43 @@
+. use assets2, clear
+(Excerpt from Chernozhukov and Hanson (2004) Rev. of Economics and Statistics)
+
+. 
+. ivqregress iqr assets (i.p401k = i.e401k) income age familysize ///
+>         i.married i.ira i.pension i.ownhome educ, quantile(50) noadaptive
+
+Initial grid
+    quantile = 0.50: .........10.........20.........30
+
+IV median regression                                   Number of obs =   9,913
+Estimator: Inverse quantile regression                 Wald chi2(9)  = 1312.24
+                                                       Prob > chi2   =  0.0000
+
+------------------------------------------------------------------------------
+             |               Robust
+      assets | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     1.p401k |   5073.007   551.8459     9.19   0.000     3991.409    6154.605
+      income |    .159635   .0124353    12.84   0.000     .1352622    .1840077
+         age |   100.7959   8.584905    11.74   0.000     83.96984     117.622
+  familysize |  -203.4073   54.42447    -3.74   0.000    -310.0773   -96.73727
+             |
+     married |
+    Married  |  -1348.987   227.0043    -5.94   0.000    -1793.907   -904.0668
+             |
+         ira |
+        Yes  |   22630.45   1016.463    22.26   0.000     20638.21    24622.68
+             |
+     pension |
+Receives ..  |  -708.9357   210.4489    -3.37   0.001    -1121.408   -296.4633
+             |
+     ownhome |
+        Yes  |  -39.62138   154.8029    -0.26   0.798    -343.0294    263.7867
+        educ |  -98.81898   32.18152    -3.07   0.002    -161.8936   -35.74435
+       _cons |  -5026.207    570.501    -8.81   0.000    -6144.368   -3908.045
+------------------------------------------------------------------------------
+Endogenous: 0b.p401k 1.p401k
+ Exogenous: income age familysize 0b.married 1.married 0b.ira 1.ira
+            0b.pension 1.pension 0b.ownhome 1.ownhome educ 0b.e401k 1.e401k
+
+. 
+. estat waldplot, name(a)

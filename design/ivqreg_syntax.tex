@@ -1,0 +1,678 @@
+
+%------------------------------------------------------------------------------
+\section{Syntax of {\ivqreg}} \label{sec:ivqreg_syntax}
+%------------------------------------------------------------------------------
+{\ivqreg} fits a linear IV quantile regression model using the
+inverse quantile regression  estimator or the smoothed estimating equation
+estimator.
+
+\subsection{Syntax}
+\vskip 0.5cm
+\noindent
+inverse quantile regression estimator:
+\vskip 0.5cm
+
+\begin{tabular}{ll}
+  \ivqregiqr & {\it depvar } [{\it $varlist_1$}]
+	({\it $varname_2 = varlist_{iv}$}) [{\tt if}] [{\tt in}] 
+	[ , {\it options} \hskip 0.2cm
+	{\it IQR\_options} ]
+\end{tabular}
+
+\vskip 0.5cm
+
+\noindent
+smoothed estimating equation estimator:
+\vskip 0.5cm
+
+\begin{tabular}{ll}
+  \ivqregsee & {\it depvar } [{\it $varlist_1$}] 
+	({\it $varlist_2 = varlist_{iv}$}) [{\tt if}] [{\tt in}] 
+	[ , {\it options} \hskip 0.2cm {\it SMOOTH\_options} ]
+\end{tabular}
+
+\vskip 0.5cm
+\noindent
+where
+\begin{itemize}
+\item {\it $varlist_1$} specifies the exogenous variables.
+\item {\it $varname_2$} or {\it $varlist_2$}  specify the endogenous variables.
+\item {\it $varlist_{iv}$} specifies the instrumental variables.
+\item Factor variables are allowed for {\it $varlist_1$}, {\it $varlist_2$}, or
+  {\it $varname_2$}.
+\end{itemize}
+
+\noindent
+The options are
+\vskip 0.3cm
+
+\begin{tabular}{ll}
+\hline
+{\it options} & Description\\
+\hline
+{\bf Model} \\
+\quad {\tt \underline{q}uantile(numlist)} & estimate quantiles specified in
+{\tt numlist}; \\
+& default is {\tt quantile(0.5)} \\
+\\
+{\bf SE/Robust} \\
+% \quad {\tt vce(\underline{r}obust [,{\it robustopts}])} & robust standard
+% errors, the default \\
+\quad {\tt vce({\it vcespec})} & technique used to estimate standard errors;  \\
+& the default is {\tt vce(robust)} \\
+{\bf Optimization} \\
+\quad {\tt [no]log} & suppress or display the iteration log \\
+\quad {\tt verbose} & display a verbose iteration log \\
+\\
+{\bf Reporting} \\
+\quad {\tt \underline{l}evel(\#)} & set confidence level; default is {\tt
+level(95)} \\
+\quad {\it display\_options} & control display formats \\
+\hline
+\end{tabular}
+
+\vskip 0.4 cm
+Notes:
+\begin{itemize}
+
+  \item The prefixes {\tt collect}, {\tt by}, {\tt statsby}, {\tt rolling}, {\tt
+    bootstrap} and {\tt xi} are allowed.
+
+\item The {\it vcespec} can be only one of the following
+  	
+\qquad  {\tt \underline{r}obust} [, {\it robust\_options}]
+
+\qquad 	or 
+
+\qquad	{\tt \underline{boot}strap [, {\it bootstrap\_options}]}
+
+where {\it boostrap\_options} are options for {\tt bootstrap}. See {\tt help
+vce\_option}.
+
+The default is {\tt robust}.
+
+\item The {\it robust\_options} is 
+
+\begin{tabular}{ll} 
+\hline
+{\tt \underline{k}ernel({\it kernel})} & use a nonparametric kernel
+density estimator; \\
+& default is {\tt epanechnikov} \\
+{\tt \underline{bw}idth(\#|{\it bwrule})} & bandwidth used by the kernel
+density estimator;\\ & default is Silverman's rule of thumb\\
+\hline
+\end{tabular}
+
+\item The {\it kernel} is
+
+\begin{tabular}{ll}
+\hline
+{\it kernel} & Description \\
+\hline
+{\tt \underline{ep}anechnikov}& Epanechnikov kernel function; the default \\
+{\tt epan2       	     }   & alternative Epanechnikov kernel function \\
+{\tt \underline{bi}weight    }& biweight kernel function \\
+{\tt \underline{cos}ine      }& cosine trace kernel function \\
+{\tt \underline{gau}ssian    }& Gaussian kernel function \\
+{\tt \underline{par}zen      }& Parzen kernel function \\
+{\tt \underline{rec}tangle   }& rectangle kernel function \\
+{\tt \underline{tri}angle    }& triangle kernel function \\
+\hline
+\end{tabular}
+
+\item The {\it bwrule} is
+
+\begin{tabular}{ll}
+\hline
+{\it kernel} & Description \\
+\hline
+{\tt \underline{si}lverman} & Silverman rule of thumb; the default \\
+{\tt \underline{hs}heather} & Hall–Sheather’s bandwidth \\
+{\tt \underline{bo}finger} & Bofinger’s bandwidth \\
+\hline
+\end{tabular}
+
+\end{itemize}
+
+\vskip 0.5cm
+\noindent
+The {\it IQR\_options} are
+\vskip 0.5cm
+
+\begin{tabular}{ll}
+\hline
+{\it IQR\_options} & Description\\
+\hline
+{\tt \underline{ng}rid(\#$_g$)} & use \#$_g$ grid points; default is {\tt
+grid(30)} \\
+{\tt \underline{bou}nd(\#$_{min}$ \#$_{max}$ [, at(\#$_{q}$)])} &
+specify the lower and the upper bound for the grid \\
+& in the \#$_{q}$-th quantile estimation; may be repeated \\
+% {\tt \underline{noadapt}ive} & do not adaptively search the grid points
+% using the dual CI;
+% \\ &default is conducting an adaptive grid search\\
+\hline
+\end{tabular}
+
+\vskip 0.5 cm
+Notes:
+\begin{itemize}
+ 
+  \item The option {\tt bound()} can be specified only once for each quantile
+    specified in option {\tt quantile()}. If {\tt at()} is not specified, the
+    bound is applied to all the quantiles specified in option {\tt
+    quantile()}.
+
+\end{itemize}
+
+\vskip 0.5cm
+\noindent
+The {\it SMOOTH\_options} are
+\vskip 0.5cm
+
+\begin{tabular}{ll}
+\hline
+{\it SMOOTH\_options} & Description\\
+\hline
+{\tt \underline{bw}idth(\#$_b$ [, at(\#$_{q}$)])} &
+specify bandwidth \#$_b$ to smooth the estimating equation \\
+& for the \#$_q$-th quantile estimation; the default is \\
+&the theoretical optimal bandwidth; may be repeated
+\\
+{\tt nosearchbwidth}&	
+do not search for feasible bandwidth if the initial bandwidth \\
+& is not feasible; default is searching for feasible bandwidth \\
+{\tt \underline{iter}ate(\#)} & perform maximum of \# iterations when solving
+estimating equation; \\ &default is iterate(100)\\
+{\tt \underline{tol}erance(\#)} & 
+tolerance for the coefficient vector; default is {\tt tolerance(1E-9)} \\
+{\tt \underline{ztol}erance(\#)} & tolerance used to determine 
+whether the proposed solution \\ 
+& to a zero-finding problem is sufficiently close to zero; \\
+& default is {\tt ztolerance(1E-9)} \\
+\hline
+\end{tabular}
+
+\vskip 0.5 cm
+Notes:
+\begin{itemize}
+ 
+  \item The option {\tt bwidth()} can be specified only once for each
+    quantile specified in option {\tt quantile()}.  If {\tt at()} is not
+    specified, the bandwidth is applied to all the quantiles specified in option
+    {\tt quantile()}.
+
+\end{itemize}
+
+%------------------------------------------------------------------------------
+\subsection{Quick start}
+%------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+{\bf Basic}
+\vskip 0.4cm
+
+\noindent
+Use  inverse quantile regression to estimate IV median regression of {\tt y} on
+exogenous {\tt x1} and endogenous {\tt d1} with instruments {\tt z1} and {\tt
+z2}
+
+\vskip 0.2cm
+{\tt \ivqregiqr\ y x1 (d1 = z1 z2)}
+
+\vskip 0.2cm 
+\noindent
+As above, but estimate the 0.75 quantile
+
+\vskip 0.2cm 
+{\tt \ivqregiqr\ y x1 (d1 = z1 z2), quantile(0.75)}
+
+\vskip 0.2cm 
+\noindent
+As above, but estimate the 0.1, 0.2, ..., 0.9 quantiles
+
+\vskip 0.2cm 
+{\tt \ivqregiqr\ y x1 (d1 = z1 z2), quantile(10(10)90)}
+
+\vskip 0.2cm
+\noindent
+Use the smoothed estimating equation estimator to estimate the 0.6 quantile
+regression of {\tt y} on exogenous {\tt x1} and endogenous {\tt d1} and {\tt d2}
+with instruments {\tt z1} and {\tt z2}
+
+\vskip 0.2cm 
+{\tt \ivqregsee\ y x1 (d1 d2 = z1 z2), quantile(0.6)}
+
+\vskip 0.2cm
+\noindent
+As above, but estimate the 0.1, 0.2, ..., 0.9 quantiles
+
+\vskip 0.2cm 
+{\tt \ivqregsee\ y x1 (d1 d2 = z1 z2), quantile(10(10)90)}
+
+\vskip 0.5cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+{\bf Advanced options for inverse quantile regression estimator}
+\vskip 0.2cm
+
+\vskip 0.2cm
+\noindent
+Use 50 grid points in the inverse quantile regression to estimate the IV 0.5 and
+0.75 quantile regression
+
+\vskip 0.2cm 
+{\tt \ivqregiqr\ y x1 (d1 = z1 z2), ngrid(50) quantile(50 75)}
+
+\vskip 0.2cm
+\noindent
+As above, but construct grid points between 1 and 5 for all the quantiles
+
+\vskip 0.2cm 
+{\tt \ivqregiqr\ y x1 (d1 = z1 z2), ngrid(50) quantile(50 75) bound(1 5)}
+
+\vskip 0.2cm
+\noindent
+As above, but construct grid using different bounds for different quantiles
+
+\vskip 0.2cm 
+{\tt \ivqregiqr\ y x1 (d1 = z1 z2), ngrid(50) quantile(50 75)}  
+\hskip 2cm
+\textbackslash\textbackslash\textbackslash
+
+\hskip 3cm  {\tt bound(1 5, at(50)) bound(2 6, at(75))}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vskip 0.5cm
+\noindent
+{\bf Advanced options for smoothed estimating equation estimator}
+
+\vskip 0.2cm
+\noindent
+Use $2$ as the bandwidth in the smoothed estimating equation estimator to
+estimate the IV 0.5 and 0.75 quantile regression
+
+\vskip 0.2cm 
+{\tt \ivqregsee\ y x1 (d1 d2 = z1 z2), quantile(50 75) bwidth(2)}
+
+
+\vskip 0.2cm
+\noindent
+As above, but use different bandwidths for different quantiles
+
+\vskip 0.2cm 
+{\tt \ivqregsee\ y x1 (d1 d2 = z1 z2), quantile(50 75)}	
+\hskip 2cm
+\textbackslash\textbackslash\textbackslash
+
+\hskip 3cm {\tt bwidth(2, at(50)) bwidth(1, at(75)) }
+
+
+\clearpage
+%------------------------------------------------------------------------------
+\section{Post-estimation of {\ivqreg}} \label{sec:post_syntax}
+%------------------------------------------------------------------------------
+\subsection{Overview}
+
+The following postestimation commands are of particular interest after {\ivqreg}.
+
+\vskip 0.5cm
+\begin{tabular}{ll}
+\hline
+Commands & Description \\
+\hline
+{\tt estat coefplot} & plot coefficients and their confidence intervals at
+different quantiles\\
+{\tt estat \underline{endogef}fects} & process test of no effect, constant effect, stochastic
+dominance, and endogeneity \\
+*{\tt estat dualci} & provide the dual-confidence interval for the endogenous 
+variables \\
+*{\tt estat waldplot} & plot Wald statistics corresponding to each grid point
+\\
+\hline
+\end{tabular}
+
+\vskip 0.5cm
+Note :
+\begin{itemize}
+  \item {\tt estat waldplot} and {\tt estat dualci} are allowed only after {\tt
+    ivqregress iqr}.
+\end{itemize}
+
+\vskip 0.5cm
+
+\noindent
+The following postestimation commands are also available after {\tt ivqreg}
+
+\begin{tabular}{ll}
+\hline
+Commands & Description \\
+\hline
+{\tt contrast}         &contrasts and ANOVA-style joint tests of estimates \\
+{\tt estat summarize}  &summary statistics for the estimation sample \\
+{\tt estat vce}        &variance-covariance matrix of the estimators (VCE) \\
+{\tt estimates}        &cataloging estimation results \\
+{\tt forecast}         &dynamic forecasts and simulations \\
+{\tt lincom}           &point estimates, standard errors, testing, and inference
+			for linear \\
+		 &  combinations of coefficients \\
+{\tt margins}          &marginal means, predictive margins, marginal effects,
+			and average marginal \\ 
+		  &  effects \\
+{\tt marginsplot}      &graph the results from margins (profile plots,
+		interaction plots, etc.) \\
+{\tt nlcom}            &point estimates, standard errors, testing, and inference
+			for nonlinear \\ &  combinations of coefficients \\
+{\tt predict}          &predictions and their SEs, residuals, etc. \\
+{\tt predictnl}        &point estimates, standard errors, testing, and inference
+			for generalized \\ 
+			&  predictions \\
+{\tt pwcompare}        &pairwise comparisons of estimates \\
+{\tt test}             &Wald tests of simple and composite linear hypotheses \\
+{\tt testnl}           &Wald tests of nonlinear hypotheses \\
+\hline
+\end{tabular}
+
+
+\clearpage
+%------------------------------------------------------------------------------
+\subsection{Syntax of {\tt estat coefplot}}	
+%------------------------------------------------------------------------------
+{\tt estat coefplot} plots the estimated coefficients and their confidence
+intervals after {\tt ivqreg}. 
+
+\vskip 0.5cm
+\noindent
+The syntax is 
+\vskip 0.5cm
+{\tt estat coefplot} [{\it varname}] [, {\it options}]
+
+\vskip 0.5cm
+\noindent
+Notes: 
+
+\begin{enumerate}
+\item {\it varname} specifies the coefficient for the variable in the model.
+By default, it plots the coefficients for the first endogenous variables
+specified in the model.
+
+\item The options are
+
+\begin{tabular}{ll}
+\hline
+Options & Description \\
+\hline
+{\bf Main} \\
+\quad {\tt noci} & do not plot the confidence intervals \\
+\quad {\tt no2sls} & do not plot the 2SLS estimates \\
+\\
+{\bf Scatter plot} \\
+\quad {\it marker\_options} & change look of markers (color, size, etc.) \\
+\quad {\it connect\_options}& change look of lines or connecting method\\
+\\ 
+{\bf CI plot}
+\\
+\quad {\tt ciopts({\it area\_options})} & affect rendition of the pointwise
+confidence interval\\
+\\
+{\bf Reference line}
+\\
+\quad {\tt lineopts({\it cline\_options})} & affect rendition of reference line
+identifying the 2SLS estimates\\
+\\
+{\bf Others} \\
+\quad {\it twoway\_options} & titles, legends, axes, added lines  and text,
+regions, \\ & name, aspect ratio, etc. \\
+\hline
+\end{tabular}
+
+\end{enumerate}
+
+\noindent
+where {\it marker\_options} and {\it connect\_options} are defined in {\tt
+scatter}; 
+{\it area\_options} and {\it twoway\_options} are defined {\tt rarea} and {\tt
+twoway}, respectively.
+
+
+\clearpage
+%------------------------------------------------------------------------------
+\subsection{Syntax of {\tt estat endogeffects}}
+%------------------------------------------------------------------------------
+{\tt estat endogeffects} tests the quantile process with different hypotheses 
+for the coefficients on the endogenous treatment variables. In particular,
+{\tt estat endogeffects} provides a test for four different hypotheses.  The null
+hypotheses are 
+\begin{enumerate}
+  \item The hypothesis of no effect: the treatment has no effect on the
+    outcome.
+
+  \item The hypothesis of constant effect: the treatment effect does not vary at
+    different quantiles.
+
+  \item The dominance hypothesis: the effects are unambiguously beneficial.
+
+  \item The exogeneity hypothesis: the treatment is exogenous.
+\end{enumerate}
+
+\vskip 0.5cm
+\noindent
+The syntax is 
+
+\vskip 0.5cm
+{\tt estat endogeffects} [{\it varlist}] [, {\it options}]
+
+\vskip 0.5cm
+\noindent
+where {\it varlist} is the endogenous variables. By default, {\it varlist}
+refers to all the endogenous variables specified in {\tt ivqregress} when
+fitting the model.
+
+\vskip 0.5cm
+\noindent
+The options are
+
+\vskip 0.5cm
+\begin{tabular}{ll}
+\hline
+Options & Description \\
+\hline
+{\tt \underline{l}evel(\#)} & confidence level of a test; default is $0.95$ \\
+{\tt reps(\#)} & perform \# bootstrap replications; default is reps(100) \\
+{\tt rseed(\#)}&  set random-number seed to \# \\
+{\tt all} & test four hypotheses; the default \\
+{\tt \underline{noef}fect} & test of no effect \\
+{\tt \underline{cons}tant} & test of constant effect \\
+{\tt \underline{dom}inance} & test of stochastic dominance \\
+{\tt \underline{exog}eneity} & test of exogeneity \\
+\hline
+\end{tabular}
+
+\vskip 0.5cm
+\noindent
+
+
+\clearpage
+%------------------------------------------------------------------------------
+\subsection{Syntax of {\tt estat waldplot}}
+%------------------------------------------------------------------------------
+{\tt estat waldplot} plots the Wald statistic corresponding to each grid point
+after {\tt ivqregress iqr}. 
+
+\vskip 0.5cm
+\noindent
+The syntax is 
+\vskip 0.5cm
+{\tt estat waldplot} [, {\it options}]
+
+\vskip 0.5cm
+\noindent
+Notes: 
+
+\begin{enumerate}
+
+\item The options are the following:
+
+\begin{tabular}{ll}
+\hline
+Options & Description \\
+\hline
+{\bf Main} \\
+\quad {\tt \underline{q}uantile(\#)} & plot Wald statistics for the \#-th
+quantile estimation \\
+\quad {\tt \underline{l}evel(\#)} & set confidence level; default is {\tt
+level(95)} \\
+\\
+{\bf Scatter plot} \\
+\quad {\it marker\_options} & change look of markers (color, size, etc.) \\
+\quad {\it connect\_options}& change look of lines or connecting method\\
+\\
+{\bf Dual CI plot}
+\\
+\quad {\tt ciopts({\it area\_options})} & affect rendition of the dual 
+confidence interval plot\\
+\\
+{\bf Others} \\
+\quad {\it twoway\_options} & titles, legends, axes, added lines  and text,
+regions, \\ & name, aspect ratio, etc. \\
+\hline
+\end{tabular}
+
+\noindent
+where {\it marker\_options} and {\it connect\_options} are defined in {\tt
+scatter}; 
+{\it area\_options} and {\it twoway\_options} are defined {\tt rarea} and {\tt
+twoway}, respectively.
+
+\end{enumerate}
+
+\noindent
+
+
+%------------------------------------------------------------------------------
+\subsection{Syntax of {\tt estat dualci}}	
+%------------------------------------------------------------------------------
+{\tt estat dualci} computes the dual confidence interval for the endogenous
+variables after {\tt ivqregress iqr}. {\tt estat dualci}
+implements the dual confidence interval method proposed in
+\cite{Chernozhukov2008}. The dual confidence interval is robust to the weak
+instruments, and it is usually wider than the traditional CI.
+
+\vskip 0.5cm
+The syntax is 
+\vskip 0.5cm
+{\tt estat dualci} [, {\tt \underline{l}evel(\#)} {\it display\_options}]
+\vskip 0.5cm
+
+\noindent
+{\it display\_options}: 
+  {\tt noci}, 
+  {\tt nopvalues}, 
+  {\tt noomitted}, 
+  {\tt vsquish}, 
+  {\tt noemptycells}, 
+  {\tt baselevels}, 
+  {\tt allbaselevels},
+  {\tt nofvlabel}, 
+  {\tt fvwrap(\#)}, 
+  {\tt fvwrapon({\it style})}, 
+  {\tt cformat({\it \%fmt})}, 
+  {\tt pformat({\it \%fmt})},
+  {\tt sformat({\it \%fmt})}, 
+  and {\tt nolstretch}; see [R] Estimation options.
+
+%------------------------------------------------------------------------------
+\subsection{Syntax of {\tt predict}}
+%------------------------------------------------------------------------------
+
+The syntax for {\tt predict} is
+\vskip 0.5cm
+{\tt predict} [{\it type}] {\it newvar} [{\it if}] [{\it in}] 	
+[, {\tt \underline{eq}uation({\it eqno})} {\it statistic}]
+\vskip 0.5cm
+
+\begin{tabular}{ll}
+\hline
+statistic& Description \\
+\hline 
+{\bf Main} \\
+\quad {\tt xb}       &linear prediction; the default \\
+%\quad {\tt stdp}      &standard error of the linear prediction \\
+%\quad {\tt stddp}     &standard error of the difference in linear predictions \\
+\quad {\tt \underline{res}iduals} &residuals \\
+\hline
+\end{tabular}
+
+\vskip 0.5cm
+\noindent
+These statistics are available both in and out of sample; type {\tt predict ...
+if e(sample) ...} if wanted only for the estimation sample.
+
+The options are
+\begin{itemize}
+
+\item {\tt xb}, the default, calculates the linear prediction.
+
+%\item {\tt stdp} calculates the standard error of the linear prediction.
+
+%\item {\tt stddp} is allowed only after you have fit a model at least two
+%quantiles.  The standard error of the difference in linear predictions between
+%equations 1 and 2 is calculated.
+
+\item {\tt residuals} calculates the residuals, that is, y - xb.
+
+\item {\tt equation({\it eqno})} specifies the equation to which
+you are making the calculation.
+
+	{\tt equation()} is filled in with one {\it eqno} for the {\tt xb} and
+	{\tt residuals} options.  {\tt equation(\#1)} would mean that the
+	calculation is to be made for the first equation, {\tt equation(\#2)}
+	would mean the second, and so on.  You could also refer to the equations
+	by their names.  {\tt equation(q10)} would refer to the equation named
+	{\tt q10} and {\tt equation(q50)} to the equation named {\tt q50}.
+
+	If you do not specify {\tt equation()}, results are the same as if you
+	had specified {\tt equation(\#1)}.
+
+%	To use {\tt stddp}, you must specify two equations.  You might specify
+%	{\tt equation(\#1, \#2)} or {\tt equation(q80, q20)} to indicate the
+%	80th and 20th quantiles.
+
+\end{itemize}
+
+
+
+%------------------------------------------------------------------------------
+\subsection{Syntax of {\tt margins}}
+%------------------------------------------------------------------------------
+
+Syntax for {\tt margins}
+
+\vskip 0.5cm
+
+{\tt margins} [{\it marginlist}] [, {\it options}]
+
+\vskip 0.5cm
+
+{\tt margins} [{\it marginlist}] , {\tt predict({\it statistic} ...)} [{\it
+options}]
+
+\vskip 0.5cm
+
+\begin{tabular}{ll}
+\hline
+statistic&          Description \\
+\hline
+{\tt xb}       & linear prediction; the default \\
+%{\tt stdp}     & not allowed with margins \\
+%{\tt stddp}    & not allowed with margins \\
+{\tt residuals}& not allowed with margins \\
+\hline
+\end{tabular}
+
+\vskip 0.5cm
+\noindent
+Statistics not allowed with margins are functions of stochastic quantities other
+than {\tt e(b)}.  For the full syntax, see [R] {\tt margins}.

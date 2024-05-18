@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+
+%------------------------------------------------------------------------------
+%	Preparation	
+%------------------------------------------------------------------------------
+
+% packages and macros
+\input{preamble.tex}
+
+% title
+\title{\ivqreg: Stata Command for Instrumental Variables Quantile Regression}
+\author{Di Liu \\ StataCorp}
+\date{March 31, 2022}
+
+\begin{document}
+\titlepage
+\maketitle
+
+%------------------------------------------------------------------------------
+%	Head
+%------------------------------------------------------------------------------
+
+% abstract
+\input{abstract}
+\clearpage
+
+% table of contents
+\tableofcontents
+\clearpage
+
+%------------------------------------------------------------------------------
+%	Main body	
+%------------------------------------------------------------------------------
+
+% Introduction
+\input{intro}
+
+% Model
+\input{model}
+
+% Review of estimation methods
+\input{rev}
+
+% inverse quantile regression 
+\input{iqr_method}
+
+% smoothed estimating equation 
+\input{see_method}
+
+% general inference
+\input{infer}
+
+% syntax
+\clearpage
+\input{ivqreg_syntax}
+\clearpage
+
+% example
+\input{examples}
+\clearpage
+
+%------------------------------------------------------------------------------
+%	Appendix	
+%------------------------------------------------------------------------------
+
+% appendix section
+\appendix
+\section{Appendix}
+
+% proof for the theorem 1
+\input{proof_th_moment}
+
+% discussion on IQR variance
+\input{discuss_th_iqrvar}
+
+% decentralization method
+\input{dec_method}
+
+%------------------------------------------------------------------------------
+%	Bibliography
+%------------------------------------------------------------------------------
+
+% reference
+\clearpage
+\bibliographystyle{sjlatex/sj}
+\bibliography{mybib}
+
+
+\end{document}

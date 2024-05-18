@@ -1,0 +1,307 @@
+%------------------------------------------------------------------------------
+\section{General inference} \label{sec:infer}
+%------------------------------------------------------------------------------
+We outline the inference procedures in \cite{Chernozhukov2006} that are of
+particular interest in the IVQR model.
+
+It is convenient to write the hypothesis in the following null hypothesis:
+\begin{align}
+  \Rb(\tau)(\thetab(\tau) - \rb(\tau)) = 0
+  \quad
+  \text{for each $\tau \in T$}
+\end{align}
+where $\Rb(\tau)$ is a $q \times p$ matrix of rank $q$ with $q$ is smaller than
+the $dim(\thetab)$, and $\rb(\tau) \in R^p$. This form is different from the
+classical setting because $\thetab()$ and $\rb()$ are functions, which need to
+be estimated in some cases.
+
+Based on the IVQR model estimates $\hat{\thetab}(\cdot)$, We focus on the basic
+inference process
+\begin{align}
+  \vb_n(\cdot) = \Rb(\cdot)(\hat{\thetab}(\cdot) - \hat{\rb}(\cdot))
+\end{align}
+where $\hat{\rb}()$ are either a vector of constant or an estimate from the
+classical quantile regression.
+
+The Kolmogorov-Smirnov (KS) statistic $S_n = f(\sqrt{n}\vb_n(\cdot))$ is a
+function of $\vb_n(\cdot)$, which is
+\begin{align}
+  S_n = \sqrt{n} sup_{\tau \in T} ||\vb_n(\tau)||_{\hat{\Lambdab}(\tau)}
+\end{align}
+where $||\xb||_\Ab = \sqrt{\xb'\Ab\xb}$, the choice of $\Lambdab(\tau)$ will be
+discussed later.
+
+
+To describe the limit distribution of $S_n$, we need the following assumption in
+addition to Assumption \ref{assum:ivqr}.
+
+\begin{assumption}\label{assum:infer} (Assumption 3 in \cite{Chernozhukov2006})
+  \begin{enumerate}
+    \item $\Rb(\cdot)(\thetab(\cdot) - \rb(\cdot)) = \gb(\cdot)$, where the
+      functions $\gb(\tau)$, $\Rb(\tau)$, and $\rb(\tau)$ are continuous and
+      either
+      \begin{enumerate}
+	\item \label{assum:infer_null} $\gb(\tau) = 0$ for all $\tau$ 
+	\item \label{assum:infer_alt} or $\gb(\tau) \neq 0$ for some $\tau$. 
+      \end{enumerate}
+
+    \item \label{assum:infer_gaussian}
+      $\sqrt{n}(\widehat{\thetab(\cdot)} - \thetab(\cdot)) \rightarrow
+      \bb(\cdot)$ and $\sqrt{n}(\widehat{\rb(\cdot)} - \rb(\cdot)) \rightarrow
+      \cb(\cdot)$, where $\bb(\cdot)$ and $\cb(\cdot)$ are zero means Gaussian
+      functions that may have different laws under the null and the alternative.
+  \end{enumerate}
+\end{assumption}
+
+Assumption \ref{assum:infer}.\ref{assum:infer_gaussian} is satisfied by the
+inverse quantile regression estimator and the smoothed estimating equation
+estimator regarding $\hat{\thetab}(\cdot)$. Correspondingly, the assumption
+regarding $\hat{\rb(\cdot)}$ is satisfied by the regular quantile regression.
+
+Theorem \ref{the:infer} describes the limit distribution of $S_n$ under the null
+and the alternative.
+
+\begin{theorem}\label{the:infer}(Theorem 4 in \cite{Chernozhukov2006})
+  \begin{enumerate}
+    \item Under Assumptions \ref{assum:ivqr} and
+      \ref{assum:infer}.\ref{assum:infer_null} , and 
+      \ref{assum:infer}.\ref{assum:infer_gaussian} 
+      $S_n \rightarrow S = f(\vb(\cdot))$, where $\vb(\cdot) =
+      \Rb(\cdot)(\bb(\cdot) - \cb(\cdot))$.
+      If $\vb(\cdot)$ has nodegenerate covariance kernel, then for $\alpha <
+      1/2$, $P(S_n > c(1-\alpha)) \rightarrow \alpha = P(f(\vb(\cdot)) >
+      c(1-\alpha))$, where $c(1-\alpha)$ is chosen such that $P(f(\vb(\cdot) >
+      c(1-\alpha)) = \alpha$
+
+    \item Under Assumptions \ref{assum:ivqr} and
+      \ref{assum:infer}.\ref{assum:infer_alt} ,and 
+      \ref{assum:infer}.\ref{assum:infer_gaussian} 
+      $S_n \rightarrow \infty$ and $P_n(S_n > c(1 - \alpha)) \rightarrow 1$.
+
+  \end{enumerate}
+\end{theorem}
+
+Theorem \ref{the:infer} is not operational because it does not provide the
+critical value $c(1 - \alpha)$. Following \cite{Chernozhukov2006}, the critical
+values can be obtained by resampling scores.
+
+%------------------------------------------------------------------------------
+\subsection{Critical values by resampling scores}
+%------------------------------------------------------------------------------
+Suppose that we have linear representation for the inference process:
+\begin{align}
+  \sqrt{n}(\vb_n(\cdot) - \gb(\cdot)) = 
+  -\frac{1}{n} \sum_{i=1}^n \zb_i(\cdot) + o_p(1)
+\end{align}
+where $\zb_i(\cdot)$ will be defined below.
+
+Given a sample of the estimated scores $\{\hat{\zb}_i(\tau), i \leq n, \tau \in
+T\}$, consider the following steps.
+
+\begin{enumerate}
+  \item Construct $B_n$ randomly chosen subsets of $\{1, \ldots, n\}$ of size
+    $b$. Denote subsets as $I_i$, $i \leq B_n$. Denote $\vb_{j, b, n}(\cdot)$
+    the inference process computed over the $j$th subset of data, $I_j$, that is
+    $$
+    \vb_{j, b, n}(\tau) = \frac{1}{b} \sum_{i \in I_j} \hat{\zb_i}(\tau)
+    $$
+    and define $S_{j, b, n} = f(\sqrt{b} \vb_{j, b, n}(\cdot))$ as
+    $$
+    	S_{j, b, n} = sup_{\tau \in T} \sqrt{b} || \vb_{j, b, n}
+	||_{\hat{\Lambdab}(\tau)}
+    $$
+
+  \item Define, for $S = f(\vb(\cdot))$, $\Gamma(x) = P (S \leq x)$. Estimate
+    $\Gamma(x)$ by 
+    $$
+    \hat{\Gamma}_{b, n}(x) = 1/B_n \sum_{j=1}^{B_n} \I(S_{j, b, n} \leq x)
+    $$
+    The critical value is obtained as the $ 1 - \alpha$th quantile of
+    $\hat{\Gamma}_{b, n}(x)$. That is, $c_{b, n}(1 - \alpha) = inf\{c:
+      \hat{\Gamma}_{b, n}(c) \geq  1 - \alpha)\}$
+
+  \item  The level $\alpha$ test rejects the null hypothesis when $S_n > c_{b,
+    n}(1 - \alpha)$.
+    
+\end{enumerate}
+
+%------------------------------------------------------------------------------
+\subsection{Some interesting testing examples}
+%------------------------------------------------------------------------------
+In the context of IVQR model, the following tesing examples are of particular
+interest.
+
+\begin{itemize}
+  \item {\bf Hypothesis of no effect}: the null hypothesis is that the treatment
+    has no impact on the outcome: $\alpha(\tau) = 0$. 
+    In this case, 
+    \begin{align*}
+      H_0: &\quad	\alpha(\tau) = 0 \quad \text{for all $\tau \in T$} \\
+      H_1: &\quad	\alpha(\tau) \neq 0 \quad \text{for some $\tau \in T$}
+      \\
+      \intertext{So, $R(\tau)$, $r(\cdot)$ and $z_i$ are defined as below}
+    R(\tau) &= \begin{bmatrix}
+      1 & 0 & \ldots & \ldots & \ldots & 0 \\
+      0 & 1 & 0 & \ldots & \ldots &  0 \\
+      \vdots \\
+      0& \ldots& 1 & 0 & \ldots & 0
+    \end{bmatrix}_{k_d \times p} \\
+    r(\cdot) &= 0 \\
+      z_i(\tau) &= R(\tau) [ J(\tau)^{-1} l_i(\tau, \theta(\tau)) \Psi_i(\tau)]
+      \intertext{where}
+      l_i(\tau, \theta(\tau)) & = \left[
+	\tau - \I\left(Y_i < D_i'\alpha(\tau) + X'_i\beta(\tau)\right)
+      \right] \\
+    \Psi(\tau) &= [\Phi(\tau)', X']'
+    \end{align*}
+
+   \item {\bf Hypothesis of constant effect}:
+     The hypothesis of a constant effect is that the treatment only affects the
+     location of the outcome $Y$. That is, $\alpha(\tau) = \alpha$ for all $\tau
+     \in T$.
+    In this case, 
+    \begin{align*}
+      H_0: &\quad	\alpha(\tau) = \alpha \quad \text{for all $\tau \in T$}
+      \\
+      H_1: &\quad	\alpha(\tau) \neq \alpha \quad \text{for some $\tau \in
+      T$}
+    \end{align*}
+
+    
+     The definition of $R(\tau)$ is same as in the test of no effect.
+     $\hat{r} = \hat{\theta}(\tau_0)$, where $\tau_0$ can either be $0.5$ or
+     some quantile index specified in the model.
+
+     The scores for this inference process is 
+    \begin{align*}
+      z_i(\tau) = R(\tau) \left[ 
+	J(\tau)^{-1} l_i(\tau, \theta(\tau)) \Psi_i(\tau)
+	- 
+	J(\tau_0)^{-1} l_i(\tau_0, \theta(\tau_0)) \Psi_i(\tau_0)
+      \right]
+    \end{align*}
+
+  \item {\bf Dominance hypothesis}:
+    The test of dominance tests whether the effects are unambiguously
+    beneficial, that is $\alpha(\tau) > 0$ for all $\tau \in T$. One may use the
+    one-sided KS statistics
+    \begin{align*}
+      S_n= \sqrt{n} sup_{\tau \in T} \quad max(-\alpha(\tau), 0)
+    \end{align*}
+
+    In this case, 
+    \begin{align*}
+      H_0: &\quad	\alpha(\tau) >0 \quad \text{for all $\tau \in T$}
+      \\
+      H_1: &\quad	\alpha(\tau) \leq 0 \quad \text{for some $\tau \in
+      T$}
+    \end{align*}
+
+    $r(\cdot) = 0$, and the scores for this inference process is
+	\begin{align*}
+      z_i(\tau) = R(\tau) [ J(\tau)^{-1} l_i(\tau, \theta(\tau)) \Psi_i(\tau)]
+	\end{align*}
+   which is the same as in the test of no effect.
+
+ \item {\bf Exogeneity Hypothesis}: 
+   If $D$ are exogenous, we can estimate the model by the regular quantile
+   regression and denote $\eta(\tau)$ as the quantile regression estimates. The
+   difference between $\theta(\tau)$ and $\eta(\tau)$ can be used to formulate a
+   Hausman test of exogeneity. In this case, the null and alternative is defined
+   as
+   \begin{align*}
+     H_0: &\quad	\alpha(\tau) = \eta(\tau)_{k_d} \quad \text{for all
+     $\tau \in T$} \\
+      H_1: &\quad	\alpha(\tau) \neq \eta(\tau)_{k_d} \quad \text{for some
+	$\tau \in T$}
+   \end{align*}
+
+   $r(\cdot) = \eta(\tau)$ 
+   and the scores for
+   the inference process is given by
+   \begin{align*}
+      z_i(\tau) = R(\tau) \left[ 
+      J(\tau)^{-1} l_i(\tau, \theta(\tau)) \Psi_i(\tau)
+      - H(\tau)^{-1} d_i(\tau, \eta(\tau))
+    \right]
+   \end{align*}
+
+   where $$
+   d_i(\tau, \eta(\tau)) = \left[
+   \tau -  \I\left(y_i < \tilde{X}_i'\eta(\tau)\right)
+ \right] \tilde{X}_i
+ \quad \text{with  } \tilde{X}_i = (D_i', X_i')'
+   $$ and
+   $$
+   	H(\tau) = E(f_\epsilon(0|\tilde{X})\tilde{X} \tilde{X}')
+   $$
+
+   Notice that $H(\tau)$ and $d_i(\tau, \eta(\tau))$ is analogous to the
+   definition of $J(\tau)$ and $l_i(\tau, \theta(\tau))\Psi_i(\tau)$,
+   respectively. The only difference is to replace the $\Phi(\tau)$ in
+   $\Psi(\tau)$ with $D$. It is intuitive because under the null $D$ are
+   exogenous, so the instrument for $D$ is itself.
+
+\end{itemize}
+
+%------------------------------------------------------------------------------
+\subsection{Implementation details}
+%------------------------------------------------------------------------------
+
+We provide some details on the estimation of $\Lambda(\tau)$, $J(\tau)$ and
+$H(\tau)$, and the block size $b_n$.
+
+\begin{itemize}
+  \item {\bf $\Lambda(\tau)$}
+
+\begin{align*}
+  \Lambda^*(\tau) = \left[ \Omega^*(\tau) \right]^{-1} = 
+	\left[ Var(z_i(\tau)) \right]^{-1} 
+\end{align*}
+where $\Omega^*(\tau)$ can be estimated as
+\begin{align*}
+  \widehat{\Omega}^*(\tau) = \frac{1}{n}\sum_{i=1}^{n} \hat{z}_i(\tau) 
+\hat{z}_i(\tau)'
+\end{align*}
+Notice that $\Omega(\tau) = 0$ when $r(\cdot) = \theta(\tau_0)$ in the testing
+of constant effect, so we can need to set $\widehat{\Omega}^*(\tau) = I$ in this
+case.
+
+\item {\bf $J(\tau)$}
+
+The estimator for $J(\tau)$ takes the form
+\begin{align*}
+	\frac{1}{n h_n}\sum_{i}^n K\left(\frac{- \epsilon_i(\tau)}{h_n}\right)
+	\widehat{\Psi}_i[D_i', X_i']
+\end{align*}
+where  $\epsilon_i(\tau) = y_i - (D_i', X_i')\theta(\tau)$, 
+$K(\cdot)$ is a Kernel function, and $h_n$ is the bandwidth.
+
+In practice, we can use Gaussian Kernel
+$$
+K(z) = \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
+$$
+and the Silverman's rule of thumb bandwidth
+$$
+h_n = 0.9 \min\left(\widehat{\sigma(\epsilon)}, \frac{M}{1.349}\right)
+n^{-\frac{1}{5}}
+$$
+where $\widehat{\sigma(\epsilon)}$ is the standard deviation of $\epsilon$ and
+$M$ is the interquartile range of $\epsilon$.
+
+\item {\bf $H(\tau)$}
+
+The estimator for $H(\tau)$ takes the form
+\begin{align*}
+	\frac{1}{n h_n}\sum_{i}^n K\left(\frac{- \upsilon_i(\tau)}{h_n}\right)
+	\tilde{X}_i\tilde{X}_i'
+\end{align*}
+where  $\upsilon_i(\tau) = y_i - \tilde{X}_i'\hat{\eta}(\tau)$, and the
+definition of $K()$ and $h_n$ is the same as in the estimation of $J(\tau)$.
+
+\item $b_n$
+
+  Following \cite{Chernozhukov2006}, $b_n = 5 n^{2/5}$. Notice that $b_n^2/n
+  \rightarrow 0$, the bootstrap of the scores can be done with replacement.
+\end{itemize}
+

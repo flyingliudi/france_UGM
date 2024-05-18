@@ -1,0 +1,8 @@
+{com}. cap noi ivqregress iqr assets (i.p401k = i.e401k) income age familysize  ///
+>         i.married i.ira i.pension i.ownhome educ, bound(3000 6000)
+{res}
+{txt}Initial grid
+{col 5}{txt}quantile = {res}0.50{txt}: {col 22}{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}10{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}20{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}.{txt}30
+
+{err}convergence not achieved{p 4 4 2}The grid interval should be wider than the         95% dual confidence interval. Try to set a wider bound using option {bf:bound()}. Use {helpb estat waldplot} for diagnosis.
+{p_end}

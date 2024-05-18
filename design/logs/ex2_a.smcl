@@ -1,0 +1,43 @@
+{com}. ivqregress smooth assets (i.p401k = i.e401k) income age familysize              ///
+>         i.married i.ira i.pension i.ownhome educ
+{res}
+{txt}Fitting smoothed IV quantile regression ...
+
+{txt}Quantile = {res}.5
+{txt}Step {res}1{txt}:{col 10}{txt} bandwidth = {res} 1302.9736{txt}{space 3} GMM criterion Q(b) = {res} 2.617e-08
+{txt}Step {res}2{txt}:{col 10}{txt} bandwidth = {res} 6079.6881{txt}{space 3} GMM criterion Q(b) = {res} 2.391e-12
+{txt}Step {res}3{txt}:{col 10}{txt} bandwidth = {res} 1438.3068{txt}{space 3} GMM criterion Q(b) = {res} 8.068e-13
+
+{txt}{col 1}IV median regression{col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:9,913}
+{txt}{col 1}Estimator: {res:Smoothed estimating equations}{col 56}{lalign 13:Wald chi2({res:9})}{col 69} = {res}{ralign 7:1243.05}
+{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      assets{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}1.p401k {c |}{col 14}{res}{space 2} 5364.468{col 26}{space 2} 573.3728{col 37}{space 1}    9.36{col 46}{space 3}0.000{col 54}{space 4} 4240.678{col 67}{space 3} 6488.258
+{txt}{space 6}income {c |}{col 14}{res}{space 2} .1679934{col 26}{space 2}  .013419{col 37}{space 1}   12.52{col 46}{space 3}0.000{col 54}{space 4} .1416925{col 67}{space 3} .1942942
+{txt}{space 9}age {c |}{col 14}{res}{space 2} 113.6318{col 26}{space 2} 9.352867{col 37}{space 1}   12.15{col 46}{space 3}0.000{col 54}{space 4} 95.30052{col 67}{space 3} 131.9631
+{txt}{space 2}familysize {c |}{col 14}{res}{space 2}-228.7766{col 26}{space 2} 57.61072{col 37}{space 1}   -3.97{col 46}{space 3}0.000{col 54}{space 4}-341.6916{col 67}{space 3}-115.8617
+{txt}{space 12} {c |}
+{space 5}married {c |}
+{space 4}Married  {c |}{col 14}{res}{space 2} -1362.56{col 26}{space 2} 238.5988{col 37}{space 1}   -5.71{col 46}{space 3}0.000{col 54}{space 4}-1830.205{col 67}{space 3}-894.9153
+{txt}{space 12} {c |}
+{space 9}ira {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 22402.04{col 26}{space 2} 1043.504{col 37}{space 1}   21.47{col 46}{space 3}0.000{col 54}{space 4} 20356.81{col 67}{space 3} 24447.27
+{txt}{space 12} {c |}
+{space 5}pension {c |}
+Receives ..  {c |}{col 14}{res}{space 2} -713.996{col 26}{space 2}  220.476{col 37}{space 1}   -3.24{col 46}{space 3}0.001{col 54}{space 4}-1146.121{col 67}{space 3}-281.8709
+{txt}{space 12} {c |}
+{space 5}ownhome {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}-12.71396{col 26}{space 2} 161.3703{col 37}{space 1}   -0.08{col 46}{space 3}0.937{col 54}{space 4} -328.994{col 67}{space 3} 303.5661
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-102.2889{col 26}{space 2} 34.18527{col 37}{space 1}   -2.99{col 46}{space 3}0.003{col 54}{space 4}-169.2908{col 67}{space 3}-35.28701
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-5672.645{col 26}{space 2} 619.7049{col 37}{space 1}   -9.15{col 46}{space 3}0.000{col 54}{space 4}-6887.244{col 67}{space 3}-4458.045
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p2colset 0 13 13 2}{...}
+{text}{p2col:Endogenous:}{res}0b.p401k 1.p401k{p_end}
+{text}{p2col:{space 1}Exogenous:}{res}income age familysize 0b.married 1.married 0b.ira 1.ira 0b.pension 1.pension 0b.ownhome 1.ownhome educ 0b.e401k 1.e401k{p_end}
+{p2colreset}{...}
+{txt}
+{com}. estimates store est_smooth

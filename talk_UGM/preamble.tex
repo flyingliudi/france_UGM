@@ -1,0 +1,93 @@
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+ 
+\mode<presentation>
+{
+ \usetheme{Boadilla}
+% \setbeamercovered{transparent}
+}
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}{}
+
+\usepackage{animate}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{shadow}
+\usepackage{alltt}
+\usepackage{fancybox}
+\usepackage{epsfig}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{natbib}
+\usepackage{threeparttable}
+\usepackage{graphics}
+\usepackage[english]{babel}
+\usepackage{inputenc}
+\usepackage[style=british]{csquotes}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{sjlatex/stata}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{listings}
+\usepackage{pdfpages}
+
+\newtheorem{prop}{PROPOSITION}
+\def\stlogscaled#1#2{\scalebox{#1}{
+\begin{minipage}{\hsize}
+    \begin{stlog}
+    \input{#2.log.tex}
+    \end{stlog}
+    \end{minipage}}}
+
+\def\stcmdscaled#1#2{\scalebox{#1}{
+\begin{minipage}{\hsize}
+	#2
+    \end{minipage}}}
+
+\definecolor{mygray}{gray}{0.85}
+\lstset{ %
+  upquote=true,
+  basicstyle=\footnotesize\ttfamily,
+  backgroundcolor=\color{mygray},
+}
+
+\AtBeginSection[]
+{
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\def\myred#1{{\color{red}{#1}}}
+\def\myblue#1{{\color{blue}{#1}}}
+
+\newcommand{\I}{\mathbbm{1}}
+\newcommand{\E}{\mathbf{E}}
+
+
+\newcommand{\xb}{\mathbf{x}}
+\newcommand{\db}{\mathbf{d}}
+\newcommand{\zb}{\mathbf{z}}
+\newcommand{\vb}{\mathbf{V}}
+\newcommand{\betab}{\boldsymbol{\beta}}
+\newcommand{\alphab}{\boldsymbol{\alpha}}
+\newcommand{\gammab}{\boldsymbol{\gamma}}
+\newcommand{\Is}{\widetilde{\mathbbm{1}}}
+\newcommand{\ivqreg}{{\tt ivqregress}}
+\newcommand{\ivqregiqr}{{\tt ivqregress iqr}}
+\newcommand{\ivqregsee}{{\tt ivqregress smooth}}
+
